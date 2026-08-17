@@ -7,7 +7,8 @@ window.WORDS = [
     "explain": "中国",
     "pos": "名",
     "note": "",
-    "idx": 0
+    "idx": 0,
+    "id": "0b5c377d4282e12172ea91e09752b800"
   },
   {
     "lesson": 1,
@@ -15,7 +16,8 @@ window.WORDS = [
     "explain": "日本",
     "pos": "名",
     "note": "",
-    "idx": 1
+    "idx": 1,
+    "id": "95e6a7dacf687d768b918d9cdeb1f473"
   },
   {
     "lesson": 1,
@@ -23,7 +25,8 @@ window.WORDS = [
     "explain": "美国",
     "pos": "名",
     "note": "",
-    "idx": 2
+    "idx": 2,
+    "id": "b408d9f41f79e691863b5e98d040af6d"
   },
   {
     "lesson": 1,
@@ -31,7 +34,8 @@ window.WORDS = [
     "explain": "韩国",
     "pos": "名",
     "note": "",
-    "idx": 3
+    "idx": 3,
+    "id": "afd6d52f9854f4fd442136e78a027f62"
   },
   {
     "lesson": 1,
@@ -39,7 +43,8 @@ window.WORDS = [
     "explain": "法国",
     "pos": "名",
     "note": "",
-    "idx": 4
+    "idx": 4,
+    "id": "61acd2d44360f3c540021e8229cb0eb6"
   },
   {
     "lesson": 1,
@@ -47,7 +52,8 @@ window.WORDS = [
     "explain": "德国",
     "pos": "名",
     "note": "",
-    "idx": 5
+    "idx": 5,
+    "id": "bd9b5aa4e203b88fc957af3930a0638e"
   },
   {
     "lesson": 1,
@@ -55,7 +61,8 @@ window.WORDS = [
     "explain": "澳大利亚",
     "pos": "名",
     "note": "",
-    "idx": 6
+    "idx": 6,
+    "id": "8291c6fb1c6436cf9ecfb2cd753897fd"
   },
   {
     "lesson": 1,
@@ -63,7 +70,8 @@ window.WORDS = [
     "explain": "英国",
     "pos": "名",
     "note": "",
-    "idx": 7
+    "idx": 7,
+    "id": "dfddf212897167487e7e073129064ed5"
   },
   {
     "lesson": 1,
@@ -71,7 +79,8 @@ window.WORDS = [
     "explain": "老师",
     "pos": "名",
     "note": "",
-    "idx": 8
+    "idx": 8,
+    "id": "9564f603baee8bd4f0ca1ff64c4eafa9"
   },
   {
     "lesson": 1,
@@ -79,7 +88,8 @@ window.WORDS = [
     "explain": "学生",
     "pos": "名",
     "note": "",
-    "idx": 9
+    "idx": 9,
+    "id": "556de60aecb19a6aac292d3e20cf73e1"
   },
   {
     "lesson": 1,
@@ -87,7 +97,8 @@ window.WORDS = [
     "explain": "医生",
     "pos": "名",
     "note": "",
-    "idx": 10
+    "idx": 10,
+    "id": "cb1e84d6500abde01bd11cb077df9436"
   },
   {
     "lesson": 1,
@@ -95,7 +106,8 @@ window.WORDS = [
     "explain": "公司职员",
     "pos": "名",
     "note": "",
-    "idx": 11
+    "idx": 11,
+    "id": "e597c98c1f0d1682ad0e6779312f3b39"
   },
   {
     "lesson": 1,
@@ -103,7 +115,8 @@ window.WORDS = [
     "explain": "厨师",
     "pos": "名",
     "note": "",
-    "idx": 12
+    "idx": 12,
+    "id": "d2b7e3b9fb29bd7b276d635ea775dcec"
   },
   {
     "lesson": 1,
@@ -111,7 +124,8 @@ window.WORDS = [
     "explain": "记者",
     "pos": "名",
     "note": "",
-    "idx": 13
+    "idx": 13,
+    "id": "abe3348185be55e71c5bc1209024739b"
   },
   {
     "lesson": 1,
@@ -119,7 +133,8 @@ window.WORDS = [
     "explain": "歌手",
     "pos": "名",
     "note": "",
-    "idx": 14
+    "idx": 14,
+    "id": "cc97d827d5f670d86aa91f4f0f493d4f"
   },
   {
     "lesson": 1,
@@ -127,7 +142,8 @@ window.WORDS = [
     "explain": "军人",
     "pos": "名",
     "note": "",
-    "idx": 15
+    "idx": 15,
+    "id": "4d109fdafaf1e9cb3857131636911c37"
   },
   {
     "lesson": 1,
@@ -135,7 +151,8 @@ window.WORDS = [
     "explain": "我",
     "pos": "代",
     "note": "",
-    "idx": 16
+    "idx": 16,
+    "id": "10c5cb5ea988da5ce0f560e4fa140b98"
   },
   {
     "lesson": 1,
@@ -143,7 +160,8 @@ window.WORDS = [
     "explain": "先生/女士",
     "pos": "依存",
     "note": "",
-    "idx": 17
+    "idx": 17,
+    "id": "37d09b18d365229680e75e02d63026a1"
   },
   {
     "lesson": 1,
@@ -151,7 +169,8 @@ window.WORDS = [
     "explain": "是",
     "pos": "感",
     "note": "",
-    "idx": 18
+    "idx": 18,
+    "id": "b6de9a602570fe67e2960a66c7cab14c"
   },
   {
     "lesson": 1,
@@ -159,7 +178,8 @@ window.WORDS = [
     "explain": "家庭主妇",
     "pos": "名",
     "note": "",
-    "idx": 19
+    "idx": 19,
+    "id": "90c234b46f911af81f444fd0df4983f3"
   },
   {
     "lesson": 1,
@@ -167,7 +187,8 @@ window.WORDS = [
     "explain": "哪（个）",
     "pos": "冠",
     "note": "",
-    "idx": 20
+    "idx": 20,
+    "id": "6aa031be0cdc4c6c36cff1e45f0d25a4"
   },
   {
     "lesson": 1,
@@ -175,7 +196,8 @@ window.WORDS = [
     "explain": "国家",
     "pos": "名",
     "note": "",
-    "idx": 21
+    "idx": 21,
+    "id": "b9bae528bd3bdd0491e6d2f670ce410e"
   },
   {
     "lesson": 1,
@@ -183,7 +205,8 @@ window.WORDS = [
     "explain": "加拿大",
     "pos": "名",
     "note": "",
-    "idx": 22
+    "idx": 22,
+    "id": "15ecce40acf718c6b8d3214a55807b2b"
   },
   {
     "lesson": 1,
@@ -191,7 +214,8 @@ window.WORDS = [
     "explain": "印度",
     "pos": "名",
     "note": "",
-    "idx": 23
+    "idx": 23,
+    "id": "776b98fba9a600a8d4df51c0703bc7d2"
   },
   {
     "lesson": 1,
@@ -199,7 +223,8 @@ window.WORDS = [
     "explain": "不是。",
     "pos": "句",
     "note": "",
-    "idx": 24
+    "idx": 24,
+    "id": "3b49573e09617ef5597b4472388d24bd"
   },
   {
     "lesson": 1,
@@ -207,7 +232,8 @@ window.WORDS = [
     "explain": "大家",
     "pos": "代",
     "note": "",
-    "idx": 25
+    "idx": 25,
+    "id": "f9c2a8ba144fec1fe5fc9208e9e8bfaf"
   },
   {
     "lesson": 1,
@@ -215,7 +241,8 @@ window.WORDS = [
     "explain": "职业",
     "pos": "名",
     "note": "",
-    "idx": 26
+    "idx": 26,
+    "id": "7e2222eb5ea886ece51c12e6d0758768"
   },
   {
     "lesson": 1,
@@ -223,7 +250,8 @@ window.WORDS = [
     "explain": "什么",
     "pos": "代",
     "note": "",
-    "idx": 27
+    "idx": 27,
+    "id": "99f7625f9b6f8afd57fde5a416d3e476"
   },
   {
     "lesson": 1,
@@ -231,7 +259,8 @@ window.WORDS = [
     "explain": "俄罗斯",
     "pos": "名",
     "note": "",
-    "idx": 28
+    "idx": 28,
+    "id": "f0fc8e1f410aab54635b2cef3f67a6e7"
   },
   {
     "lesson": 1,
@@ -239,7 +268,8 @@ window.WORDS = [
     "explain": "巴基斯坦",
     "pos": "名",
     "note": "",
-    "idx": 29
+    "idx": 29,
+    "id": "6835ec1768d0a5f80adabce8baf6f21f"
   },
   {
     "lesson": 1,
@@ -247,7 +277,8 @@ window.WORDS = [
     "explain": "名片",
     "pos": "名",
     "note": "",
-    "idx": 30
+    "idx": 30,
+    "id": "c42b39f559dd4ae2a4aa1f18246f4f87"
   },
   {
     "lesson": 1,
@@ -255,7 +286,8 @@ window.WORDS = [
     "explain": "名字",
     "pos": "名",
     "note": "",
-    "idx": 31
+    "idx": 31,
+    "id": "6eb5cd03bff7a1ae2a375b25318c6c01"
   },
   {
     "lesson": 1,
@@ -263,7 +295,8 @@ window.WORDS = [
     "explain": "电话号码",
     "pos": "名",
     "note": "",
-    "idx": 32
+    "idx": 32,
+    "id": "ba8df02322a21c6042337a53a6332a52"
   },
   {
     "lesson": 1,
@@ -271,7 +304,8 @@ window.WORDS = [
     "explain": "英语",
     "pos": "名",
     "note": "",
-    "idx": 33
+    "idx": 33,
+    "id": "bf6e5992bcb5aab1e8605f055db29fd6"
   },
   {
     "lesson": 1,
@@ -279,7 +313,8 @@ window.WORDS = [
     "explain": "国籍",
     "pos": "名",
     "note": "",
-    "idx": 34
+    "idx": 34,
+    "id": "53ce6d8b96af85112cbb50890bef27da"
   },
   {
     "lesson": 2,
@@ -287,7 +322,8 @@ window.WORDS = [
     "explain": "书桌",
     "pos": "名",
     "note": "",
-    "idx": 35
+    "idx": 35,
+    "id": "79458c35713e1c41b8e55f22107d600c"
   },
   {
     "lesson": 2,
@@ -295,7 +331,8 @@ window.WORDS = [
     "explain": "椅子",
     "pos": "名",
     "note": "",
-    "idx": 36
+    "idx": 36,
+    "id": "2e34b8dfd6746cc0486b6b259b8c70aa"
   },
   {
     "lesson": 2,
@@ -303,7 +340,8 @@ window.WORDS = [
     "explain": "书",
     "pos": "名",
     "note": "",
-    "idx": 37
+    "idx": 37,
+    "id": "ce1c31eaebc0273fede2b662863d6636"
   },
   {
     "lesson": 2,
@@ -311,7 +349,8 @@ window.WORDS = [
     "explain": "练习本",
     "pos": "名",
     "note": "",
-    "idx": 38
+    "idx": 38,
+    "id": "f6d0ecd1c5368b2f74c0f8488a4d796c"
   },
   {
     "lesson": 2,
@@ -319,7 +358,8 @@ window.WORDS = [
     "explain": "圆珠笔",
     "pos": "名",
     "note": "",
-    "idx": 39
+    "idx": 39,
+    "id": "168025c93711164541e2f94318ae4cf5"
   },
   {
     "lesson": 2,
@@ -327,7 +367,8 @@ window.WORDS = [
     "explain": "铅笔",
     "pos": "名",
     "note": "",
-    "idx": 40
+    "idx": 40,
+    "id": "7368bbaf6824f23a47d8486d84ed2554"
   },
   {
     "lesson": 2,
@@ -335,7 +376,8 @@ window.WORDS = [
     "explain": "书包",
     "pos": "名",
     "note": "",
-    "idx": 41
+    "idx": 41,
+    "id": "d8c299ee99215ac91bfca9de699c8cde"
   },
   {
     "lesson": 2,
@@ -343,7 +385,8 @@ window.WORDS = [
     "explain": "橡皮",
     "pos": "名",
     "note": "",
-    "idx": 42
+    "idx": 42,
+    "id": "2171d6129b4fa76b6df770805c6e44e6"
   },
   {
     "lesson": 2,
@@ -351,7 +394,8 @@ window.WORDS = [
     "explain": "手表",
     "pos": "名",
     "note": "",
-    "idx": 43
+    "idx": 43,
+    "id": "960ebc65e153d360d5f2d5845f7cb5e5"
   },
   {
     "lesson": 2,
@@ -359,7 +403,8 @@ window.WORDS = [
     "explain": "帽子",
     "pos": "名",
     "note": "",
-    "idx": 44
+    "idx": 44,
+    "id": "902ba1a96caa3879588ee7ecb1a3bd3a"
   },
   {
     "lesson": 2,
@@ -367,7 +412,8 @@ window.WORDS = [
     "explain": "雨伞",
     "pos": "名",
     "note": "",
-    "idx": 45
+    "idx": 45,
+    "id": "f7d7a660bc80d6011e9da8b1199ca07b"
   },
   {
     "lesson": 2,
@@ -375,7 +421,8 @@ window.WORDS = [
     "explain": "报纸",
     "pos": "名",
     "note": "",
-    "idx": 46
+    "idx": 46,
+    "id": "457b3dc44b055a9a129d3a28f437910d"
   },
   {
     "lesson": 2,
@@ -383,7 +430,8 @@ window.WORDS = [
     "explain": "照相机",
     "pos": "名",
     "note": "",
-    "idx": 47
+    "idx": 47,
+    "id": "ede0afe7d5f2ae4c106ecb0ea7e29e9e"
   },
   {
     "lesson": 2,
@@ -391,7 +439,8 @@ window.WORDS = [
     "explain": "字典",
     "pos": "名",
     "note": "",
-    "idx": 48
+    "idx": 48,
+    "id": "745270cd65a2c69d1c924fc563fccb53"
   },
   {
     "lesson": 2,
@@ -399,7 +448,8 @@ window.WORDS = [
     "explain": "眼镜",
     "pos": "名",
     "note": "",
-    "idx": 49
+    "idx": 49,
+    "id": "a334f3a05bb0d0d8f3de52e09d489fae"
   },
   {
     "lesson": 2,
@@ -407,7 +457,8 @@ window.WORDS = [
     "explain": "手机",
     "pos": "名",
     "note": "",
-    "idx": 50
+    "idx": 50,
+    "id": "65c774edd180c44e6601e1c50a631b8d"
   },
   {
     "lesson": 2,
@@ -415,7 +466,8 @@ window.WORDS = [
     "explain": "男朋友",
     "pos": "名",
     "note": "",
-    "idx": 51
+    "idx": 51,
+    "id": "00ce3ac28c9dce3575d2f302dfbb47df"
   },
   {
     "lesson": 2,
@@ -423,7 +475,8 @@ window.WORDS = [
     "explain": "硬币",
     "pos": "名",
     "note": "",
-    "idx": 52
+    "idx": 52,
+    "id": "2c9da79aa6f5543031320d8948d062a3"
   },
   {
     "lesson": 2,
@@ -431,7 +484,8 @@ window.WORDS = [
     "explain": "茶",
     "pos": "名",
     "note": "",
-    "idx": 53
+    "idx": 53,
+    "id": "b9cc606e1ae2f1b378653d3443061bb5"
   },
   {
     "lesson": 2,
@@ -439,7 +493,8 @@ window.WORDS = [
     "explain": "韩国语",
     "pos": "名",
     "note": "",
-    "idx": 54
+    "idx": 54,
+    "id": "d6d014c612be422818ca8a960063d051"
   },
   {
     "lesson": 2,
@@ -447,7 +502,8 @@ window.WORDS = [
     "explain": "朋友",
     "pos": "名",
     "note": "",
-    "idx": 55
+    "idx": 55,
+    "id": "2e2bda5f943b8b95829485e433a89f7c"
   },
   {
     "lesson": 2,
@@ -455,7 +511,8 @@ window.WORDS = [
     "explain": "女朋友",
     "pos": "名",
     "note": "",
-    "idx": 56
+    "idx": 56,
+    "id": "bea0001f0633acfd97ca0325da41ba02"
   },
   {
     "lesson": 2,
@@ -463,7 +520,8 @@ window.WORDS = [
     "explain": "什么",
     "pos": "代",
     "note": "",
-    "idx": 57
+    "idx": 57,
+    "id": "6e39cb4f67d0ac1d531e7084e80bac76"
   },
   {
     "lesson": 2,
@@ -471,7 +529,8 @@ window.WORDS = [
     "explain": "窗户",
     "pos": "名",
     "note": "",
-    "idx": 58
+    "idx": 58,
+    "id": "f2d48fa1b9a95370be589916b03c8629"
   },
   {
     "lesson": 2,
@@ -479,7 +538,8 @@ window.WORDS = [
     "explain": "地图",
     "pos": "名",
     "note": "",
-    "idx": 59
+    "idx": 59,
+    "id": "e0e3b473e109fde1b442dfefb9721430"
   },
   {
     "lesson": 2,
@@ -487,7 +547,8 @@ window.WORDS = [
     "explain": "电子词典",
     "pos": "名",
     "note": "",
-    "idx": 60
+    "idx": 60,
+    "id": "c398566a75b9055c93f0c081df6833f1"
   },
   {
     "lesson": 2,
@@ -495,7 +556,8 @@ window.WORDS = [
     "explain": "用韩国语",
     "pos": "词组",
     "note": "",
-    "idx": 61
+    "idx": 61,
+    "id": "2212b62a5727cd68da23587838a1de5c"
   },
   {
     "lesson": 2,
@@ -503,7 +565,8 @@ window.WORDS = [
     "explain": "尺子",
     "pos": "名",
     "note": "",
-    "idx": 62
+    "idx": 62,
+    "id": "4e19f2fbb4c759ed7b6241da83c88d6d"
   },
   {
     "lesson": 2,
@@ -511,7 +574,8 @@ window.WORDS = [
     "explain": "笔袋",
     "pos": "名",
     "note": "",
-    "idx": 63
+    "idx": 63,
+    "id": "d56ae956ba791aa8b811558a444b737c"
   },
   {
     "lesson": 2,
@@ -519,7 +583,8 @@ window.WORDS = [
     "explain": "杂志",
     "pos": "名",
     "note": "",
-    "idx": 64
+    "idx": 64,
+    "id": "103082d878595895885d3617c58afdad"
   },
   {
     "lesson": 2,
@@ -527,7 +592,8 @@ window.WORDS = [
     "explain": "钱包",
     "pos": "名",
     "note": "",
-    "idx": 65
+    "idx": 65,
+    "id": "a1960428ea635c3c3d248ad6a72595d3"
   },
   {
     "lesson": 2,
@@ -535,7 +601,8 @@ window.WORDS = [
     "explain": "咖啡",
     "pos": "名",
     "note": "",
-    "idx": 66
+    "idx": 66,
+    "id": "06b2d89317cd04397f65858264d7c627"
   },
   {
     "lesson": 2,
@@ -543,7 +610,8 @@ window.WORDS = [
     "explain": "稍微，一点儿",
     "pos": "副",
     "note": "",
-    "idx": 67
+    "idx": 67,
+    "id": "f5b98d99c4d2dc9816146fdec9753fc6"
   },
   {
     "lesson": 2,
@@ -551,7 +619,8 @@ window.WORDS = [
     "explain": "可乐",
     "pos": "名",
     "note": "",
-    "idx": 68
+    "idx": 68,
+    "id": "85ca22853a6180dbd847fba1177d0bd5"
   },
   {
     "lesson": 2,
@@ -559,7 +628,8 @@ window.WORDS = [
     "explain": "果汁",
     "pos": "名",
     "note": "",
-    "idx": 69
+    "idx": 69,
+    "id": "4d7545b01ffc6a010363df36e78ddce1"
   },
   {
     "lesson": 2,
@@ -567,7 +637,8 @@ window.WORDS = [
     "explain": "交通卡",
     "pos": "名",
     "note": "",
-    "idx": 70
+    "idx": 70,
+    "id": "19cfe76ca288e7841d81157087aea2d9"
   },
   {
     "lesson": 2,
@@ -575,7 +646,8 @@ window.WORDS = [
     "explain": "纸巾",
     "pos": "名",
     "note": "",
-    "idx": 71
+    "idx": 71,
+    "id": "2a4ba44d810bba58e64088c5008e62eb"
   },
   {
     "lesson": 2,
@@ -583,7 +655,8 @@ window.WORDS = [
     "explain": "水",
     "pos": "名",
     "note": "",
-    "idx": 72
+    "idx": 72,
+    "id": "3558e19de4634b6415e56a7661abf709"
   },
   {
     "lesson": 2,
@@ -591,7 +664,8 @@ window.WORDS = [
     "explain": "欢迎光临。",
     "pos": "句",
     "note": "",
-    "idx": 73
+    "idx": 73,
+    "id": "c3050c7e368bfc941768daffad8da973"
   },
   {
     "lesson": 2,
@@ -599,7 +673,8 @@ window.WORDS = [
     "explain": "苹果",
     "pos": "名",
     "note": "",
-    "idx": 74
+    "idx": 74,
+    "id": "7a56f5adb68eb4f4972d16d4c9aa739f"
   },
   {
     "lesson": 2,
@@ -607,7 +682,8 @@ window.WORDS = [
     "explain": "橙子",
     "pos": "名",
     "note": "",
-    "idx": 75
+    "idx": 75,
+    "id": "b874d51cee0a9e7cb177b5d13c4ec1e6"
   },
   {
     "lesson": 2,
@@ -615,7 +691,8 @@ window.WORDS = [
     "explain": "电影",
     "pos": "名",
     "note": "",
-    "idx": 76
+    "idx": 76,
+    "id": "2934c20a67fa5dc5fbd714f4578b810d"
   },
   {
     "lesson": 2,
@@ -623,7 +700,8 @@ window.WORDS = [
     "explain": "电脑",
     "pos": "名",
     "note": "",
-    "idx": 77
+    "idx": 77,
+    "id": "c5c36583dc912495b8f360305fe21d2d"
   },
   {
     "lesson": 2,
@@ -631,7 +709,8 @@ window.WORDS = [
     "explain": "牛奶",
     "pos": "名",
     "note": "",
-    "idx": 78
+    "idx": 78,
+    "id": "54235ee0305ebd5cfd4fc028faf54c88"
   },
   {
     "lesson": 2,
@@ -639,7 +718,8 @@ window.WORDS = [
     "explain": "香蕉",
     "pos": "名",
     "note": "",
-    "idx": 79
+    "idx": 79,
+    "id": "7913d8b210e04a5b2f1b58e47656f99e"
   },
   {
     "lesson": 2,
@@ -647,7 +727,8 @@ window.WORDS = [
     "explain": "草莓",
     "pos": "名",
     "note": "",
-    "idx": 80
+    "idx": 80,
+    "id": "63c6e936cd7eaac52ee90fe3facc7b49"
   },
   {
     "lesson": 2,
@@ -655,7 +736,8 @@ window.WORDS = [
     "explain": "电视",
     "pos": "名",
     "note": "",
-    "idx": 81
+    "idx": 81,
+    "id": "f63e0535e37b3732b6ebc1e773b48d16"
   },
   {
     "lesson": 2,
@@ -663,7 +745,8 @@ window.WORDS = [
     "explain": "首尔大学",
     "pos": "名",
     "note": "",
-    "idx": 82
+    "idx": 82,
+    "id": "81b1d47eedf6a39e44351b153757c4a2"
   },
   {
     "lesson": 2,
@@ -671,7 +754,8 @@ window.WORDS = [
     "explain": "我的",
     "pos": "代",
     "note": "",
-    "idx": 83
+    "idx": 83,
+    "id": "c48b3010320f6c65d0a750a3796f4783"
   },
   {
     "lesson": 2,
@@ -679,7 +763,8 @@ window.WORDS = [
     "explain": "房间",
     "pos": "名",
     "note": "",
-    "idx": 84
+    "idx": 84,
+    "id": "5c8c70c261a93ff4e744a92fa8ee15a6"
   },
   {
     "lesson": 2,
@@ -687,7 +772,8 @@ window.WORDS = [
     "explain": "床",
     "pos": "名",
     "note": "",
-    "idx": 85
+    "idx": 85,
+    "id": "e724ec66e17f563fdbb8508f4a33c276"
   },
   {
     "lesson": 2,
@@ -695,7 +781,8 @@ window.WORDS = [
     "explain": "冰箱",
     "pos": "名",
     "note": "",
-    "idx": 86
+    "idx": 86,
+    "id": "9ece6896c4d52b6473d41cbe4267aa13"
   },
   {
     "lesson": 2,
@@ -703,7 +790,8 @@ window.WORDS = [
     "explain": "室友",
     "pos": "名",
     "note": "",
-    "idx": 87
+    "idx": 87,
+    "id": "82894ee6d83709bb2865b08fdd955b21"
   },
   {
     "lesson": 2,
@@ -711,7 +799,8 @@ window.WORDS = [
     "explain": "空调",
     "pos": "名",
     "note": "",
-    "idx": 88
+    "idx": 88,
+    "id": "a44c2eb60c7efab6e96e7ef61afe4757"
   },
   {
     "lesson": 2,
@@ -719,7 +808,8 @@ window.WORDS = [
     "explain": "我们",
     "pos": "代",
     "note": "",
-    "idx": 89
+    "idx": 89,
+    "id": "56f50d7dbe2543867cd3848c531c03cd"
   },
   {
     "lesson": 3,
@@ -727,7 +817,8 @@ window.WORDS = [
     "explain": "睡觉",
     "pos": "动",
     "note": "",
-    "idx": 90
+    "idx": 90,
+    "id": "a1b6522e559e2dc01854b30656129346"
   },
   {
     "lesson": 3,
@@ -735,7 +826,8 @@ window.WORDS = [
     "explain": "学习",
     "pos": "动",
     "note": "",
-    "idx": 91
+    "idx": 91,
+    "id": "de0a26de455c4d0349a698eb794050e0"
   },
   {
     "lesson": 3,
@@ -743,7 +835,8 @@ window.WORDS = [
     "explain": "工作",
     "pos": "动",
     "note": "",
-    "idx": 92
+    "idx": 92,
+    "id": "8bbd07e6512c7e4cf6ea63313cc64bde"
   },
   {
     "lesson": 3,
@@ -751,7 +844,8 @@ window.WORDS = [
     "explain": "运动",
     "pos": "动",
     "note": "",
-    "idx": 93
+    "idx": 93,
+    "id": "105b4fe95b21ffb3e23e740e76350d45"
   },
   {
     "lesson": 3,
@@ -759,7 +853,8 @@ window.WORDS = [
     "explain": "做",
     "pos": "动",
     "note": "",
-    "idx": 94
+    "idx": 94,
+    "id": "d8ff41ad37e84a47b366fc7c4afa2f8c"
   },
   {
     "lesson": 3,
@@ -767,7 +862,8 @@ window.WORDS = [
     "explain": "作业",
     "pos": "名",
     "note": "",
-    "idx": 95
+    "idx": 95,
+    "id": "7dc2110d59045ac82bc58c5d13b7001e"
   },
   {
     "lesson": 3,
@@ -775,7 +871,8 @@ window.WORDS = [
     "explain": "买",
     "pos": "动",
     "note": "",
-    "idx": 96
+    "idx": 96,
+    "id": "cac1d3391c2915247c05eff90e28c913"
   },
   {
     "lesson": 3,
@@ -783,7 +880,8 @@ window.WORDS = [
     "explain": "衣服",
     "pos": "名",
     "note": "",
-    "idx": 97
+    "idx": 97,
+    "id": "96b1d30300e57ef2921c7f77b2899cb6"
   },
   {
     "lesson": 3,
@@ -791,7 +889,8 @@ window.WORDS = [
     "explain": "看",
     "pos": "动",
     "note": "",
-    "idx": 98
+    "idx": 98,
+    "id": "ba170c3d59310824af4f82dc889c232b"
   },
   {
     "lesson": 3,
@@ -799,7 +898,8 @@ window.WORDS = [
     "explain": "电影",
     "pos": "名",
     "note": "",
-    "idx": 99
+    "idx": 99,
+    "id": "2934c20a67fa5dc5fbd714f4578b810d"
   },
   {
     "lesson": 3,
@@ -807,7 +907,8 @@ window.WORDS = [
     "explain": "见",
     "pos": "动",
     "note": "",
-    "idx": 100
+    "idx": 100,
+    "id": "4f73b57a70d5156282d4fc4848c2dda7"
   },
   {
     "lesson": 3,
@@ -815,7 +916,8 @@ window.WORDS = [
     "explain": "同学",
     "pos": "名",
     "note": "",
-    "idx": 101
+    "idx": 101,
+    "id": "2e2bda5f943b8b95829485e433a89f7c"
   },
   {
     "lesson": 3,
@@ -823,7 +925,8 @@ window.WORDS = [
     "explain": "学",
     "pos": "动",
     "note": "",
-    "idx": 102
+    "idx": 102,
+    "id": "4881c2b3d3017f2bdedba438c806f265"
   },
   {
     "lesson": 3,
@@ -831,7 +934,8 @@ window.WORDS = [
     "explain": "跆拳道",
     "pos": "名",
     "note": "",
-    "idx": 103
+    "idx": 103,
+    "id": "05ef32e151451e75773bf3b00a4c0e5e"
   },
   {
     "lesson": 3,
@@ -839,7 +943,8 @@ window.WORDS = [
     "explain": "吃",
     "pos": "动",
     "note": "",
-    "idx": 104
+    "idx": 104,
+    "id": "a8d7fa09a2fa7133e131582ace6b61cd"
   },
   {
     "lesson": 3,
@@ -847,7 +952,8 @@ window.WORDS = [
     "explain": "饭",
     "pos": "名",
     "note": "",
-    "idx": 105
+    "idx": 105,
+    "id": "f56bae24a3f38be55d6d6da46207155c"
   },
   {
     "lesson": 3,
@@ -855,7 +961,8 @@ window.WORDS = [
     "explain": "喝",
     "pos": "动",
     "note": "",
-    "idx": 106
+    "idx": 106,
+    "id": "5430e6b709b9cf46bcba8cb71e41e7d5"
   },
   {
     "lesson": 3,
@@ -863,7 +970,8 @@ window.WORDS = [
     "explain": "咖啡",
     "pos": "名",
     "note": "",
-    "idx": 107
+    "idx": 107,
+    "id": "06b2d89317cd04397f65858264d7c627"
   },
   {
     "lesson": 3,
@@ -871,7 +979,8 @@ window.WORDS = [
     "explain": "看",
     "pos": "动",
     "note": "",
-    "idx": 108
+    "idx": 108,
+    "id": "bb41176472a5e6d45f715b892cbd2bd7"
   },
   {
     "lesson": 3,
@@ -879,7 +988,8 @@ window.WORDS = [
     "explain": "书",
     "pos": "名",
     "note": "",
-    "idx": 109
+    "idx": 109,
+    "id": "ce1c31eaebc0273fede2b662863d6636"
   },
   {
     "lesson": 3,
@@ -887,7 +997,8 @@ window.WORDS = [
     "explain": "图书馆",
     "pos": "名",
     "note": "",
-    "idx": 110
+    "idx": 110,
+    "id": "43244bc0b4bd74ef62b097d54708119c"
   },
   {
     "lesson": 3,
@@ -895,7 +1006,8 @@ window.WORDS = [
     "explain": "家",
     "pos": "名",
     "note": "",
-    "idx": 111
+    "idx": 111,
+    "id": "4f15583cc4aa2344ad990ce3b3b65366"
   },
   {
     "lesson": 3,
@@ -903,7 +1015,8 @@ window.WORDS = [
     "explain": "百货商场",
     "pos": "名",
     "note": "",
-    "idx": 112
+    "idx": 112,
+    "id": "4045d68c9cf4c00eb22841ec26554d31"
   },
   {
     "lesson": 3,
@@ -911,7 +1024,8 @@ window.WORDS = [
     "explain": "市场",
     "pos": "名",
     "note": "",
-    "idx": 113
+    "idx": 113,
+    "id": "1a400842dad7632deb5de42bdfc49213"
   },
   {
     "lesson": 3,
@@ -919,7 +1033,8 @@ window.WORDS = [
     "explain": "公园",
     "pos": "名",
     "note": "",
-    "idx": 114
+    "idx": 114,
+    "id": "a5d6ac44658692b31bb60c04654544e9"
   },
   {
     "lesson": 3,
@@ -927,7 +1042,8 @@ window.WORDS = [
     "explain": "咖啡厅",
     "pos": "名",
     "note": "",
-    "idx": 115
+    "idx": 115,
+    "id": "1d4143bc23a27563d848fafe1d0013b1"
   },
   {
     "lesson": 3,
@@ -935,7 +1051,8 @@ window.WORDS = [
     "explain": "剧场，电影院",
     "pos": "名",
     "note": "",
-    "idx": 116
+    "idx": 116,
+    "id": "14d4563e8428f5a88403e8caec28bec0"
   },
   {
     "lesson": 3,
@@ -943,7 +1060,8 @@ window.WORDS = [
     "explain": "学校",
     "pos": "名",
     "note": "",
-    "idx": 117
+    "idx": 117,
+    "id": "09b9db30e2d13cdd45c57cf9ebf7d951"
   },
   {
     "lesson": 3,
@@ -951,7 +1069,8 @@ window.WORDS = [
     "explain": "餐厅",
     "pos": "名",
     "note": "",
-    "idx": 118
+    "idx": 118,
+    "id": "87cdcf9389deb11587570b087d9261f3"
   },
   {
     "lesson": 3,
@@ -959,7 +1078,8 @@ window.WORDS = [
     "explain": "公司",
     "pos": "名",
     "note": "",
-    "idx": 119
+    "idx": 119,
+    "id": "87d89bd37af64dc215535b772705e0a7"
   },
   {
     "lesson": 3,
@@ -967,7 +1087,8 @@ window.WORDS = [
     "explain": "现在",
     "pos": "副",
     "note": "",
-    "idx": 120
+    "idx": 120,
+    "id": "50596b413c482034930e9babc15ee84a"
   },
   {
     "lesson": 3,
@@ -975,7 +1096,8 @@ window.WORDS = [
     "explain": "打工",
     "pos": "动",
     "note": "",
-    "idx": 121
+    "idx": 121,
+    "id": "01bdb62f159fb412729c127b9f3a8549"
   },
   {
     "lesson": 3,
@@ -983,7 +1105,8 @@ window.WORDS = [
     "explain": "休息",
     "pos": "动",
     "note": "",
-    "idx": 122
+    "idx": 122,
+    "id": "5d356b8ba8a9612bc41f222a4d33fcf7"
   },
   {
     "lesson": 3,
@@ -991,7 +1114,8 @@ window.WORDS = [
     "explain": "比萨",
     "pos": "名",
     "note": "",
-    "idx": 123
+    "idx": 123,
+    "id": "8ef013b98083028b8353ada7e98b39b8"
   },
   {
     "lesson": 3,
@@ -999,7 +1123,8 @@ window.WORDS = [
     "explain": "日语",
     "pos": "名",
     "note": "",
-    "idx": 124
+    "idx": 124,
+    "id": "a5a16fac486a3f498193366fb7281d1c"
   },
   {
     "lesson": 3,
@@ -1007,7 +1132,8 @@ window.WORDS = [
     "explain": "菜，料理",
     "pos": "名",
     "note": "",
-    "idx": 125
+    "idx": 125,
+    "id": "38cf8918141ff5686a608c5f271f4a48"
   },
   {
     "lesson": 3,
@@ -1015,7 +1141,8 @@ window.WORDS = [
     "explain": "今天",
     "pos": "副",
     "note": "",
-    "idx": 126
+    "idx": 126,
+    "id": "e1e8a7b4021650c6fbad08d9088dcd69"
   },
   {
     "lesson": 3,
@@ -1023,7 +1150,8 @@ window.WORDS = [
     "explain": "还有",
     "pos": "副",
     "note": "",
-    "idx": 127
+    "idx": 127,
+    "id": "a95af3b9841811a61f207f65c55445b2"
   },
   {
     "lesson": 3,
@@ -1031,7 +1159,8 @@ window.WORDS = [
     "explain": "哪里",
     "pos": "代",
     "note": "",
-    "idx": 128
+    "idx": 128,
+    "id": "b7068b7f37ae0c9133b6b4cedf4e6e38"
   },
   {
     "lesson": 3,
@@ -1039,7 +1168,8 @@ window.WORDS = [
     "explain": "肉",
     "pos": "名",
     "note": "",
-    "idx": 129
+    "idx": 129,
+    "id": "0f6b92946cdb02756fc188f100a69bc9"
   },
   {
     "lesson": 3,
@@ -1047,7 +1177,8 @@ window.WORDS = [
     "explain": "法语",
     "pos": "名",
     "note": "",
-    "idx": 130
+    "idx": 130,
+    "id": "2f8cb01a95215bd0737ea5be80b524ef"
   },
   {
     "lesson": 3,
@@ -1055,7 +1186,8 @@ window.WORDS = [
     "explain": "电视剧",
     "pos": "名",
     "note": "",
-    "idx": 131
+    "idx": 131,
+    "id": "e09c49ced570bbdffa0ec02ae198f8c3"
   },
   {
     "lesson": 3,
@@ -1063,7 +1195,8 @@ window.WORDS = [
     "explain": "那么",
     "pos": "副",
     "note": "",
-    "idx": 132
+    "idx": 132,
+    "id": "e10d5f86a95c49f3779536e2b28a8d27"
   },
   {
     "lesson": 3,
@@ -1071,7 +1204,8 @@ window.WORDS = [
     "explain": "体育中心",
     "pos": "名",
     "note": "",
-    "idx": 133
+    "idx": 133,
+    "id": "ad4b2f2bae98bfe96d42caf6ea9239a2"
   },
   {
     "lesson": 3,
@@ -1079,7 +1213,8 @@ window.WORDS = [
     "explain": "教，教授",
     "pos": "动",
     "note": "",
-    "idx": 134
+    "idx": 134,
+    "id": "625983467709958885ac48f56be3dc60"
   },
   {
     "lesson": 3,
@@ -1087,7 +1222,8 @@ window.WORDS = [
     "explain": "语言教育院",
     "pos": "名",
     "note": "",
-    "idx": 135
+    "idx": 135,
+    "id": "671640a94edfc3b7aaac1122e15aa13a"
   },
   {
     "lesson": 3,
@@ -1095,7 +1231,8 @@ window.WORDS = [
     "explain": "烤肉",
     "pos": "名",
     "note": "",
-    "idx": 136
+    "idx": 136,
+    "id": "5c8034c7f69a84f2248912d6364fa49e"
   },
   {
     "lesson": 4,
@@ -1103,7 +1240,8 @@ window.WORDS = [
     "explain": "机场",
     "pos": "名",
     "note": "",
-    "idx": 137
+    "idx": 137,
+    "id": "fa0677f84677cd318b8dc3fcaf60f9e2"
   },
   {
     "lesson": 4,
@@ -1111,7 +1249,8 @@ window.WORDS = [
     "explain": "邮局",
     "pos": "名",
     "note": "",
-    "idx": 138
+    "idx": 138,
+    "id": "46d46bd337333fff2cd08bc95b8ae078"
   },
   {
     "lesson": 4,
@@ -1119,7 +1258,8 @@ window.WORDS = [
     "explain": "大使馆",
     "pos": "名",
     "note": "",
-    "idx": 139
+    "idx": 139,
+    "id": "d2888fb838e5083e4feaff4894d155f5"
   },
   {
     "lesson": 4,
@@ -1127,7 +1267,8 @@ window.WORDS = [
     "explain": "银行",
     "pos": "名",
     "note": "",
-    "idx": 140
+    "idx": 140,
+    "id": "bbea9da1dc9330c541e4b784b9af165a"
   },
   {
     "lesson": 4,
@@ -1135,7 +1276,8 @@ window.WORDS = [
     "explain": "商店",
     "pos": "名",
     "note": "",
-    "idx": 141
+    "idx": 141,
+    "id": "fc79037e70872473c62fab0018384df5"
   },
   {
     "lesson": 4,
@@ -1143,7 +1285,8 @@ window.WORDS = [
     "explain": "药店",
     "pos": "名",
     "note": "",
-    "idx": 142
+    "idx": 142,
+    "id": "5d8963f4b5803ea8e8c86d0dd72b9ddf"
   },
   {
     "lesson": 4,
@@ -1151,7 +1294,8 @@ window.WORDS = [
     "explain": "医院",
     "pos": "名",
     "note": "",
-    "idx": 143
+    "idx": 143,
+    "id": "00536290cb523236371c956f4b2aeec8"
   },
   {
     "lesson": 4,
@@ -1159,7 +1303,8 @@ window.WORDS = [
     "explain": "理发店",
     "pos": "名",
     "note": "",
-    "idx": 144
+    "idx": 144,
+    "id": "58f857ebb7b08f21ea32748f568677be"
   },
   {
     "lesson": 4,
@@ -1167,7 +1312,8 @@ window.WORDS = [
     "explain": "前面",
     "pos": "名",
     "note": "",
-    "idx": 145
+    "idx": 145,
+    "id": "c3c74ec0d253d922db05f5833dc673cd"
   },
   {
     "lesson": 4,
@@ -1175,7 +1321,8 @@ window.WORDS = [
     "explain": "后面",
     "pos": "名",
     "note": "",
-    "idx": 146
+    "idx": 146,
+    "id": "530aafc7604745f639164dda3c13dd5b"
   },
   {
     "lesson": 4,
@@ -1183,7 +1330,8 @@ window.WORDS = [
     "explain": "旁边",
     "pos": "名",
     "note": "",
-    "idx": 147
+    "idx": 147,
+    "id": "afd7fb79dd4e04347494e96c751bab0d"
   },
   {
     "lesson": 4,
@@ -1191,7 +1339,8 @@ window.WORDS = [
     "explain": "里面",
     "pos": "名",
     "note": "",
-    "idx": 148
+    "idx": 148,
+    "id": "3f1aa7b81440d1d75b61ea04affdefa4"
   },
   {
     "lesson": 4,
@@ -1199,7 +1348,8 @@ window.WORDS = [
     "explain": "下面",
     "pos": "名",
     "note": "",
-    "idx": 149
+    "idx": 149,
+    "id": "14df98ab83fbb011ff6e305eab85f7b6"
   },
   {
     "lesson": 4,
@@ -1207,7 +1357,8 @@ window.WORDS = [
     "explain": "底部",
     "pos": "名",
     "note": "",
-    "idx": 150
+    "idx": 150,
+    "id": "d9643a74ea7217a13bf4e3aee16116b1"
   },
   {
     "lesson": 4,
@@ -1215,7 +1366,8 @@ window.WORDS = [
     "explain": "上面",
     "pos": "名",
     "note": "",
-    "idx": 151
+    "idx": 151,
+    "id": "a549476cf0c353c779cb76da7c15be8c"
   },
   {
     "lesson": 4,
@@ -1223,7 +1375,8 @@ window.WORDS = [
     "explain": "仁寺洞",
     "pos": "名",
     "note": "",
-    "idx": 152
+    "idx": 152,
+    "id": "3c586c953d4b8ec019e55ab8e3a49b5a"
   },
   {
     "lesson": 4,
@@ -1231,7 +1384,8 @@ window.WORDS = [
     "explain": "N首尔塔",
     "pos": "名",
     "note": "",
-    "idx": 153
+    "idx": 153,
+    "id": "e523dd93a10c3bf6ecffe8168094716a"
   },
   {
     "lesson": 4,
@@ -1239,7 +1393,8 @@ window.WORDS = [
     "explain": "明洞",
     "pos": "名",
     "note": "",
-    "idx": 154
+    "idx": 154,
+    "id": "cabc3b52404b804b50a07d1b1cd73094"
   },
   {
     "lesson": 4,
@@ -1247,7 +1402,8 @@ window.WORDS = [
     "explain": "南山",
     "pos": "名",
     "note": "",
-    "idx": 155
+    "idx": 155,
+    "id": "3238af8a259c28a821c1adaaed3472a6"
   },
   {
     "lesson": 4,
@@ -1255,7 +1411,8 @@ window.WORDS = [
     "explain": "大学路",
     "pos": "名",
     "note": "",
-    "idx": 156
+    "idx": 156,
+    "id": "6d6c98bd28704eba61cde93618ead79b"
   },
   {
     "lesson": 4,
@@ -1263,7 +1420,8 @@ window.WORDS = [
     "explain": "清溪川",
     "pos": "名",
     "note": "",
-    "idx": 157
+    "idx": 157,
+    "id": "a8dc87a37a63b13fc56fb19320697f6a"
   },
   {
     "lesson": 4,
@@ -1271,7 +1429,8 @@ window.WORDS = [
     "explain": "教室",
     "pos": "名",
     "note": "",
-    "idx": 158
+    "idx": 158,
+    "id": "460c45c6b79abe0d04bc47a86a4c661f"
   },
   {
     "lesson": 4,
@@ -1279,7 +1438,8 @@ window.WORDS = [
     "explain": "茶馆儿",
     "pos": "名",
     "note": "",
-    "idx": 159
+    "idx": 159,
+    "id": "de90314eb949d592dbc30623e615e993"
   },
   {
     "lesson": 4,
@@ -1287,7 +1447,8 @@ window.WORDS = [
     "explain": "首尔",
     "pos": "名",
     "note": "",
-    "idx": 160
+    "idx": 160,
+    "id": "d50fb2f91ab75ee2564aad103c3a153e"
   },
   {
     "lesson": 4,
@@ -1295,7 +1456,8 @@ window.WORDS = [
     "explain": "市内",
     "pos": "名",
     "note": "",
-    "idx": 161
+    "idx": 161,
+    "id": "11aad7a326fd6c67ff460d09065a4d01"
   },
   {
     "lesson": 4,
@@ -1303,7 +1465,8 @@ window.WORDS = [
     "explain": "观看，欣赏",
     "pos": "动",
     "note": "",
-    "idx": 162
+    "idx": 162,
+    "id": "3aa145b1a7e5125e63da1c152521ba5a"
   },
   {
     "lesson": 4,
@@ -1311,7 +1474,8 @@ window.WORDS = [
     "explain": "购物",
     "pos": "动",
     "note": "",
-    "idx": 163
+    "idx": 163,
+    "id": "5fb017711394542506b62f342fc71617"
   },
   {
     "lesson": 4,
@@ -1319,7 +1483,8 @@ window.WORDS = [
     "explain": "话剧",
     "pos": "名",
     "note": "",
-    "idx": 164
+    "idx": 164,
+    "id": "dab146ff214d5fc599ee9f57391ad8b9"
   },
   {
     "lesson": 4,
@@ -1327,7 +1492,8 @@ window.WORDS = [
     "explain": "知道",
     "pos": "动",
     "note": "",
-    "idx": 165
+    "idx": 165,
+    "id": "4d5956ac3f50ac298929cf89c6bd4a42"
   },
   {
     "lesson": 4,
@@ -1335,7 +1501,8 @@ window.WORDS = [
     "explain": "妈妈",
     "pos": "名",
     "note": "",
-    "idx": 166
+    "idx": 166,
+    "id": "e5b7109f3db3217bfd15994ffce8ef5f"
   },
   {
     "lesson": 4,
@@ -1343,7 +1510,8 @@ window.WORDS = [
     "explain": "爸爸",
     "pos": "名",
     "note": "",
-    "idx": 167
+    "idx": 167,
+    "id": "0e2734d13472d649035d3d911399d784"
   },
   {
     "lesson": 4,
@@ -1351,7 +1519,8 @@ window.WORDS = [
     "explain": "过得很好",
     "pos": "词组",
     "note": "",
-    "idx": 168
+    "idx": 168,
+    "id": "5e22bc4baada1d0aad5795b761294be5"
   },
   {
     "lesson": 4,
@@ -1359,7 +1528,8 @@ window.WORDS = [
     "explain": "宿舍",
     "pos": "名",
     "note": "",
-    "idx": 169
+    "idx": 169,
+    "id": "76f4b2aa9bcc3764aed5da37cb5bc643"
   },
   {
     "lesson": 4,
@@ -1367,7 +1537,8 @@ window.WORDS = [
     "explain": "照片",
     "pos": "名",
     "note": "",
-    "idx": 170
+    "idx": 170,
+    "id": "48a75a3a5093fb5d63e0a5cfee115bd3"
   },
   {
     "lesson": 4,
@@ -1375,7 +1546,8 @@ window.WORDS = [
     "explain": "每天",
     "pos": "副",
     "note": "",
-    "idx": 171
+    "idx": 171,
+    "id": "73780bc1146c6349955538174fa0e4f5"
   },
   {
     "lesson": 4,
@@ -1383,7 +1555,8 @@ window.WORDS = [
     "explain": "那",
     "pos": "代",
     "note": "",
-    "idx": 172
+    "idx": 172,
+    "id": "8ebf6dc6884e200cf992778fcc17c58f"
   },
   {
     "lesson": 4,
@@ -1391,7 +1564,8 @@ window.WORDS = [
     "explain": "班",
     "pos": "名",
     "note": "",
-    "idx": 173
+    "idx": 173,
+    "id": "cd494f06af25238a965ced1c3fd7a43e"
   },
   {
     "lesson": 4,
@@ -1399,7 +1573,8 @@ window.WORDS = [
     "explain": "爱",
     "pos": "动",
     "note": "",
-    "idx": 174
+    "idx": 174,
+    "id": "611c26f174d52ea22a6a10cc82f97301"
   },
   {
     "lesson": 4,
@@ -1407,7 +1582,8 @@ window.WORDS = [
     "explain": "书店",
     "pos": "名",
     "note": "",
-    "idx": 175
+    "idx": 175,
+    "id": "b51cd720aa396d23063c81ff9c8c162c"
   },
   {
     "lesson": 4,
@@ -1415,7 +1591,8 @@ window.WORDS = [
     "explain": "面包店",
     "pos": "名",
     "note": "",
-    "idx": 176
+    "idx": 176,
+    "id": "fe40b36088ca0bf46a3533ce32206e32"
   },
   {
     "lesson": 4,
@@ -1423,7 +1600,8 @@ window.WORDS = [
     "explain": "洗手间",
     "pos": "名",
     "note": "",
-    "idx": 177
+    "idx": 177,
+    "id": "745fe53118a3925197f32d7279f818f0"
   },
   {
     "lesson": 5,
@@ -1431,7 +1609,8 @@ window.WORDS = [
     "explain": "一",
     "pos": "数",
     "note": "",
-    "idx": 178
+    "idx": 178,
+    "id": "95e4313c7bc7ca3b4453870879870109"
   },
   {
     "lesson": 5,
@@ -1439,7 +1618,8 @@ window.WORDS = [
     "explain": "二",
     "pos": "数",
     "note": "",
-    "idx": 179
+    "idx": 179,
+    "id": "6f3ac52824961a0e5a0165fb1bb911ef"
   },
   {
     "lesson": 5,
@@ -1447,7 +1627,8 @@ window.WORDS = [
     "explain": "三",
     "pos": "数",
     "note": "",
-    "idx": 180
+    "idx": 180,
+    "id": "b5203e6149de86676e5b190700309844"
   },
   {
     "lesson": 5,
@@ -1455,7 +1636,8 @@ window.WORDS = [
     "explain": "四",
     "pos": "数",
     "note": "",
-    "idx": 181
+    "idx": 181,
+    "id": "03622984130d7d081e2467fedba901d7"
   },
   {
     "lesson": 5,
@@ -1463,7 +1645,8 @@ window.WORDS = [
     "explain": "五",
     "pos": "数",
     "note": "",
-    "idx": 182
+    "idx": 182,
+    "id": "01970ecb71a063dd95a98c6d7c9fe73f"
   },
   {
     "lesson": 5,
@@ -1471,7 +1654,8 @@ window.WORDS = [
     "explain": "六",
     "pos": "数",
     "note": "",
-    "idx": 183
+    "idx": 183,
+    "id": "4175a7a0f5768f697a0ce6d5df1784b1"
   },
   {
     "lesson": 5,
@@ -1479,7 +1663,8 @@ window.WORDS = [
     "explain": "七",
     "pos": "数",
     "note": "",
-    "idx": 184
+    "idx": 184,
+    "id": "7a9370d9fcbd5f0537e078399035f8bf"
   },
   {
     "lesson": 5,
@@ -1487,7 +1672,8 @@ window.WORDS = [
     "explain": "八",
     "pos": "数",
     "note": "",
-    "idx": 185
+    "idx": 185,
+    "id": "0c9dc7c072fea1a19e70de9708482537"
   },
   {
     "lesson": 5,
@@ -1495,7 +1681,8 @@ window.WORDS = [
     "explain": "九",
     "pos": "数",
     "note": "",
-    "idx": 186
+    "idx": 186,
+    "id": "e8ced87954c61fefc7102240512db252"
   },
   {
     "lesson": 5,
@@ -1503,7 +1690,8 @@ window.WORDS = [
     "explain": "十",
     "pos": "数",
     "note": "",
-    "idx": 187
+    "idx": 187,
+    "id": "d98fa28f4c2f474f4e78e75c4afdcbcc"
   },
   {
     "lesson": 5,
@@ -1511,7 +1699,8 @@ window.WORDS = [
     "explain": "星期一",
     "pos": "名",
     "note": "",
-    "idx": 188
+    "idx": 188,
+    "id": "6787715bbb1e9e0f44ea1234181c1f4e"
   },
   {
     "lesson": 5,
@@ -1519,7 +1708,8 @@ window.WORDS = [
     "explain": "星期二",
     "pos": "名",
     "note": "",
-    "idx": 189
+    "idx": 189,
+    "id": "bff43de253c2425a591d385fd646325a"
   },
   {
     "lesson": 5,
@@ -1527,7 +1717,8 @@ window.WORDS = [
     "explain": "星期三",
     "pos": "名",
     "note": "",
-    "idx": 190
+    "idx": 190,
+    "id": "f36964a9c30835593fc8c42c39a7f4d5"
   },
   {
     "lesson": 5,
@@ -1535,7 +1726,8 @@ window.WORDS = [
     "explain": "星期四",
     "pos": "名",
     "note": "",
-    "idx": 191
+    "idx": 191,
+    "id": "c9b38a0d65dccfe09ba5afad3544a178"
   },
   {
     "lesson": 5,
@@ -1543,7 +1735,8 @@ window.WORDS = [
     "explain": "星期五",
     "pos": "名",
     "note": "",
-    "idx": 192
+    "idx": 192,
+    "id": "4def5de196c6790fb2aeca835fb99a00"
   },
   {
     "lesson": 5,
@@ -1551,7 +1744,8 @@ window.WORDS = [
     "explain": "星期六",
     "pos": "名",
     "note": "",
-    "idx": 193
+    "idx": 193,
+    "id": "46345320e49d3b76c9798da97a8c9c36"
   },
   {
     "lesson": 5,
@@ -1559,7 +1753,8 @@ window.WORDS = [
     "explain": "星期日",
     "pos": "名",
     "note": "",
-    "idx": 194
+    "idx": 194,
+    "id": "90963b5c5621618fd68cbc9538fb3007"
   },
   {
     "lesson": 5,
@@ -1567,7 +1762,8 @@ window.WORDS = [
     "explain": "周末",
     "pos": "名",
     "note": "",
-    "idx": 195
+    "idx": 195,
+    "id": "cdd7eab0bf31fd7a5e1ea6cdf283f160"
   },
   {
     "lesson": 5,
@@ -1575,7 +1771,8 @@ window.WORDS = [
     "explain": "几号",
     "pos": "名",
     "note": "",
-    "idx": 196
+    "idx": 196,
+    "id": "797ed5e2892a66b1971080d4ccbb8504"
   },
   {
     "lesson": 5,
@@ -1583,7 +1780,8 @@ window.WORDS = [
     "explain": "考试",
     "pos": "名",
     "note": "",
-    "idx": 197
+    "idx": 197,
+    "id": "d84622d76065c718234d085cf6cd54cc"
   },
   {
     "lesson": 5,
@@ -1591,7 +1789,8 @@ window.WORDS = [
     "explain": "什么时候",
     "pos": "代",
     "note": "",
-    "idx": 198
+    "idx": 198,
+    "id": "f77212454dba70870452cee2ff2289cd"
   },
   {
     "lesson": 5,
@@ -1599,7 +1798,8 @@ window.WORDS = [
     "explain": "什么",
     "pos": "冠",
     "note": "",
-    "idx": 199
+    "idx": 199,
+    "id": "b210be168741c68364589df42ee0e40d"
   },
   {
     "lesson": 5,
@@ -1607,7 +1807,8 @@ window.WORDS = [
     "explain": "生日",
     "pos": "名",
     "note": "",
-    "idx": 200
+    "idx": 200,
+    "id": "2c3cbfe53cb199b957c5af2dd1d8bd4b"
   },
   {
     "lesson": 5,
@@ -1615,7 +1816,8 @@ window.WORDS = [
     "explain": "和",
     "pos": "助",
     "note": "",
-    "idx": 201
+    "idx": 201,
+    "id": "6d8fcbaef097c069c9bda41c5d18dfd4"
   },
   {
     "lesson": 5,
@@ -1623,7 +1825,8 @@ window.WORDS = [
     "explain": "圣诞节",
     "pos": "名",
     "note": "",
-    "idx": 202
+    "idx": 202,
+    "id": "2ce15d16e5171b8e5a0e3f296aff79b8"
   },
   {
     "lesson": 5,
@@ -1631,7 +1834,8 @@ window.WORDS = [
     "explain": "派对，聚会",
     "pos": "名",
     "note": "",
-    "idx": 203
+    "idx": 203,
+    "id": "fd363b75e06235bb75a24c7457e48223"
   },
   {
     "lesson": 5,
@@ -1639,7 +1843,8 @@ window.WORDS = [
     "explain": "时间",
     "pos": "名",
     "note": "",
-    "idx": 204
+    "idx": 204,
+    "id": "3f23fd871c66a74bdf5776d435e9dd1c"
   },
   {
     "lesson": 5,
@@ -1647,7 +1852,8 @@ window.WORDS = [
     "explain": "对不起",
     "pos": "形",
     "note": "",
-    "idx": 205
+    "idx": 205,
+    "id": "f0bce1bd3e057c1f0cfa71f15cdd30f3"
   },
   {
     "lesson": 5,
@@ -1655,7 +1861,8 @@ window.WORDS = [
     "explain": "约会",
     "pos": "名",
     "note": "",
-    "idx": 206
+    "idx": 206,
+    "id": "ccf987b46990dbdf538b74d70315f094"
   },
   {
     "lesson": 5,
@@ -1663,7 +1870,8 @@ window.WORDS = [
     "explain": "一起",
     "pos": "副",
     "note": "",
-    "idx": 207
+    "idx": 207,
+    "id": "536a6b0fa83f957716c7fd61d7c6e3ab"
   },
   {
     "lesson": 5,
@@ -1671,7 +1879,8 @@ window.WORDS = [
     "explain": "昨天",
     "pos": "副",
     "note": "",
-    "idx": 208
+    "idx": 208,
+    "id": "f269c1911caa0b4bbada255ea962c798"
   },
   {
     "lesson": 5,
@@ -1679,7 +1888,8 @@ window.WORDS = [
     "explain": "COEX购物中心",
     "pos": "名",
     "note": "",
-    "idx": 209
+    "idx": 209,
+    "id": "bd5d528eea55d4a79c3332491dad3f71"
   },
   {
     "lesson": 5,
@@ -1687,7 +1897,8 @@ window.WORDS = [
     "explain": "卡片",
     "pos": "名",
     "note": "",
-    "idx": 210
+    "idx": 210,
+    "id": "7e9cf38c8c759f44bcb8639c5de9191c"
   },
   {
     "lesson": 5,
@@ -1695,7 +1906,8 @@ window.WORDS = [
     "explain": "礼物",
     "pos": "名",
     "note": "",
-    "idx": 211
+    "idx": 211,
+    "id": "409050e9a43674de2f2e90923cea265d"
   },
   {
     "lesson": 5,
@@ -1703,7 +1915,8 @@ window.WORDS = [
     "explain": "洗漱",
     "pos": "动",
     "note": "",
-    "idx": 212
+    "idx": 212,
+    "id": "bc50bb5721bc3ef327a342fc5b9c8854"
   },
   {
     "lesson": 5,
@@ -1711,7 +1924,8 @@ window.WORDS = [
     "explain": "牙",
     "pos": "名",
     "note": "",
-    "idx": 213
+    "idx": 213,
+    "id": "6f3ac52824961a0e5a0165fb1bb911ef"
   },
   {
     "lesson": 5,
@@ -1719,7 +1933,8 @@ window.WORDS = [
     "explain": "刷",
     "pos": "动",
     "note": "",
-    "idx": 214
+    "idx": 214,
+    "id": "48d34d2b24c167d06187b40706f6bd14"
   },
   {
     "lesson": 5,
@@ -1727,7 +1942,8 @@ window.WORDS = [
     "explain": "那里",
     "pos": "代",
     "note": "",
-    "idx": 215
+    "idx": 215,
+    "id": "07732e46db4b08154326a5f3e75b7174"
   },
   {
     "lesson": 5,
@@ -1735,7 +1951,8 @@ window.WORDS = [
     "explain": "散步",
     "pos": "动",
     "note": "",
-    "idx": 216
+    "idx": 216,
+    "id": "3ef4bcb037132f0cc050ff803983d944"
   },
   {
     "lesson": 5,
@@ -1743,7 +1960,8 @@ window.WORDS = [
     "explain": "拍照",
     "pos": "词组",
     "note": "",
-    "idx": 217
+    "idx": 217,
+    "id": "fc95120434b66f5617f90ee4abd90d38"
   },
   {
     "lesson": 5,
@@ -1751,7 +1969,8 @@ window.WORDS = [
     "explain": "谁",
     "pos": "代",
     "note": "",
-    "idx": 218
+    "idx": 218,
+    "id": "523d8566bfd41b4abaf0d0edc69fef74"
   },
   {
     "lesson": 5,
@@ -1759,7 +1978,8 @@ window.WORDS = [
     "explain": "自己",
     "pos": "名",
     "note": "",
-    "idx": 219
+    "idx": 219,
+    "id": "3e5fdba03158f2b50011dcbd43127ca8"
   },
   {
     "lesson": 5,
@@ -1767,7 +1987,8 @@ window.WORDS = [
     "explain": "结束",
     "pos": "动",
     "note": "",
-    "idx": 220
+    "idx": 220,
+    "id": "ff9047d5aae99115a3292d1f16019c8f"
   },
   {
     "lesson": 5,
@@ -1775,7 +1996,8 @@ window.WORDS = [
     "explain": "所以",
     "pos": "副",
     "note": "",
-    "idx": 221
+    "idx": 221,
+    "id": "d8a5b84ae087f653e589be186b727310"
   },
   {
     "lesson": 5,
@@ -1783,7 +2005,8 @@ window.WORDS = [
     "explain": "明天",
     "pos": "副",
     "note": "",
-    "idx": 222
+    "idx": 222,
+    "id": "0fd17ef79976eff02c5b042efd6996bc"
   },
   {
     "lesson": 5,
@@ -1791,7 +2014,8 @@ window.WORDS = [
     "explain": "日程安排",
     "pos": "名",
     "note": "",
-    "idx": 223
+    "idx": 223,
+    "id": "b3a59d1f2edbd5a6b1a33b0ec3990d46"
   },
   {
     "lesson": 5,
@@ -1799,7 +2023,8 @@ window.WORDS = [
     "explain": "上周",
     "pos": "名",
     "note": "",
-    "idx": 224
+    "idx": 224,
+    "id": "317a8933b0ccee066dc776ffde2b9ed2"
   },
   {
     "lesson": 6,
@@ -1807,7 +2032,8 @@ window.WORDS = [
     "explain": "排骨汤",
     "pos": "名",
     "note": "",
-    "idx": 225
+    "idx": 225,
+    "id": "7db847e9bc9deb26f46a68bb4cbec4ed"
   },
   {
     "lesson": 6,
@@ -1815,7 +2041,8 @@ window.WORDS = [
     "explain": "紫菜包饭",
     "pos": "名",
     "note": "",
-    "idx": 226
+    "idx": 226,
+    "id": "79fb0f7004c89e5b8b53cd8c7c21a75c"
   },
   {
     "lesson": 6,
@@ -1823,7 +2050,8 @@ window.WORDS = [
     "explain": "泡菜",
     "pos": "名",
     "note": "",
-    "idx": 227
+    "idx": 227,
+    "id": "9f2e2dc4c669eb64c2dd0d432eed2ba6"
   },
   {
     "lesson": 6,
@@ -1831,7 +2059,8 @@ window.WORDS = [
     "explain": "泡菜汤",
     "pos": "名",
     "note": "",
-    "idx": 228
+    "idx": 228,
+    "id": "1a24f44e98a7e8b7de9c7103a2d63a04"
   },
   {
     "lesson": 6,
@@ -1839,7 +2068,8 @@ window.WORDS = [
     "explain": "冷面",
     "pos": "名",
     "note": "",
-    "idx": 229
+    "idx": 229,
+    "id": "600116efc1f84ae2c1acced2037c373c"
   },
   {
     "lesson": 6,
@@ -1847,7 +2077,8 @@ window.WORDS = [
     "explain": "方便面",
     "pos": "名",
     "note": "",
-    "idx": 230
+    "idx": 230,
+    "id": "6377d6bc30bc8c5843fbb963f7089cc9"
   },
   {
     "lesson": 6,
@@ -1855,7 +2086,8 @@ window.WORDS = [
     "explain": "烤肉",
     "pos": "名",
     "note": "",
-    "idx": 231
+    "idx": 231,
+    "id": "5c8034c7f69a84f2248912d6364fa49e"
   },
   {
     "lesson": 6,
@@ -1863,7 +2095,8 @@ window.WORDS = [
     "explain": "拌饭",
     "pos": "名",
     "note": "",
-    "idx": 232
+    "idx": 232,
+    "id": "6549b54773672a73b9dbd3f0bd41a968"
   },
   {
     "lesson": 6,
@@ -1871,7 +2104,8 @@ window.WORDS = [
     "explain": "三明治",
     "pos": "名",
     "note": "",
-    "idx": 233
+    "idx": 233,
+    "id": "2eec389e8646c6056d374c92d279be2b"
   },
   {
     "lesson": 6,
@@ -1879,7 +2113,8 @@ window.WORDS = [
     "explain": "意大利面",
     "pos": "名",
     "note": "",
-    "idx": 234
+    "idx": 234,
+    "id": "b1ea9c5d8a575ecb196a3af8f6adcccc"
   },
   {
     "lesson": 6,
@@ -1887,7 +2122,8 @@ window.WORDS = [
     "explain": "汉堡包",
     "pos": "名",
     "note": "",
-    "idx": 235
+    "idx": 235,
+    "id": "13a98fcee3bd17593d8b04e3c579d231"
   },
   {
     "lesson": 6,
@@ -1895,7 +2131,8 @@ window.WORDS = [
     "explain": "披萨",
     "pos": "名",
     "note": "",
-    "idx": 236
+    "idx": 236,
+    "id": "8ef013b98083028b8353ada7e98b39b8"
   },
   {
     "lesson": 6,
@@ -1903,7 +2140,8 @@ window.WORDS = [
     "explain": "橘子",
     "pos": "名",
     "note": "",
-    "idx": 237
+    "idx": 237,
+    "id": "7d7360ccb9e0e94c3c1c2613c2f7d50d"
   },
   {
     "lesson": 6,
@@ -1911,7 +2149,8 @@ window.WORDS = [
     "explain": "草莓",
     "pos": "名",
     "note": "",
-    "idx": 238
+    "idx": 238,
+    "id": "63c6e936cd7eaac52ee90fe3facc7b49"
   },
   {
     "lesson": 6,
@@ -1919,7 +2158,8 @@ window.WORDS = [
     "explain": "苹果",
     "pos": "名",
     "note": "",
-    "idx": 239
+    "idx": 239,
+    "id": "7a56f5adb68eb4f4972d16d4c9aa739f"
   },
   {
     "lesson": 6,
@@ -1927,7 +2167,8 @@ window.WORDS = [
     "explain": "西瓜",
     "pos": "名",
     "note": "",
-    "idx": 240
+    "idx": 240,
+    "id": "fbd7f7fef733ae003cf45c2dce397562"
   },
   {
     "lesson": 6,
@@ -1935,7 +2176,8 @@ window.WORDS = [
     "explain": "一",
     "pos": "数",
     "note": "",
-    "idx": 241
+    "idx": 241,
+    "id": "558136bd171f2f33b5e15e27f81dda13"
   },
   {
     "lesson": 6,
@@ -1943,7 +2185,8 @@ window.WORDS = [
     "explain": "二",
     "pos": "数",
     "note": "",
-    "idx": 242
+    "idx": 242,
+    "id": "eca74f10001cf41e7974a388ede9bd15"
   },
   {
     "lesson": 6,
@@ -1951,7 +2194,8 @@ window.WORDS = [
     "explain": "三",
     "pos": "数",
     "note": "",
-    "idx": 243
+    "idx": 243,
+    "id": "e4e5c4c3bf9d81eae5f5d9914886c708"
   },
   {
     "lesson": 6,
@@ -1959,7 +2203,8 @@ window.WORDS = [
     "explain": "四",
     "pos": "数",
     "note": "",
-    "idx": 244
+    "idx": 244,
+    "id": "c94b9f1fabdaa0d7823fc8b7342ee41a"
   },
   {
     "lesson": 6,
@@ -1967,7 +2212,8 @@ window.WORDS = [
     "explain": "五",
     "pos": "数",
     "note": "",
-    "idx": 245
+    "idx": 245,
+    "id": "3d9bc8a0623b8265611e6933120651e4"
   },
   {
     "lesson": 6,
@@ -1975,7 +2221,8 @@ window.WORDS = [
     "explain": "六",
     "pos": "数",
     "note": "",
-    "idx": 246
+    "idx": 246,
+    "id": "e9fc9ad101b595d1baa0d6e70f3473cb"
   },
   {
     "lesson": 6,
@@ -1983,7 +2230,8 @@ window.WORDS = [
     "explain": "七",
     "pos": "数",
     "note": "",
-    "idx": 247
+    "idx": 247,
+    "id": "f0af7331e195582f8940cd95609e4c91"
   },
   {
     "lesson": 6,
@@ -1991,7 +2239,8 @@ window.WORDS = [
     "explain": "八",
     "pos": "数",
     "note": "",
-    "idx": 248
+    "idx": 248,
+    "id": "2026d651c037210f65d592b665ad9c3c"
   },
   {
     "lesson": 6,
@@ -1999,7 +2248,8 @@ window.WORDS = [
     "explain": "九",
     "pos": "数",
     "note": "",
-    "idx": 249
+    "idx": 249,
+    "id": "4c1d5d08441ea18e859baa7e144c138c"
   },
   {
     "lesson": 6,
@@ -2007,7 +2257,8 @@ window.WORDS = [
     "explain": "十",
     "pos": "数",
     "note": "",
-    "idx": 250
+    "idx": 250,
+    "id": "1de1d624091d24674a02309d1e9f78a7"
   },
   {
     "lesson": 6,
@@ -2015,7 +2266,8 @@ window.WORDS = [
     "explain": "多少",
     "pos": "名",
     "note": "",
-    "idx": 251
+    "idx": 251,
+    "id": "d07e82e9e7baeba2771b8824c62ed73f"
   },
   {
     "lesson": 6,
@@ -2023,7 +2275,8 @@ window.WORDS = [
     "explain": "10韩元",
     "pos": "名",
     "note": "",
-    "idx": 252
+    "idx": 252,
+    "id": "336ef8ef42d469f8f0b68848f660b64a"
   },
   {
     "lesson": 6,
@@ -2031,7 +2284,8 @@ window.WORDS = [
     "explain": "50韩元",
     "pos": "名",
     "note": "",
-    "idx": 253
+    "idx": 253,
+    "id": "059ecb93baffca94b115f373447f3b7f"
   },
   {
     "lesson": 6,
@@ -2039,7 +2293,8 @@ window.WORDS = [
     "explain": "100韩元",
     "pos": "名",
     "note": "",
-    "idx": 254
+    "idx": 254,
+    "id": "d8733f0a5b20a695bf60c8d0d881fdae"
   },
   {
     "lesson": 6,
@@ -2047,7 +2302,8 @@ window.WORDS = [
     "explain": "500韩元",
     "pos": "名",
     "note": "",
-    "idx": 255
+    "idx": 255,
+    "id": "dc41057e32d1ca14681be4beb28adc7b"
   },
   {
     "lesson": 6,
@@ -2055,7 +2311,8 @@ window.WORDS = [
     "explain": "1000韩元",
     "pos": "名",
     "note": "",
-    "idx": 256
+    "idx": 256,
+    "id": "9138764b50b6da9c2b87d0cd6d5635a7"
   },
   {
     "lesson": 6,
@@ -2063,7 +2320,8 @@ window.WORDS = [
     "explain": "5000韩元",
     "pos": "名",
     "note": "",
-    "idx": 257
+    "idx": 257,
+    "id": "5b8610585e2c1e16a33d4cb3bd297879"
   },
   {
     "lesson": 6,
@@ -2071,7 +2329,8 @@ window.WORDS = [
     "explain": "10000韩元",
     "pos": "名",
     "note": "",
-    "idx": 258
+    "idx": 258,
+    "id": "ada6faff280c4ee14d8990e698d4b17d"
   },
   {
     "lesson": 6,
@@ -2079,7 +2338,8 @@ window.WORDS = [
     "explain": "50000韩元",
     "pos": "名",
     "note": "",
-    "idx": 259
+    "idx": 259,
+    "id": "041a7c2cbee1d0a825b6b21bb51d64c8"
   },
   {
     "lesson": 6,
@@ -2087,7 +2347,8 @@ window.WORDS = [
     "explain": "坐",
     "pos": "动",
     "note": "",
-    "idx": 260
+    "idx": 260,
+    "id": "b25022148f38ebf8b2e1821cbfeb695e"
   },
   {
     "lesson": 6,
@@ -2095,7 +2356,8 @@ window.WORDS = [
     "explain": "给",
     "pos": "动",
     "note": "",
-    "idx": 261
+    "idx": 261,
+    "id": "62a806f1cac864d3b0b6dcc134113216"
   },
   {
     "lesson": 6,
@@ -2103,7 +2365,8 @@ window.WORDS = [
     "explain": "一会儿",
     "pos": "名",
     "note": "",
-    "idx": 262
+    "idx": 262,
+    "id": "1d512b47eebc066decd825dc4f08cbf6"
   },
   {
     "lesson": 6,
@@ -2111,7 +2374,8 @@ window.WORDS = [
     "explain": "等",
     "pos": "动",
     "note": "",
-    "idx": 263
+    "idx": 263,
+    "id": "0f73c3ce7428a9f2c3b9f619146b35c3"
   },
   {
     "lesson": 6,
@@ -2119,7 +2383,8 @@ window.WORDS = [
     "explain": "面包",
     "pos": "名",
     "note": "",
-    "idx": 264
+    "idx": 264,
+    "id": "c05823f6c0abd40ddec03dc360cb163f"
   },
   {
     "lesson": 6,
@@ -2127,7 +2392,8 @@ window.WORDS = [
     "explain": "几",
     "pos": "冠",
     "note": "",
-    "idx": 265
+    "idx": 265,
+    "id": "6f3a7124c3d027ea8bbed02157be848a"
   },
   {
     "lesson": 6,
@@ -2135,7 +2401,8 @@ window.WORDS = [
     "explain": "啤酒",
     "pos": "名",
     "note": "",
-    "idx": 266
+    "idx": 266,
+    "id": "2c02309276ab7e9606d4ab167fb85508"
   },
   {
     "lesson": 6,
@@ -2143,7 +2410,8 @@ window.WORDS = [
     "explain": "冰激凌",
     "pos": "名",
     "note": "",
-    "idx": 267
+    "idx": 267,
+    "id": "c015152068cffcbd51e0339c0209004e"
   },
   {
     "lesson": 6,
@@ -2151,7 +2419,8 @@ window.WORDS = [
     "explain": "菜单",
     "pos": "名",
     "note": "",
-    "idx": 268
+    "idx": 268,
+    "id": "5bc9d1897841baa55ad18ad85e801277"
   },
   {
     "lesson": 6,
@@ -2159,7 +2428,8 @@ window.WORDS = [
     "explain": "喜欢",
     "pos": "动",
     "note": "",
-    "idx": 269
+    "idx": 269,
+    "id": "46633efb390bcafd690b4269eee230a7"
   },
   {
     "lesson": 6,
@@ -2167,7 +2437,8 @@ window.WORDS = [
     "explain": "不喜欢",
     "pos": "动",
     "note": "",
-    "idx": 270
+    "idx": 270,
+    "id": "3ab93465d4cddce52cb3abbc1653528e"
   },
   {
     "lesson": 6,
@@ -2175,7 +2446,8 @@ window.WORDS = [
     "explain": "乌冬面",
     "pos": "名",
     "note": "",
-    "idx": 271
+    "idx": 271,
+    "id": "e7a3a6a307e15b4315fa7bb1a2dc111e"
   },
   {
     "lesson": 6,
@@ -2183,7 +2455,8 @@ window.WORDS = [
     "explain": "是吗？",
     "pos": "句",
     "note": "",
-    "idx": 272
+    "idx": 272,
+    "id": "fa27616b23f77264d03ce569bbc50a20"
   },
   {
     "lesson": 6,
@@ -2191,7 +2464,8 @@ window.WORDS = [
     "explain": "这里。",
     "pos": "句",
     "note": "",
-    "idx": 273
+    "idx": 273,
+    "id": "9be619f2872b70736b070627c388472a"
   },
   {
     "lesson": 6,
@@ -2199,7 +2473,8 @@ window.WORDS = [
     "explain": "好吃，好喝",
     "pos": "形",
     "note": "",
-    "idx": 274
+    "idx": 274,
+    "id": "db7972856205e8c9a027303bfe7edb29"
   },
   {
     "lesson": 6,
@@ -2207,7 +2482,8 @@ window.WORDS = [
     "explain": "不好吃",
     "pos": "形",
     "note": "",
-    "idx": 275
+    "idx": 275,
+    "id": "4f3856508441dc858b64e5c1bbfa199f"
   },
   {
     "lesson": 6,
@@ -2215,7 +2491,8 @@ window.WORDS = [
     "explain": "便宜",
     "pos": "形",
     "note": "",
-    "idx": 276
+    "idx": 276,
+    "id": "efc76b3b34862509e18765a66b2580cb"
   },
   {
     "lesson": 6,
@@ -2223,7 +2500,8 @@ window.WORDS = [
     "explain": "贵",
     "pos": "形",
     "note": "",
-    "idx": 277
+    "idx": 277,
+    "id": "2cda3f7dc64984de7816dfc39205aca2"
   },
   {
     "lesson": 6,
@@ -2231,7 +2509,8 @@ window.WORDS = [
     "explain": "好",
     "pos": "形",
     "note": "",
-    "idx": 278
+    "idx": 278,
+    "id": "ba40a6d673b601671f1d5f1207e45ab8"
   },
   {
     "lesson": 6,
@@ -2239,7 +2518,8 @@ window.WORDS = [
     "explain": "路",
     "pos": "名",
     "note": "",
-    "idx": 279
+    "idx": 279,
+    "id": "50534628d75ad44691f1c7920cef062e"
   },
   {
     "lesson": 6,
@@ -2247,7 +2527,8 @@ window.WORDS = [
     "explain": "复杂",
     "pos": "形",
     "note": "",
-    "idx": 280
+    "idx": 280,
+    "id": "076b2202e730e16992d7321f8cb8b1f4"
   },
   {
     "lesson": 6,
@@ -2255,7 +2536,8 @@ window.WORDS = [
     "explain": "有趣",
     "pos": "形",
     "note": "",
-    "idx": 281
+    "idx": 281,
+    "id": "4c339009e05d2194533e2ff0fdfde818"
   },
   {
     "lesson": 6,
@@ -2263,7 +2545,8 @@ window.WORDS = [
     "explain": "无趣",
     "pos": "形",
     "note": "",
-    "idx": 282
+    "idx": 282,
+    "id": "e79121ba2b6a42b98bdef5bfea59d406"
   },
   {
     "lesson": 6,
@@ -2271,7 +2554,8 @@ window.WORDS = [
     "explain": "歌曲",
     "pos": "名",
     "note": "",
-    "idx": 283
+    "idx": 283,
+    "id": "c1ac6289c969d964edce77fe0410b768"
   },
   {
     "lesson": 6,
@@ -2279,7 +2563,8 @@ window.WORDS = [
     "explain": "阿里郎",
     "pos": "名",
     "note": "",
-    "idx": 284
+    "idx": 284,
+    "id": "25afe38c8402d9bedfd65dd854eddf80"
   },
   {
     "lesson": 6,
@@ -2287,7 +2572,8 @@ window.WORDS = [
     "explain": "裤子",
     "pos": "名",
     "note": "",
-    "idx": 285
+    "idx": 285,
+    "id": "922090ea30abfa3aa4111b14357df93a"
   },
   {
     "lesson": 6,
@@ -2295,7 +2581,8 @@ window.WORDS = [
     "explain": "运动鞋",
     "pos": "名",
     "note": "",
-    "idx": 286
+    "idx": 286,
+    "id": "a022052e8ea9fef5581e64f811e9bb4e"
   },
   {
     "lesson": 6,
@@ -2303,7 +2590,8 @@ window.WORDS = [
     "explain": "大叔",
     "pos": "名",
     "note": "",
-    "idx": 287
+    "idx": 287,
+    "id": "7e6fa7bc1f563d437c6b59170479bd9c"
   },
   {
     "lesson": 6,
@@ -2311,7 +2599,8 @@ window.WORDS = [
     "explain": "表示基准或标准",
     "pos": "助",
     "note": "",
-    "idx": 288
+    "idx": 288,
+    "id": "f215119c15264cf50db738a33f7c36a5"
   },
   {
     "lesson": 6,
@@ -2319,7 +2608,8 @@ window.WORDS = [
     "explain": "全部",
     "pos": "名",
     "note": "",
-    "idx": 289
+    "idx": 289,
+    "id": "25045fbc2e2b258ec531f9c9fca852a3"
   },
   {
     "lesson": 6,
@@ -2327,7 +2617,8 @@ window.WORDS = [
     "explain": "又",
     "pos": "副",
     "note": "",
-    "idx": 290
+    "idx": 290,
+    "id": "4ad93346195b60bff0e9d529f72f98eb"
   },
   {
     "lesson": 6,
@@ -2335,7 +2626,8 @@ window.WORDS = [
     "explain": "梨",
     "pos": "名",
     "note": "",
-    "idx": 291
+    "idx": 291,
+    "id": "494a1a86163888a563976d339cc2652d"
   },
   {
     "lesson": 6,
@@ -2343,7 +2635,8 @@ window.WORDS = [
     "explain": "猕猴桃",
     "pos": "名",
     "note": "",
-    "idx": 292
+    "idx": 292,
+    "id": "40fc0efafa2b64d0dd12a099300ede33"
   },
   {
     "lesson": 6,
@@ -2351,7 +2644,8 @@ window.WORDS = [
     "explain": "菠萝",
     "pos": "名",
     "note": "",
-    "idx": 293
+    "idx": 293,
+    "id": "54a78e6ee63ae465ff8970d81976fec8"
   },
   {
     "lesson": 6,
@@ -2359,7 +2653,8 @@ window.WORDS = [
     "explain": "盒",
     "pos": "名",
     "note": "",
-    "idx": 294
+    "idx": 294,
+    "id": "b58447339e508e904366f2faadaa4f83"
   },
   {
     "lesson": 6,
@@ -2367,7 +2662,8 @@ window.WORDS = [
     "explain": "鸡蛋",
     "pos": "名",
     "note": "",
-    "idx": 295
+    "idx": 295,
+    "id": "771bbdc78b6a3df8ebeec29322e87fc7"
   },
   {
     "lesson": 6,
@@ -2375,7 +2671,8 @@ window.WORDS = [
     "explain": "饼干",
     "pos": "名",
     "note": "",
-    "idx": 296
+    "idx": 296,
+    "id": "2479382886242f7c6a95d4fb32b6c8dc"
   },
   {
     "lesson": 6,
@@ -2383,7 +2680,8 @@ window.WORDS = [
     "explain": "蛋糕",
     "pos": "名",
     "note": "",
-    "idx": 297
+    "idx": 297,
+    "id": "e1f78f99c2cd3ff20f416a2f160db3a3"
   },
   {
     "lesson": 6,
@@ -2391,7 +2689,8 @@ window.WORDS = [
     "explain": "冰咖啡",
     "pos": "名",
     "note": "",
-    "idx": 298
+    "idx": 298,
+    "id": "cab257e142636856f5629be8aed75a66"
   },
   {
     "lesson": 6,
@@ -2399,7 +2698,8 @@ window.WORDS = [
     "explain": "意式咖啡",
     "pos": "名",
     "note": "",
-    "idx": 299
+    "idx": 299,
+    "id": "345e4f86f0d2b5524cfa86c602537082"
   },
   {
     "lesson": 6,
@@ -2407,7 +2707,8 @@ window.WORDS = [
     "explain": "炸猪排",
     "pos": "名",
     "note": "",
-    "idx": 300
+    "idx": 300,
+    "id": "1dfb04292f98b23b18551a717b39c0f5"
   },
   {
     "lesson": 6,
@@ -2415,7 +2716,8 @@ window.WORDS = [
     "explain": "午饭",
     "pos": "名",
     "note": "",
-    "idx": 301
+    "idx": 301,
+    "id": "8c884a727b72d8028d1070caee8029af"
   },
   {
     "lesson": 6,
@@ -2423,7 +2725,8 @@ window.WORDS = [
     "explain": "级别",
     "pos": "名",
     "note": "",
-    "idx": 302
+    "idx": 302,
+    "id": "44fa17a2c892ceeebeb97b271bdc5149"
   },
   {
     "lesson": 6,
@@ -2431,7 +2734,8 @@ window.WORDS = [
     "explain": "东西",
     "pos": "名",
     "note": "",
-    "idx": 303
+    "idx": 303,
+    "id": "32ea896f884f01588bc22e91e0d78e42"
   },
   {
     "lesson": 6,
@@ -2439,7 +2743,8 @@ window.WORDS = [
     "explain": "卖",
     "pos": "动",
     "note": "",
-    "idx": 304
+    "idx": 304,
+    "id": "c892a9bbed4cfc08140ddb604abbbcc5"
   },
   {
     "lesson": 6,
@@ -2447,7 +2752,8 @@ window.WORDS = [
     "explain": "寸",
     "pos": "依存",
     "note": "",
-    "idx": 305
+    "idx": 305,
+    "id": "030e8ef7941131fe87863fc2d204bae0"
   },
   {
     "lesson": 6,
@@ -2455,7 +2761,8 @@ window.WORDS = [
     "explain": "非常",
     "pos": "副",
     "note": "",
-    "idx": 306
+    "idx": 306,
+    "id": "ed69c8876c7c286c380b6e639408bc89"
   },
   {
     "lesson": 6,
@@ -2463,7 +2770,8 @@ window.WORDS = [
     "explain": "遥控器",
     "pos": "名",
     "note": "",
-    "idx": 307
+    "idx": 307,
+    "id": "9b8c20645567eee00f32de607eb89c41"
   },
   {
     "lesson": 6,
@@ -2471,7 +2779,8 @@ window.WORDS = [
     "explain": "干净",
     "pos": "形",
     "note": "",
-    "idx": 308
+    "idx": 308,
+    "id": "5f286ab45685035e7d3f530d1c43ea74"
   },
   {
     "lesson": 6,
@@ -2479,7 +2788,8 @@ window.WORDS = [
     "explain": "很多",
     "pos": "副",
     "note": "",
-    "idx": 309
+    "idx": 309,
+    "id": "711574c8fe65da675ea37044c64b2229"
   },
   {
     "lesson": 6,
@@ -2487,7 +2797,8 @@ window.WORDS = [
     "explain": "册，本",
     "pos": "依名",
     "note": "",
-    "idx": 310
+    "idx": 310,
+    "id": "3b1c4868fd942748774952f1a1b3f3e0"
   },
   {
     "lesson": 6,
@@ -2495,7 +2806,8 @@ window.WORDS = [
     "explain": "打电话",
     "pos": "动",
     "note": "",
-    "idx": 311
+    "idx": 311,
+    "id": "b1914bdc2b1451fc4b13bed7d6b3fa26"
   },
   {
     "lesson": 6,
@@ -2503,7 +2815,8 @@ window.WORDS = [
     "explain": "砍价",
     "pos": "词组",
     "note": "",
-    "idx": 312
+    "idx": 312,
+    "id": "cad63f79bf3fe70e26eec96f18824145"
   },
   {
     "lesson": 7,
@@ -2511,7 +2824,8 @@ window.WORDS = [
     "explain": "阴",
     "pos": "形",
     "note": "",
-    "idx": 313
+    "idx": 313,
+    "id": "cea6e0490be2b5bc2bad9b9d40f09b15"
   },
   {
     "lesson": 7,
@@ -2519,7 +2833,8 @@ window.WORDS = [
     "explain": "晴朗",
     "pos": "形",
     "note": "",
-    "idx": 314
+    "idx": 314,
+    "id": "04eca43af27c3a7f9dbff41fbac80f1c"
   },
   {
     "lesson": 7,
@@ -2527,7 +2842,8 @@ window.WORDS = [
     "explain": "热",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 315
+    "idx": 315,
+    "id": "1f75eaf2e148929cd078ba2e068acbcb"
   },
   {
     "lesson": 7,
@@ -2535,7 +2851,8 @@ window.WORDS = [
     "explain": "冷",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 316
+    "idx": 316,
+    "id": "77f24e3213b91b56df7e50ddec1d3681"
   },
   {
     "lesson": 7,
@@ -2543,7 +2860,8 @@ window.WORDS = [
     "explain": "温暖",
     "pos": "形",
     "note": "",
-    "idx": 317
+    "idx": 317,
+    "id": "6adf19062b6bfb300817a8090b60bb62"
   },
   {
     "lesson": 7,
@@ -2551,7 +2869,8 @@ window.WORDS = [
     "explain": "凉爽",
     "pos": "形",
     "note": "",
-    "idx": 318
+    "idx": 318,
+    "id": "fc259b3105274e18e3a7ace39917da07"
   },
   {
     "lesson": 7,
@@ -2559,7 +2878,8 @@ window.WORDS = [
     "explain": "下雨",
     "pos": "词组",
     "note": "",
-    "idx": 319
+    "idx": 319,
+    "id": "6646fbe80392a63f83134a1198990685"
   },
   {
     "lesson": 7,
@@ -2567,7 +2887,8 @@ window.WORDS = [
     "explain": "下雪",
     "pos": "词组",
     "note": "",
-    "idx": 320
+    "idx": 320,
+    "id": "87999c2596cc15375e4fef02bd7df5eb"
   },
   {
     "lesson": 7,
@@ -2575,7 +2896,8 @@ window.WORDS = [
     "explain": "季节",
     "pos": "名",
     "note": "",
-    "idx": 321
+    "idx": 321,
+    "id": "fca6c96363094289ae5f4c42a53cb4f3"
   },
   {
     "lesson": 7,
@@ -2583,7 +2905,8 @@ window.WORDS = [
     "explain": "春天",
     "pos": "名",
     "note": "",
-    "idx": 322
+    "idx": 322,
+    "id": "5b41570620e59a1dcde31b2c13fcfc0d"
   },
   {
     "lesson": 7,
@@ -2591,7 +2914,8 @@ window.WORDS = [
     "explain": "夏天",
     "pos": "名",
     "note": "",
-    "idx": 323
+    "idx": 323,
+    "id": "38fe8860c575b3e31c053544ff39d71c"
   },
   {
     "lesson": 7,
@@ -2599,7 +2923,8 @@ window.WORDS = [
     "explain": "秋天",
     "pos": "名",
     "note": "",
-    "idx": 324
+    "idx": 324,
+    "id": "3be81a08bef34fb3d81bae56af633ba5"
   },
   {
     "lesson": 7,
@@ -2607,7 +2932,8 @@ window.WORDS = [
     "explain": "冬天",
     "pos": "名",
     "note": "",
-    "idx": 325
+    "idx": 325,
+    "id": "00fe72ee500f0f1eef9ec3e7d23644a3"
   },
   {
     "lesson": 7,
@@ -2615,7 +2941,8 @@ window.WORDS = [
     "explain": "容易",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 326
+    "idx": 326,
+    "id": "961454ffda6114674760a04943ae891e"
   },
   {
     "lesson": 7,
@@ -2623,7 +2950,8 @@ window.WORDS = [
     "explain": "难",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 327
+    "idx": 327,
+    "id": "39490e872ca8295bd80b1689db107a8e"
   },
   {
     "lesson": 7,
@@ -2631,7 +2959,8 @@ window.WORDS = [
     "explain": "辣",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 328
+    "idx": 328,
+    "id": "4176c0b0e12da15f3be6d0b54764e7e6"
   },
   {
     "lesson": 7,
@@ -2639,7 +2968,8 @@ window.WORDS = [
     "explain": "轻",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 329
+    "idx": 329,
+    "id": "cf880c131180727a8072e24addea88b2"
   },
   {
     "lesson": 7,
@@ -2647,7 +2977,8 @@ window.WORDS = [
     "explain": "重",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 330
+    "idx": 330,
+    "id": "22492aeef4da54589e0ca6790648455d"
   },
   {
     "lesson": 7,
@@ -2655,7 +2986,8 @@ window.WORDS = [
     "explain": "天气",
     "pos": "名",
     "note": "",
-    "idx": 331
+    "idx": 331,
+    "id": "451a758fec885041af7cf3e16c73e27b"
   },
   {
     "lesson": 7,
@@ -2663,7 +2995,8 @@ window.WORDS = [
     "explain": "怎么样？",
     "pos": "句",
     "note": "",
-    "idx": 332
+    "idx": 332,
+    "id": "acfc11d67a8f945de3507dda08bf13fd"
   },
   {
     "lesson": 7,
@@ -2671,7 +3004,8 @@ window.WORDS = [
     "explain": "弟弟，妹妹",
     "pos": "名",
     "note": "",
-    "idx": 333
+    "idx": 333,
+    "id": "7d7bbe029bca6a6ac688d8bce533f69b"
   },
   {
     "lesson": 7,
@@ -2679,7 +3013,8 @@ window.WORDS = [
     "explain": "手机",
     "pos": "名",
     "note": "",
-    "idx": 334
+    "idx": 334,
+    "id": "65c774edd180c44e6601e1c50a631b8d"
   },
   {
     "lesson": 7,
@@ -2687,7 +3022,8 @@ window.WORDS = [
     "explain": "炒年糕",
     "pos": "名",
     "note": "",
-    "idx": 335
+    "idx": 335,
+    "id": "ee2cdcfa20dc8e50095ce2f0cbd30106"
   },
   {
     "lesson": 7,
@@ -2695,7 +3031,8 @@ window.WORDS = [
     "explain": "东京",
     "pos": "名",
     "note": "",
-    "idx": 336
+    "idx": 336,
+    "id": "0eb431c8ae7079fb9914d5b3ca9f1e19"
   },
   {
     "lesson": 7,
@@ -2703,7 +3040,8 @@ window.WORDS = [
     "explain": "来的路上注意安全。",
     "pos": "句",
     "note": "",
-    "idx": 337
+    "idx": 337,
+    "id": "6df5d09d449d141c178c62e9be3c4e08"
   },
   {
     "lesson": 7,
@@ -2711,7 +3049,8 @@ window.WORDS = [
     "explain": "伦敦",
     "pos": "名",
     "note": "",
-    "idx": 338
+    "idx": 338,
+    "id": "39edbddab70242cf8500bb7085baaf11"
   },
   {
     "lesson": 7,
@@ -2719,7 +3058,8 @@ window.WORDS = [
     "explain": "新加坡",
     "pos": "名",
     "note": "",
-    "idx": 339
+    "idx": 339,
+    "id": "1d027dc2219c0949b287c0a34e0b78a6"
   },
   {
     "lesson": 7,
@@ -2727,7 +3067,8 @@ window.WORDS = [
     "explain": "莫斯科",
     "pos": "名",
     "note": "",
-    "idx": 340
+    "idx": 340,
+    "id": "e90373a431fed944c8210c45f9de9df4"
   },
   {
     "lesson": 7,
@@ -2735,7 +3076,8 @@ window.WORDS = [
     "explain": "怎么样",
     "pos": "形",
     "note": "",
-    "idx": 341
+    "idx": 341,
+    "id": "8166ae134267e804e7fdd4c2b48bf155"
   },
   {
     "lesson": 7,
@@ -2743,7 +3085,8 @@ window.WORDS = [
     "explain": "巴黎",
     "pos": "名",
     "note": "",
-    "idx": 342
+    "idx": 342,
+    "id": "e2cd5f09828ce76cd31d62dff4de0618"
   },
   {
     "lesson": 7,
@@ -2751,7 +3094,8 @@ window.WORDS = [
     "explain": "最近",
     "pos": "名",
     "note": "",
-    "idx": 343
+    "idx": 343,
+    "id": "4659c5a446da82751076b97f568c515f"
   },
   {
     "lesson": 7,
@@ -2759,7 +3103,8 @@ window.WORDS = [
     "explain": "休息时间",
     "pos": "词组",
     "note": "",
-    "idx": 344
+    "idx": 344,
+    "id": "7bbc69836b1e38f1b78781e0898b77f8"
   },
   {
     "lesson": 7,
@@ -2767,7 +3112,8 @@ window.WORDS = [
     "explain": "聊天",
     "pos": "动",
     "note": "",
-    "idx": 345
+    "idx": 345,
+    "id": "44a48de0d2b611de320eba3661b5a663"
   },
   {
     "lesson": 7,
@@ -2775,7 +3121,8 @@ window.WORDS = [
     "explain": "家乡",
     "pos": "名",
     "note": "",
-    "idx": 346
+    "idx": 346,
+    "id": "d8e6b97678bf45533aae4fa34031fe2e"
   },
   {
     "lesson": 7,
@@ -2783,7 +3130,8 @@ window.WORDS = [
     "explain": "滑雪场",
     "pos": "名",
     "note": "",
-    "idx": 347
+    "idx": 347,
+    "id": "ca73734845ea09df3d4aa9967c28629f"
   },
   {
     "lesson": 7,
@@ -2791,7 +3139,8 @@ window.WORDS = [
     "explain": "纽约",
     "pos": "名",
     "note": "",
-    "idx": 348
+    "idx": 348,
+    "id": "e8fc0aec7ca7a1a820a245be6739c49d"
   },
   {
     "lesson": 7,
@@ -2799,7 +3148,8 @@ window.WORDS = [
     "explain": "枫叶",
     "pos": "名",
     "note": "",
-    "idx": 349
+    "idx": 349,
+    "id": "b44c469c54f21d48c0c9a4da0af1c014"
   },
   {
     "lesson": 7,
@@ -2807,7 +3157,8 @@ window.WORDS = [
     "explain": "北京",
     "pos": "名",
     "note": "",
-    "idx": 350
+    "idx": 350,
+    "id": "9a9bea322d1533c1fc519b68b35829dd"
   },
   {
     "lesson": 7,
@@ -2815,7 +3166,8 @@ window.WORDS = [
     "explain": "游泳馆",
     "pos": "名",
     "note": "",
-    "idx": 351
+    "idx": 351,
+    "id": "a499b177cd60db5cde14068a943bf30b"
   },
   {
     "lesson": 7,
@@ -2823,7 +3175,8 @@ window.WORDS = [
     "explain": "花",
     "pos": "名",
     "note": "",
-    "idx": 352
+    "idx": 352,
+    "id": "e6344f656751bbb95d37c019fa9981f6"
   },
   {
     "lesson": 7,
@@ -2831,7 +3184,8 @@ window.WORDS = [
     "explain": "海",
     "pos": "名",
     "note": "",
-    "idx": 353
+    "idx": 353,
+    "id": "3c62fdd8a3b14d747f2fd9357461642e"
   },
   {
     "lesson": 7,
@@ -2839,7 +3193,8 @@ window.WORDS = [
     "explain": "鱼",
     "pos": "名",
     "note": "",
-    "idx": 354
+    "idx": 354,
+    "id": "16d7cd28c1716642a57a620d0780c22d"
   },
   {
     "lesson": 7,
@@ -2847,7 +3202,8 @@ window.WORDS = [
     "explain": "釜山",
     "pos": "名",
     "note": "",
-    "idx": 355
+    "idx": 355,
+    "id": "7f2a9065547b619f8ad2d81c15bbac2a"
   },
   {
     "lesson": 7,
@@ -2855,7 +3211,8 @@ window.WORDS = [
     "explain": "去年",
     "pos": "名",
     "note": "",
-    "idx": 356
+    "idx": 356,
+    "id": "ce6b44f41a1059838464b3e962f1d2dd"
   },
   {
     "lesson": 7,
@@ -2863,7 +3220,8 @@ window.WORDS = [
     "explain": "巴西",
     "pos": "名",
     "note": "",
-    "idx": 357
+    "idx": 357,
+    "id": "e4ea02e32c589778857bd81121b8bf09"
   },
   {
     "lesson": 7,
@@ -2871,7 +3229,8 @@ window.WORDS = [
     "explain": "从",
     "pos": "助",
     "note": "",
-    "idx": 358
+    "idx": 358,
+    "id": "420e118c0f4e6ae907e16005d8665038"
   },
   {
     "lesson": 7,
@@ -2879,7 +3238,8 @@ window.WORDS = [
     "explain": "巴西利亚",
     "pos": "名",
     "note": "",
-    "idx": 359
+    "idx": 359,
+    "id": "960a475dd89698fab7929e89061f9beb"
   },
   {
     "lesson": 7,
@@ -2887,7 +3247,8 @@ window.WORDS = [
     "explain": "经常",
     "pos": "副",
     "note": "",
-    "idx": 360
+    "idx": 360,
+    "id": "e9adf895aae8ece39dc6472b72d11fbc"
   },
   {
     "lesson": 7,
@@ -2895,7 +3256,8 @@ window.WORDS = [
     "explain": "第一次",
     "pos": "名",
     "note": "",
-    "idx": 361
+    "idx": 361,
+    "id": "3274fd6ec64ae347b1cf1a29eb4b55eb"
   },
   {
     "lesson": 7,
@@ -2903,7 +3265,8 @@ window.WORDS = [
     "explain": "天空",
     "pos": "名",
     "note": "",
-    "idx": 362
+    "idx": 362,
+    "id": "ca2c7e52f2dcd8b0a57ee38666ff020e"
   },
   {
     "lesson": 7,
@@ -2911,7 +3274,8 @@ window.WORDS = [
     "explain": "雪人",
     "pos": "名",
     "note": "",
-    "idx": 363
+    "idx": 363,
+    "id": "6a699b20d74b62843f1d320da1b3efa9"
   },
   {
     "lesson": 7,
@@ -2919,7 +3283,8 @@ window.WORDS = [
     "explain": "做",
     "pos": "动",
     "note": "",
-    "idx": 364
+    "idx": 364,
+    "id": "49aced47b88e3360aaf591ff0c2f5257"
   },
   {
     "lesson": 7,
@@ -2927,7 +3292,8 @@ window.WORDS = [
     "explain": "泰国",
     "pos": "名",
     "note": "",
-    "idx": 365
+    "idx": 365,
+    "id": "0ee77ccdcf43faac07d33ff662f97493"
   },
   {
     "lesson": 7,
@@ -2935,7 +3301,8 @@ window.WORDS = [
     "explain": "游泳",
     "pos": "动",
     "note": "",
-    "idx": 366
+    "idx": 366,
+    "id": "529dc9d3517cc0c4550edf4fc35aaf8f"
   },
   {
     "lesson": 7,
@@ -2943,7 +3310,8 @@ window.WORDS = [
     "explain": "芒果",
     "pos": "名",
     "note": "",
-    "idx": 367
+    "idx": 367,
+    "id": "a5ea71b3a6a5a8c4f4c10bd19104b44d"
   },
   {
     "lesson": 7,
@@ -2951,7 +3319,8 @@ window.WORDS = [
     "explain": "墨镜",
     "pos": "名",
     "note": "",
-    "idx": 368
+    "idx": 368,
+    "id": "9f0f355c3aa600d615fcdbcc437b1469"
   },
   {
     "lesson": 7,
@@ -2959,7 +3328,8 @@ window.WORDS = [
     "explain": "扇子",
     "pos": "名",
     "note": "",
-    "idx": 369
+    "idx": 369,
+    "id": "6fb2ccefa2bf02ab9fde3f90f26c010a"
   },
   {
     "lesson": 7,
@@ -2967,7 +3337,8 @@ window.WORDS = [
     "explain": "拖鞋",
     "pos": "名",
     "note": "",
-    "idx": 370
+    "idx": 370,
+    "id": "db31b25b5ecbb783e87d4d9faaac24c4"
   },
   {
     "lesson": 8,
@@ -2975,7 +3346,8 @@ window.WORDS = [
     "explain": "打高尔夫",
     "pos": "词组",
     "note": "",
-    "idx": 371
+    "idx": 371,
+    "id": "196b32180f720d9cab176cbd85b8db27"
   },
   {
     "lesson": 8,
@@ -2983,7 +3355,8 @@ window.WORDS = [
     "explain": "骑自行车",
     "pos": "词组",
     "note": "",
-    "idx": 372
+    "idx": 372,
+    "id": "efd653b5c699394f51036a2b5f156b13"
   },
   {
     "lesson": 8,
@@ -2991,7 +3364,8 @@ window.WORDS = [
     "explain": "打游戏",
     "pos": "词组",
     "note": "",
-    "idx": 373
+    "idx": 373,
+    "id": "3d8eecbc7cd75608b54e7aa346e1f987"
   },
   {
     "lesson": 8,
@@ -2999,7 +3373,8 @@ window.WORDS = [
     "explain": "打网球",
     "pos": "词组",
     "note": "",
-    "idx": 374
+    "idx": 374,
+    "id": "02adad78d3cc04a646dd564f5d0b1e33"
   },
   {
     "lesson": 8,
@@ -3007,7 +3382,8 @@ window.WORDS = [
     "explain": "打篮球",
     "pos": "词组",
     "note": "",
-    "idx": 375
+    "idx": 375,
+    "id": "db43a8ed6881d461cc1a2a1c2fc994b4"
   },
   {
     "lesson": 8,
@@ -3015,7 +3391,8 @@ window.WORDS = [
     "explain": "弹钢琴",
     "pos": "词组",
     "note": "",
-    "idx": 376
+    "idx": 376,
+    "id": "61fdcffaf031480657b840d07b6950ec"
   },
   {
     "lesson": 8,
@@ -3023,7 +3400,8 @@ window.WORDS = [
     "explain": "打台球",
     "pos": "词组",
     "note": "",
-    "idx": 377
+    "idx": 377,
+    "id": "2eccbadea52388152405fa43f6803311"
   },
   {
     "lesson": 8,
@@ -3031,7 +3409,8 @@ window.WORDS = [
     "explain": "滑雪",
     "pos": "词组",
     "note": "",
-    "idx": 378
+    "idx": 378,
+    "id": "515acb2260343e563b7722c67ef20653"
   },
   {
     "lesson": 8,
@@ -3039,7 +3418,8 @@ window.WORDS = [
     "explain": "弹吉他",
     "pos": "词组",
     "note": "",
-    "idx": 379
+    "idx": 379,
+    "id": "ed57330e27a04d56121b09a8d70307f6"
   },
   {
     "lesson": 8,
@@ -3047,7 +3427,8 @@ window.WORDS = [
     "explain": "滑冰",
     "pos": "词组",
     "note": "",
-    "idx": 380
+    "idx": 380,
+    "id": "2b428f8d71c44068e448001a8e590c66"
   },
   {
     "lesson": 8,
@@ -3055,7 +3436,8 @@ window.WORDS = [
     "explain": "踢足球",
     "pos": "词组",
     "note": "",
-    "idx": 381
+    "idx": 381,
+    "id": "bc215913261c78f93662887930322127"
   },
   {
     "lesson": 8,
@@ -3063,7 +3445,8 @@ window.WORDS = [
     "explain": "睡懒觉",
     "pos": "词组",
     "note": "",
-    "idx": 382
+    "idx": 382,
+    "id": "8d39adc916367c70705efe8e4cdb053d"
   },
   {
     "lesson": 8,
@@ -3071,7 +3454,8 @@ window.WORDS = [
     "explain": "去练歌房",
     "pos": "词组",
     "note": "",
-    "idx": 383
+    "idx": 383,
+    "id": "9578be82e09748c9d93375812dd1e2da"
   },
   {
     "lesson": 8,
@@ -3079,7 +3463,8 @@ window.WORDS = [
     "explain": "登山",
     "pos": "词组",
     "note": "",
-    "idx": 384
+    "idx": 384,
+    "id": "4e53e490fe2ca5de0f46ef8e2871b12d"
   },
   {
     "lesson": 8,
@@ -3087,7 +3472,8 @@ window.WORDS = [
     "explain": "去汗蒸房",
     "pos": "词组",
     "note": "",
-    "idx": 385
+    "idx": 385,
+    "id": "58e237d1ed2f82a3a667a2a04c63ae1d"
   },
   {
     "lesson": 8,
@@ -3095,7 +3481,8 @@ window.WORDS = [
     "explain": "散步",
     "pos": "词组",
     "note": "",
-    "idx": 386
+    "idx": 386,
+    "id": "225bdd6d4761a6732399dda275dd7687"
   },
   {
     "lesson": 8,
@@ -3103,7 +3490,8 @@ window.WORDS = [
     "explain": "旅行",
     "pos": "词组",
     "note": "",
-    "idx": 387
+    "idx": 387,
+    "id": "72235479536d07e1363c8747219fd513"
   },
   {
     "lesson": 8,
@@ -3111,7 +3499,8 @@ window.WORDS = [
     "explain": "走",
     "pos": "动",
     "note": "ㄷ的不规则变化",
-    "idx": 388
+    "idx": 388,
+    "id": "b2a5547280201bfd3e94569d371ca538"
   },
   {
     "lesson": 8,
@@ -3119,7 +3508,8 @@ window.WORDS = [
     "explain": "公共汽车",
     "pos": "名",
     "note": "",
-    "idx": 389
+    "idx": 389,
+    "id": "b9e1e36f0e270928959f38de9441e105"
   },
   {
     "lesson": 8,
@@ -3127,7 +3517,8 @@ window.WORDS = [
     "explain": "乘坐，骑",
     "pos": "动",
     "note": "",
-    "idx": 390
+    "idx": 390,
+    "id": "deca95d5b3ea28c3ed600f42d6c8730c"
   },
   {
     "lesson": 8,
@@ -3135,7 +3526,8 @@ window.WORDS = [
     "explain": "走着去",
     "pos": "词组",
     "note": "",
-    "idx": 391
+    "idx": 391,
+    "id": "fbc1a8cb6a720620b18227f64944e174"
   },
   {
     "lesson": 8,
@@ -3143,7 +3535,8 @@ window.WORDS = [
     "explain": "音乐",
     "pos": "名",
     "note": "",
-    "idx": 392
+    "idx": 392,
+    "id": "57cafddda690d39160be1e7a7e1c03b2"
   },
   {
     "lesson": 8,
@@ -3151,7 +3544,8 @@ window.WORDS = [
     "explain": "听",
     "pos": "动",
     "note": "ㄷ的不规则变化",
-    "idx": 393
+    "idx": 393,
+    "id": "31bfb61435b5f04c53b11a1f23b4f96f"
   },
   {
     "lesson": 8,
@@ -3159,7 +3553,8 @@ window.WORDS = [
     "explain": "新闻",
     "pos": "名",
     "note": "",
-    "idx": 394
+    "idx": 394,
+    "id": "10a50c91b49a714d2ef69ac3c7e81694"
   },
   {
     "lesson": 8,
@@ -3167,7 +3562,8 @@ window.WORDS = [
     "explain": "广播",
     "pos": "名",
     "note": "",
-    "idx": 395
+    "idx": 395,
+    "id": "0bb427be8cc72fa2c5fb95810fee0dfb"
   },
   {
     "lesson": 8,
@@ -3175,7 +3571,8 @@ window.WORDS = [
     "explain": "好好地",
     "pos": "副",
     "note": "",
-    "idx": 396
+    "idx": 396,
+    "id": "fdb77449445437920ad1082934f7c2a4"
   },
   {
     "lesson": 8,
@@ -3183,7 +3580,8 @@ window.WORDS = [
     "explain": "生活",
     "pos": "名",
     "note": "",
-    "idx": 397
+    "idx": 397,
+    "id": "e8e48426fb95226c7c03335e81761264"
   },
   {
     "lesson": 8,
@@ -3191,7 +3589,8 @@ window.WORDS = [
     "explain": "一点儿",
     "pos": "副",
     "note": "",
-    "idx": 398
+    "idx": 398,
+    "id": "41cc107061e48bb650e80111931535cf"
   },
   {
     "lesson": 8,
@@ -3199,7 +3598,8 @@ window.WORDS = [
     "explain": "无聊",
     "pos": "形",
     "note": "",
-    "idx": 399
+    "idx": 399,
+    "id": "644e823a5d9014bf88f43e3600201af9"
   },
   {
     "lesson": 8,
@@ -3207,7 +3607,8 @@ window.WORDS = [
     "explain": "汉江",
     "pos": "名",
     "note": "",
-    "idx": 400
+    "idx": 400,
+    "id": "223affdb0e480724ed7ab8b09e1c0f20"
   },
   {
     "lesson": 8,
@@ -3215,7 +3616,8 @@ window.WORDS = [
     "explain": "但是，可是",
     "pos": "副",
     "note": "",
-    "idx": 401
+    "idx": 401,
+    "id": "e03e35adee1dc9ce77ad45acf1354d43"
   },
   {
     "lesson": 8,
@@ -3223,7 +3625,8 @@ window.WORDS = [
     "explain": "怎么",
     "pos": "副",
     "note": "",
-    "idx": 402
+    "idx": 402,
+    "id": "3552addc1f2352807ae8ce612e532417"
   },
   {
     "lesson": 8,
@@ -3231,7 +3634,8 @@ window.WORDS = [
     "explain": "近",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 403
+    "idx": 403,
+    "id": "f477c4073b0dd871d8e70d2d7ea7d60e"
   },
   {
     "lesson": 8,
@@ -3239,7 +3643,8 @@ window.WORDS = [
     "explain": "冠岳山",
     "pos": "名",
     "note": "",
-    "idx": 404
+    "idx": 404,
+    "id": "4ab674dcfc37c0968a9f933c0f2b288b"
   },
   {
     "lesson": 8,
@@ -3247,7 +3652,8 @@ window.WORDS = [
     "explain": "市政府",
     "pos": "名",
     "note": "",
-    "idx": 405
+    "idx": 405,
+    "id": "425f74fba36ac6a40058ac0fd49f1df0"
   },
   {
     "lesson": 8,
@@ -3255,7 +3661,8 @@ window.WORDS = [
     "explain": "真的",
     "pos": "副",
     "note": "",
-    "idx": 406
+    "idx": 406,
+    "id": "d081097ea6ced1a0c78cc3df0be806cb"
   },
   {
     "lesson": 8,
@@ -3263,7 +3670,8 @@ window.WORDS = [
     "explain": "多",
     "pos": "形",
     "note": "",
-    "idx": 407
+    "idx": 407,
+    "id": "15b67567361f0f9798c566f7883eff29"
   },
   {
     "lesson": 8,
@@ -3271,7 +3679,8 @@ window.WORDS = [
     "explain": "经常",
     "pos": "副",
     "note": "",
-    "idx": 408
+    "idx": 408,
+    "id": "31d7a633662e4a759eca5678425b3383"
   },
   {
     "lesson": 8,
@@ -3279,7 +3688,8 @@ window.WORDS = [
     "explain": "好啊。",
     "pos": "句",
     "note": "",
-    "idx": 409
+    "idx": 409,
+    "id": "54ba12fc408a15e431557aee328a6e83"
   },
   {
     "lesson": 8,
@@ -3287,7 +3697,8 @@ window.WORDS = [
     "explain": "下次，下一个",
     "pos": "名",
     "note": "",
-    "idx": 410
+    "idx": 410,
+    "id": "fe6879802f984b240a7b717cbcd9e067"
   },
   {
     "lesson": 8,
@@ -3295,7 +3706,8 @@ window.WORDS = [
     "explain": "累",
     "pos": "形",
     "note": "",
-    "idx": 411
+    "idx": 411,
+    "id": "eda8003808bc50b39c26987eaac83998"
   },
   {
     "lesson": 8,
@@ -3303,7 +3715,8 @@ window.WORDS = [
     "explain": "大",
     "pos": "形",
     "note": "",
-    "idx": 412
+    "idx": 412,
+    "id": "dd0f1a89dca114e72b0321b6a798a3bc"
   },
   {
     "lesson": 8,
@@ -3311,7 +3724,8 @@ window.WORDS = [
     "explain": "甜米露",
     "pos": "名",
     "note": "",
-    "idx": 413
+    "idx": 413,
+    "id": "ac7b5009696db8ea39042b780701ae7b"
   },
   {
     "lesson": 8,
@@ -3319,7 +3733,8 @@ window.WORDS = [
     "explain": "那里",
     "pos": "代",
     "note": "",
-    "idx": 414
+    "idx": 414,
+    "id": "0ab92a9863dd76e48d42507ce40ee09c"
   },
   {
     "lesson": 8,
@@ -3327,7 +3742,8 @@ window.WORDS = [
     "explain": "课",
     "pos": "名",
     "note": "",
-    "idx": 415
+    "idx": 415,
+    "id": "7749439ac59d29eac366472b54da3c39"
   },
   {
     "lesson": 8,
@@ -3335,7 +3751,8 @@ window.WORDS = [
     "explain": "下午",
     "pos": "名",
     "note": "",
-    "idx": 416
+    "idx": 416,
+    "id": "aefb9b6ffa0b9272530fabc343bf465e"
   },
   {
     "lesson": 8,
@@ -3343,7 +3760,8 @@ window.WORDS = [
     "explain": "运动场",
     "pos": "名",
     "note": "",
-    "idx": 417
+    "idx": 417,
+    "id": "a1a5e266bbc31112597fa3d60f612789"
   },
   {
     "lesson": 8,
@@ -3351,7 +3769,8 @@ window.WORDS = [
     "explain": "号",
     "pos": "依名",
     "note": "",
-    "idx": 418
+    "idx": 418,
+    "id": "6b118fb54d198975b17fc7e5fee34147"
   },
   {
     "lesson": 9,
@@ -3359,7 +3778,8 @@ window.WORDS = [
     "explain": "家人",
     "pos": "名",
     "note": "",
-    "idx": 419
+    "idx": 419,
+    "id": "19fa45a1032df1948d926e7811eef738"
   },
   {
     "lesson": 9,
@@ -3367,7 +3787,8 @@ window.WORDS = [
     "explain": "奶奶",
     "pos": "名",
     "note": "",
-    "idx": 420
+    "idx": 420,
+    "id": "98be252fbd92b645e5f8bf528535b52b"
   },
   {
     "lesson": 9,
@@ -3375,7 +3796,8 @@ window.WORDS = [
     "explain": "爷爷",
     "pos": "名",
     "note": "",
-    "idx": 421
+    "idx": 421,
+    "id": "faf26a26ae2ed9658ae4fa1c430fadb8"
   },
   {
     "lesson": 9,
@@ -3383,7 +3805,8 @@ window.WORDS = [
     "explain": "妈妈",
     "pos": "名",
     "note": "",
-    "idx": 422
+    "idx": 422,
+    "id": "e5b7109f3db3217bfd15994ffce8ef5f"
   },
   {
     "lesson": 9,
@@ -3391,7 +3814,8 @@ window.WORDS = [
     "explain": "爸爸",
     "pos": "名",
     "note": "",
-    "idx": 423
+    "idx": 423,
+    "id": "0e2734d13472d649035d3d911399d784"
   },
   {
     "lesson": 9,
@@ -3399,7 +3823,8 @@ window.WORDS = [
     "explain": "姐",
     "pos": "名",
     "note": "",
-    "idx": 424
+    "idx": 424,
+    "id": "564e04da351952f012136cfe3d2b2f66"
   },
   {
     "lesson": 9,
@@ -3407,7 +3832,8 @@ window.WORDS = [
     "explain": "哥",
     "pos": "名",
     "note": "",
-    "idx": 425
+    "idx": 425,
+    "id": "afec8386690ab562979c22b7e1a9825d"
   },
   {
     "lesson": 9,
@@ -3415,7 +3841,8 @@ window.WORDS = [
     "explain": "姐",
     "pos": "名",
     "note": "",
-    "idx": 426
+    "idx": 426,
+    "id": "ee969c1f23dabf08489b0aebd3efeb57"
   },
   {
     "lesson": 9,
@@ -3423,7 +3850,8 @@ window.WORDS = [
     "explain": "哥",
     "pos": "名",
     "note": "",
-    "idx": 427
+    "idx": 427,
+    "id": "7b752ccf7b86b4b185311a6c9a5e7fc1"
   },
   {
     "lesson": 9,
@@ -3431,7 +3859,8 @@ window.WORDS = [
     "explain": "妹妹",
     "pos": "名",
     "note": "",
-    "idx": 428
+    "idx": 428,
+    "id": "0e72bcb72f752be87610f2e6ced705c4"
   },
   {
     "lesson": 9,
@@ -3439,7 +3868,8 @@ window.WORDS = [
     "explain": "弟弟",
     "pos": "名",
     "note": "",
-    "idx": 429
+    "idx": 429,
+    "id": "d84a0c21a17ee965c6fdc4d1d598b7cd"
   },
   {
     "lesson": 9,
@@ -3447,7 +3877,8 @@ window.WORDS = [
     "explain": "妻子",
     "pos": "名",
     "note": "",
-    "idx": 430
+    "idx": 430,
+    "id": "407838ca3844ecb25078e2de5a2df51c"
   },
   {
     "lesson": 9,
@@ -3455,7 +3886,8 @@ window.WORDS = [
     "explain": "丈夫",
     "pos": "名",
     "note": "",
-    "idx": 431
+    "idx": 431,
+    "id": "c1cedd319ee5f7ae33fb9cf69720e5df"
   },
   {
     "lesson": 9,
@@ -3463,7 +3895,8 @@ window.WORDS = [
     "explain": "儿子",
     "pos": "名",
     "note": "",
-    "idx": 432
+    "idx": 432,
+    "id": "dfdfe2db83e6c9adb0ec7417dba425e9"
   },
   {
     "lesson": 9,
@@ -3471,7 +3904,8 @@ window.WORDS = [
     "explain": "女儿",
     "pos": "名",
     "note": "",
-    "idx": 433
+    "idx": 433,
+    "id": "94455dff0f41bdb1dbbd300337fb54b6"
   },
   {
     "lesson": 9,
@@ -3479,7 +3913,8 @@ window.WORDS = [
     "explain": "十",
     "pos": "数",
     "note": "",
-    "idx": 434
+    "idx": 434,
+    "id": "1de1d624091d24674a02309d1e9f78a7"
   },
   {
     "lesson": 9,
@@ -3487,7 +3922,8 @@ window.WORDS = [
     "explain": "二十",
     "pos": "数",
     "note": "",
-    "idx": 435
+    "idx": 435,
+    "id": "33717ee251a6eb15c66b2614ae62726a"
   },
   {
     "lesson": 9,
@@ -3495,7 +3931,8 @@ window.WORDS = [
     "explain": "三十",
     "pos": "数",
     "note": "",
-    "idx": 436
+    "idx": 436,
+    "id": "3710bd3ac682b2024bb0e3e2ed5c5f48"
   },
   {
     "lesson": 9,
@@ -3503,7 +3940,8 @@ window.WORDS = [
     "explain": "四十",
     "pos": "数",
     "note": "",
-    "idx": 437
+    "idx": 437,
+    "id": "c69eb37bcf214c293cf0192849c46272"
   },
   {
     "lesson": 9,
@@ -3511,7 +3949,8 @@ window.WORDS = [
     "explain": "五十",
     "pos": "数",
     "note": "",
-    "idx": 438
+    "idx": 438,
+    "id": "cdc303b7830f90dfdea54b520f248e38"
   },
   {
     "lesson": 9,
@@ -3519,7 +3958,8 @@ window.WORDS = [
     "explain": "六十",
     "pos": "数",
     "note": "",
-    "idx": 439
+    "idx": 439,
+    "id": "1e7a9b854ab6b4903ccaaa7cd91258da"
   },
   {
     "lesson": 9,
@@ -3527,7 +3967,8 @@ window.WORDS = [
     "explain": "七十",
     "pos": "数",
     "note": "",
-    "idx": 440
+    "idx": 440,
+    "id": "1d8444b9c64f89fd19a8c716809bd20d"
   },
   {
     "lesson": 9,
@@ -3535,7 +3976,8 @@ window.WORDS = [
     "explain": "八十",
     "pos": "数",
     "note": "",
-    "idx": 441
+    "idx": 441,
+    "id": "e2c1fa29bf69bd704605a3253a852c30"
   },
   {
     "lesson": 9,
@@ -3543,7 +3985,8 @@ window.WORDS = [
     "explain": "九十",
     "pos": "数",
     "note": "",
-    "idx": 442
+    "idx": 442,
+    "id": "e4b641a935c3a56b486fa2b3c6a9b045"
   },
   {
     "lesson": 9,
@@ -3551,7 +3994,8 @@ window.WORDS = [
     "explain": "一百",
     "pos": "数",
     "note": "",
-    "idx": 443
+    "idx": 443,
+    "id": "a6700dcfd6a20d3601ed6a9597ac3552"
   },
   {
     "lesson": 9,
@@ -3559,7 +4003,8 @@ window.WORDS = [
     "explain": "岁",
     "pos": "依名",
     "note": "",
-    "idx": 444
+    "idx": 444,
+    "id": "5d4dee8ef414da184a0fe38a51501305"
   },
   {
     "lesson": 9,
@@ -3567,7 +4012,8 @@ window.WORDS = [
     "explain": "年龄",
     "pos": "名",
     "note": "",
-    "idx": 445
+    "idx": 445,
+    "id": "50c79801feb1b3ce6b36a31421a95cd8"
   },
   {
     "lesson": 9,
@@ -3575,7 +4021,8 @@ window.WORDS = [
     "explain": "贵庚",
     "pos": "名",
     "note": "",
-    "idx": 446
+    "idx": 446,
+    "id": "5a2a223a381718939471523acd2dc27b"
   },
   {
     "lesson": 9,
@@ -3583,7 +4030,8 @@ window.WORDS = [
     "explain": "吃",
     "pos": "动",
     "note": "",
-    "idx": 447
+    "idx": 447,
+    "id": "a8d7fa09a2fa7133e131582ace6b61cd"
   },
   {
     "lesson": 9,
@@ -3591,7 +4039,8 @@ window.WORDS = [
     "explain": "喝",
     "pos": "动",
     "note": "",
-    "idx": 448
+    "idx": 448,
+    "id": "5430e6b709b9cf46bcba8cb71e41e7d5"
   },
   {
     "lesson": 9,
@@ -3599,7 +4048,8 @@ window.WORDS = [
     "explain": "吃，喝（敬语）",
     "pos": "动",
     "note": "",
-    "idx": 449
+    "idx": 449,
+    "id": "4a8fae160aa22885faaf739e5dfdf2c5"
   },
   {
     "lesson": 9,
@@ -3607,7 +4057,8 @@ window.WORDS = [
     "explain": "-人",
     "pos": "依名",
     "note": "",
-    "idx": 450
+    "idx": 450,
+    "id": "61738cb6ca26e6d902610a163a29f7c2"
   },
   {
     "lesson": 9,
@@ -3615,7 +4066,8 @@ window.WORDS = [
     "explain": "-名",
     "pos": "依名",
     "note": "",
-    "idx": 451
+    "idx": 451,
+    "id": "7b3c6e3d8706ec274cd96fe6f872acc4"
   },
   {
     "lesson": 9,
@@ -3623,7 +4075,8 @@ window.WORDS = [
     "explain": "-位",
     "pos": "依名",
     "note": "",
-    "idx": 452
+    "idx": 452,
+    "id": "778ec428357d1ca07b4aad7b6100b9f6"
   },
   {
     "lesson": 9,
@@ -3631,7 +4084,8 @@ window.WORDS = [
     "explain": "名字",
     "pos": "名",
     "note": "",
-    "idx": 453
+    "idx": 453,
+    "id": "6eb5cd03bff7a1ae2a375b25318c6c01"
   },
   {
     "lesson": 9,
@@ -3639,7 +4093,8 @@ window.WORDS = [
     "explain": "姓名",
     "pos": "名",
     "note": "",
-    "idx": 454
+    "idx": 454,
+    "id": "f60eb33a06df4a363fa173ed689385a8"
   },
   {
     "lesson": 9,
@@ -3647,7 +4102,8 @@ window.WORDS = [
     "explain": "在",
     "pos": "动",
     "note": "",
-    "idx": 455
+    "idx": 455,
+    "id": "dfe763f3f38ff85fbc87f1aebdf3f903"
   },
   {
     "lesson": 9,
@@ -3655,7 +4111,8 @@ window.WORDS = [
     "explain": "在（敬语）",
     "pos": "动",
     "note": "",
-    "idx": 456
+    "idx": 456,
+    "id": "f06a28780a453ed3a287a78a4227030f"
   },
   {
     "lesson": 9,
@@ -3663,7 +4120,8 @@ window.WORDS = [
     "explain": "睡觉",
     "pos": "动",
     "note": "",
-    "idx": 457
+    "idx": 457,
+    "id": "a1b6522e559e2dc01854b30656129346"
   },
   {
     "lesson": 9,
@@ -3671,7 +4129,8 @@ window.WORDS = [
     "explain": "睡觉（敬语）",
     "pos": "动",
     "note": "",
-    "idx": 458
+    "idx": 458,
+    "id": "756bf704ce1b37d750041fce68f43811"
   },
   {
     "lesson": 9,
@@ -3679,7 +4138,8 @@ window.WORDS = [
     "explain": "家",
     "pos": "名",
     "note": "",
-    "idx": 459
+    "idx": 459,
+    "id": "4f15583cc4aa2344ad990ce3b3b65366"
   },
   {
     "lesson": 9,
@@ -3687,7 +4147,8 @@ window.WORDS = [
     "explain": "贵府",
     "pos": "名",
     "note": "",
-    "idx": 460
+    "idx": 460,
+    "id": "9ef99da2dd4451f6d544831dbe7072be"
   },
   {
     "lesson": 9,
@@ -3695,7 +4156,8 @@ window.WORDS = [
     "explain": "驾驶",
     "pos": "名",
     "note": "",
-    "idx": 461
+    "idx": 461,
+    "id": "ef9d05ea37b5d1cd92d831c3003736d3"
   },
   {
     "lesson": 9,
@@ -3703,7 +4165,8 @@ window.WORDS = [
     "explain": "数学",
     "pos": "名",
     "note": "",
-    "idx": 462
+    "idx": 462,
+    "id": "fa5ebfcf99460da618334bcca794c368"
   },
   {
     "lesson": 9,
@@ -3711,7 +4174,8 @@ window.WORDS = [
     "explain": "游泳",
     "pos": "名",
     "note": "",
-    "idx": 463
+    "idx": 463,
+    "id": "d7f1f8531f2c5a5f501ab941de9bd160"
   },
   {
     "lesson": 9,
@@ -3719,7 +4183,8 @@ window.WORDS = [
     "explain": "问好，打招呼",
     "pos": "动",
     "note": "",
-    "idx": 464
+    "idx": 464,
+    "id": "352ea5e6be3b77e0d48b0b93719f9933"
   },
   {
     "lesson": 9,
@@ -3727,7 +4192,8 @@ window.WORDS = [
     "explain": "这，这边",
     "pos": "代",
     "note": "",
-    "idx": 465
+    "idx": 465,
+    "id": "447878d290c46499cbfff883721250d9"
   },
   {
     "lesson": 9,
@@ -3735,7 +4201,8 @@ window.WORDS = [
     "explain": "从",
     "pos": "助",
     "note": "",
-    "idx": 466
+    "idx": 466,
+    "id": "c13a09ae22ffd6c36a9b8a23113cdc52"
   },
   {
     "lesson": 9,
@@ -3743,7 +4210,8 @@ window.WORDS = [
     "explain": "哪里。",
     "pos": "句",
     "note": "",
-    "idx": 467
+    "idx": 467,
+    "id": "87f7407627d325cce6d8d79f63aaedf1"
   },
   {
     "lesson": 9,
@@ -3751,7 +4219,8 @@ window.WORDS = [
     "explain": "兴趣小组，社团",
     "pos": "名",
     "note": "",
-    "idx": 468
+    "idx": 468,
+    "id": "172bd4e38e0dd7ef077ae5e391845567"
   },
   {
     "lesson": 9,
@@ -3759,7 +4228,8 @@ window.WORDS = [
     "explain": "同系，同专业",
     "pos": "词组",
     "note": "",
-    "idx": 469
+    "idx": 469,
+    "id": "b73680431fb867b37b6dc4385319618c"
   },
   {
     "lesson": 9,
@@ -3767,7 +4237,8 @@ window.WORDS = [
     "explain": "清扫",
     "pos": "名",
     "note": "",
-    "idx": 470
+    "idx": 470,
+    "id": "9f25095899c3487b33efca423fba9bee"
   },
   {
     "lesson": 9,
@@ -3775,7 +4246,8 @@ window.WORDS = [
     "explain": "高兴，喜悦",
     "pos": "形",
     "note": "ㅂ的不规则变化",
-    "idx": 471
+    "idx": 471,
+    "id": "c2cfde88025a125ad57978630f3b443e"
   },
   {
     "lesson": 9,
@@ -3783,7 +4255,8 @@ window.WORDS = [
     "explain": "历史",
     "pos": "名",
     "note": "",
-    "idx": 472
+    "idx": 472,
+    "id": "3da98e33e11a2f37662578a0e8710935"
   },
   {
     "lesson": 9,
@@ -3791,7 +4264,8 @@ window.WORDS = [
     "explain": "这位",
     "pos": "代",
     "note": "",
-    "idx": 473
+    "idx": 473,
+    "id": "b2b1672e50f7e673e79cbce9c2d70808"
   },
   {
     "lesson": 9,
@@ -3799,7 +4273,8 @@ window.WORDS = [
     "explain": "我们",
     "pos": "代",
     "note": "",
-    "idx": 474
+    "idx": 474,
+    "id": "56f50d7dbe2543867cd3848c531c03cd"
   },
   {
     "lesson": 9,
@@ -3807,7 +4282,8 @@ window.WORDS = [
     "explain": "主妇",
     "pos": "名",
     "note": "",
-    "idx": 475
+    "idx": 475,
+    "id": "90c234b46f911af81f444fd0df4983f3"
   },
   {
     "lesson": 9,
@@ -3815,7 +4291,8 @@ window.WORDS = [
     "explain": "公司职员",
     "pos": "名",
     "note": "",
-    "idx": 476
+    "idx": 476,
+    "id": "e597c98c1f0d1682ad0e6779312f3b39"
   },
   {
     "lesson": 9,
@@ -3823,7 +4300,8 @@ window.WORDS = [
     "explain": "上班，上学",
     "pos": "动",
     "note": "",
-    "idx": 477
+    "idx": 477,
+    "id": "e59344a9c695268e4c24a60790883733"
   },
   {
     "lesson": 9,
@@ -3831,7 +4309,8 @@ window.WORDS = [
     "explain": "亲切",
     "pos": "形",
     "note": "",
-    "idx": 478
+    "idx": 478,
+    "id": "374914b27c8e58f7a5508618cab7996a"
   },
   {
     "lesson": 9,
@@ -3839,7 +4318,8 @@ window.WORDS = [
     "explain": "社长",
     "pos": "名",
     "note": "",
-    "idx": 479
+    "idx": 479,
+    "id": "9d68f73c67684907cde581438e33c697"
   },
   {
     "lesson": 9,
@@ -3847,7 +4327,8 @@ window.WORDS = [
     "explain": "之前",
     "pos": "名",
     "note": "",
-    "idx": 480
+    "idx": 480,
+    "id": "00df7e76ae4a1f34d859a8149c4e1cdd"
   },
   {
     "lesson": 9,
@@ -3855,7 +4336,8 @@ window.WORDS = [
     "explain": "帅",
     "pos": "形",
     "note": "",
-    "idx": 481
+    "idx": 481,
+    "id": "0834e47d4478e66837d7bb93730d2ec3"
   },
   {
     "lesson": 9,
@@ -3863,7 +4345,8 @@ window.WORDS = [
     "explain": "父母",
     "pos": "名",
     "note": "",
-    "idx": 482
+    "idx": 482,
+    "id": "3819210d06a3fa6d83a005389bcd6c66"
   },
   {
     "lesson": 9,
@@ -3871,7 +4354,8 @@ window.WORDS = [
     "explain": "美人",
     "pos": "名",
     "note": "",
-    "idx": 483
+    "idx": 483,
+    "id": "d17e50f8b6606831c09e6b6e737757be"
   },
   {
     "lesson": 9,
@@ -3879,7 +4363,8 @@ window.WORDS = [
     "explain": "大学",
     "pos": "名",
     "note": "",
-    "idx": 484
+    "idx": 484,
+    "id": "96a4862c6b2d91e21c24a1dcd06d8dee"
   },
   {
     "lesson": 9,
@@ -3887,7 +4372,8 @@ window.WORDS = [
     "explain": "报社",
     "pos": "名",
     "note": "",
-    "idx": 485
+    "idx": 485,
+    "id": "bbbc3313f2c2704f3b73fb881e04f078"
   },
   {
     "lesson": 9,
@@ -3895,7 +4381,8 @@ window.WORDS = [
     "explain": "中学",
     "pos": "名",
     "note": "",
-    "idx": 486
+    "idx": 486,
+    "id": "55814874df01c92bdb71955f5b0e907c"
   },
   {
     "lesson": 9,
@@ -3903,7 +4390,8 @@ window.WORDS = [
     "explain": "家，家族",
     "pos": "名",
     "note": "",
-    "idx": 487
+    "idx": 487,
+    "id": "19fa45a1032df1948d926e7811eef738"
   },
   {
     "lesson": 9,
@@ -3911,7 +4399,8 @@ window.WORDS = [
     "explain": "成为，变成",
     "pos": "动",
     "note": "",
-    "idx": 488
+    "idx": 488,
+    "id": "7533c28db9b4572d673e54f62eb0cd8a"
   },
   {
     "lesson": 9,
@@ -3919,7 +4408,8 @@ window.WORDS = [
     "explain": "小狗",
     "pos": "名",
     "note": "",
-    "idx": 489
+    "idx": 489,
+    "id": "3246065a00e967c70d9189db5e3787c8"
   },
   {
     "lesson": 9,
@@ -3927,7 +4417,8 @@ window.WORDS = [
     "explain": "全家福",
     "pos": "名",
     "note": "",
-    "idx": 490
+    "idx": 490,
+    "id": "0b40661c1072e7a21cf5c92d304ce3a7"
   },
   {
     "lesson": 9,
@@ -3935,7 +4426,8 @@ window.WORDS = [
     "explain": "笑",
     "pos": "动",
     "note": "",
-    "idx": 491
+    "idx": 491,
+    "id": "ec0bf763da474524b404cfc699037686"
   },
   {
     "lesson": 9,
@@ -3943,7 +4435,8 @@ window.WORDS = [
     "explain": "经常",
     "pos": "副",
     "note": "",
-    "idx": 492
+    "idx": 492,
+    "id": "e9adf895aae8ece39dc6472b72d11fbc"
   },
   {
     "lesson": 9,
@@ -3951,7 +4444,8 @@ window.WORDS = [
     "explain": "表“复数”",
     "pos": "助",
     "note": "",
-    "idx": 493
+    "idx": 493,
+    "id": "8137bec5e3dbbd8e2ee48a3257386564"
   },
   {
     "lesson": 9,
@@ -3959,7 +4453,8 @@ window.WORDS = [
     "explain": "所以",
     "pos": "副",
     "note": "",
-    "idx": 494
+    "idx": 494,
+    "id": "d8a5b84ae087f653e589be186b727310"
   },
   {
     "lesson": 9,
@@ -3967,7 +4462,8 @@ window.WORDS = [
     "explain": "还有",
     "pos": "副",
     "note": "",
-    "idx": 495
+    "idx": 495,
+    "id": "a95af3b9841811a61f207f65c55445b2"
   },
   {
     "lesson": 9,
@@ -3975,7 +4471,8 @@ window.WORDS = [
     "explain": "社团",
     "pos": "名",
     "note": "",
-    "idx": 496
+    "idx": 496,
+    "id": "172bd4e38e0dd7ef077ae5e391845567"
   },
   {
     "lesson": 9,
@@ -3983,7 +4480,8 @@ window.WORDS = [
     "explain": "真的",
     "pos": "副",
     "note": "",
-    "idx": 497
+    "idx": 497,
+    "id": "d081097ea6ced1a0c78cc3df0be806cb"
   },
   {
     "lesson": 9,
@@ -3991,7 +4489,8 @@ window.WORDS = [
     "explain": "兴趣爱好",
     "pos": "名",
     "note": "",
-    "idx": 498
+    "idx": 498,
+    "id": "1179642bcd6158f28930a9e2d10e1492"
   },
   {
     "lesson": 10,
@@ -3999,7 +4498,8 @@ window.WORDS = [
     "explain": "凌晨",
     "pos": "名",
     "note": "",
-    "idx": 499
+    "idx": 499,
+    "id": "12e4a7de4f6ed688c6063739af334ccf"
   },
   {
     "lesson": 10,
@@ -4007,7 +4507,8 @@ window.WORDS = [
     "explain": "早上；早餐",
     "pos": "名",
     "note": "",
-    "idx": 500
+    "idx": 500,
+    "id": "a45cabcadba8229e0926498b7cd510dd"
   },
   {
     "lesson": 10,
@@ -4015,7 +4516,8 @@ window.WORDS = [
     "explain": "白天",
     "pos": "名",
     "note": "",
-    "idx": 501
+    "idx": 501,
+    "id": "ce360031a29ab7e64dbfee086661c15c"
   },
   {
     "lesson": 10,
@@ -4023,7 +4525,8 @@ window.WORDS = [
     "explain": "午餐",
     "pos": "名",
     "note": "",
-    "idx": 502
+    "idx": 502,
+    "id": "8c884a727b72d8028d1070caee8029af"
   },
   {
     "lesson": 10,
@@ -4031,7 +4534,8 @@ window.WORDS = [
     "explain": "傍晚；晚餐",
     "pos": "名",
     "note": "",
-    "idx": 503
+    "idx": 503,
+    "id": "7ed29071b3cc0fe28e51f0b6dca1552d"
   },
   {
     "lesson": 10,
@@ -4039,7 +4543,8 @@ window.WORDS = [
     "explain": "晚上",
     "pos": "名",
     "note": "",
-    "idx": 504
+    "idx": 504,
+    "id": "5eb472a7598fff02be4e2c71fd03b61c"
   },
   {
     "lesson": 10,
@@ -4047,7 +4552,8 @@ window.WORDS = [
     "explain": "上午",
     "pos": "名",
     "note": "",
-    "idx": 505
+    "idx": 505,
+    "id": "9802ac1a9e709696e4ecae482e8ea6ee"
   },
   {
     "lesson": 10,
@@ -4055,7 +4561,8 @@ window.WORDS = [
     "explain": "下午",
     "pos": "名",
     "note": "",
-    "idx": 506
+    "idx": 506,
+    "id": "aefb9b6ffa0b9272530fabc343bf465e"
   },
   {
     "lesson": 10,
@@ -4063,7 +4570,8 @@ window.WORDS = [
     "explain": "等公交车",
     "pos": "词组",
     "note": "",
-    "idx": 507
+    "idx": 507,
+    "id": "097b5e523b413a7872edc5e679064ded"
   },
   {
     "lesson": 10,
@@ -4071,7 +4579,8 @@ window.WORDS = [
     "explain": "坐公交车",
     "pos": "词组",
     "note": "",
-    "idx": 508
+    "idx": 508,
+    "id": "394531cae5438de7671ce4eedc4d8f60"
   },
   {
     "lesson": 10,
@@ -4079,7 +4588,8 @@ window.WORDS = [
     "explain": "洗衣服",
     "pos": "动",
     "note": "",
-    "idx": 509
+    "idx": 509,
+    "id": "e6a64b06ad87208b28d0debd51ccbafa"
   },
   {
     "lesson": 10,
@@ -4087,7 +4597,8 @@ window.WORDS = [
     "explain": "洗澡",
     "pos": "动",
     "note": "",
-    "idx": 510
+    "idx": 510,
+    "id": "1a6ce9ab82af08c25a4aa267f5144923"
   },
   {
     "lesson": 10,
@@ -4095,7 +4606,8 @@ window.WORDS = [
     "explain": "洗漱",
     "pos": "动",
     "note": "",
-    "idx": 511
+    "idx": 511,
+    "id": "bc50bb5721bc3ef327a342fc5b9c8854"
   },
   {
     "lesson": 10,
@@ -4103,7 +4615,8 @@ window.WORDS = [
     "explain": "做饭",
     "pos": "动",
     "note": "",
-    "idx": 512
+    "idx": 512,
+    "id": "4e0195ee5c65ad8e9d11039cbcc16e4f"
   },
   {
     "lesson": 10,
@@ -4111,7 +4624,8 @@ window.WORDS = [
     "explain": "起来，起床",
     "pos": "动",
     "note": "",
-    "idx": 513
+    "idx": 513,
+    "id": "0e7710e8182f65a1c1ce7a1deec7c28e"
   },
   {
     "lesson": 10,
@@ -4119,7 +4633,8 @@ window.WORDS = [
     "explain": "打电话",
     "pos": "动",
     "note": "",
-    "idx": 514
+    "idx": 514,
+    "id": "b1914bdc2b1451fc4b13bed7d6b3fa26"
   },
   {
     "lesson": 10,
@@ -4127,7 +4642,8 @@ window.WORDS = [
     "explain": "打扫卫生",
     "pos": "动",
     "note": "",
-    "idx": 515
+    "idx": 515,
+    "id": "0b2b1dbf344ee14304377544598e148e"
   },
   {
     "lesson": 10,
@@ -4135,7 +4651,8 @@ window.WORDS = [
     "explain": "用电脑",
     "pos": "词组",
     "note": "",
-    "idx": 516
+    "idx": 516,
+    "id": "f849c262fa4e15aada376981402b77be"
   },
   {
     "lesson": 10,
@@ -4143,7 +4660,8 @@ window.WORDS = [
     "explain": "开会",
     "pos": "动",
     "note": "",
-    "idx": 517
+    "idx": 517,
+    "id": "e9e21d54ad119aedab4d776259624871"
   },
   {
     "lesson": 10,
@@ -4151,7 +4669,8 @@ window.WORDS = [
     "explain": "点、时",
     "pos": "依名",
     "note": "",
-    "idx": 518
+    "idx": 518,
+    "id": "1ab61187807f8772df9c2042c9809dcb"
   },
   {
     "lesson": 10,
@@ -4159,7 +4678,8 @@ window.WORDS = [
     "explain": "分",
     "pos": "依名",
     "note": "",
-    "idx": 519
+    "idx": 519,
+    "id": "778ec428357d1ca07b4aad7b6100b9f6"
   },
   {
     "lesson": 10,
@@ -4167,7 +4687,8 @@ window.WORDS = [
     "explain": "半",
     "pos": "名",
     "note": "",
-    "idx": 520
+    "idx": 520,
+    "id": "cd494f06af25238a965ced1c3fd7a43e"
   },
   {
     "lesson": 10,
@@ -4175,7 +4696,8 @@ window.WORDS = [
     "explain": "左右，大概",
     "pos": "后缀",
     "note": "",
-    "idx": 521
+    "idx": 521,
+    "id": "a16dce64585014fc6ee7119b4b1cde12"
   },
   {
     "lesson": 10,
@@ -4183,7 +4705,8 @@ window.WORDS = [
     "explain": "普通，一般，通常",
     "pos": "名",
     "note": "",
-    "idx": 522
+    "idx": 522,
+    "id": "6b10175158b01fe40736271b565fb2d4"
   },
   {
     "lesson": 10,
@@ -4191,7 +4714,8 @@ window.WORDS = [
     "explain": "上课",
     "pos": "词组",
     "note": "",
-    "idx": 523
+    "idx": 523,
+    "id": "cdb8e2f0c422093e77bcb0e46ff57cad"
   },
   {
     "lesson": 10,
@@ -4199,7 +4723,8 @@ window.WORDS = [
     "explain": "考试",
     "pos": "词组",
     "note": "",
-    "idx": 524
+    "idx": 524,
+    "id": "331966c6e2992065654bef68527b9294"
   },
   {
     "lesson": 10,
@@ -4207,7 +4732,8 @@ window.WORDS = [
     "explain": "下，落",
     "pos": "动",
     "note": "",
-    "idx": 525
+    "idx": 525,
+    "id": "90379967cffed64aef9e1b8a9a6292a4"
   },
   {
     "lesson": 10,
@@ -4215,7 +4741,8 @@ window.WORDS = [
     "explain": "画",
     "pos": "动",
     "note": "",
-    "idx": 526
+    "idx": 526,
+    "id": "c848f7c722b7221c0c1f82131d755555"
   },
   {
     "lesson": 10,
@@ -4223,7 +4750,8 @@ window.WORDS = [
     "explain": "一会儿",
     "pos": "名",
     "note": "",
-    "idx": 527
+    "idx": 527,
+    "id": "080ccbb1624597b5ecf6340bb62b5486"
   },
   {
     "lesson": 10,
@@ -4231,7 +4759,8 @@ window.WORDS = [
     "explain": "这次，这回",
     "pos": "名",
     "note": "",
-    "idx": 528
+    "idx": 528,
+    "id": "04bfe2724a8e466ef211f1525142bdb4"
   },
   {
     "lesson": 10,
@@ -4239,7 +4768,8 @@ window.WORDS = [
     "explain": "假期",
     "pos": "名",
     "note": "",
-    "idx": 529
+    "idx": 529,
+    "id": "39de21ca94d0ae8a6d2ac3a5b6becb01"
   },
   {
     "lesson": 10,
@@ -4247,7 +4777,8 @@ window.WORDS = [
     "explain": "度过愉快的周末",
     "pos": "句",
     "note": "",
-    "idx": 530
+    "idx": 530,
+    "id": "ed93ac3d2914963e25e2906fa1ccc505"
   },
   {
     "lesson": 10,
@@ -4255,7 +4786,8 @@ window.WORDS = [
     "explain": "约会",
     "pos": "动",
     "note": "",
-    "idx": 531
+    "idx": 531,
+    "id": "ffdea1d69e875ae01e6bc1246d152bb6"
   },
   {
     "lesson": 10,
@@ -4263,7 +4795,8 @@ window.WORDS = [
     "explain": "江南",
     "pos": "名",
     "note": "",
-    "idx": 532
+    "idx": 532,
+    "id": "630c614c05d77c891b63a72b6ed13a76"
   },
   {
     "lesson": 10,
@@ -4271,7 +4804,8 @@ window.WORDS = [
     "explain": "汝矣岛",
     "pos": "名",
     "note": "",
-    "idx": 533
+    "idx": 533,
+    "id": "5a15566ccec926c7f06e148352284a3b"
   },
   {
     "lesson": 10,
@@ -4279,7 +4813,8 @@ window.WORDS = [
     "explain": "博物馆",
     "pos": "名",
     "note": "",
-    "idx": 534
+    "idx": 534,
+    "id": "f1f228d3b2c10662a9797ac57ce1ab44"
   },
   {
     "lesson": 10,
@@ -4287,7 +4822,8 @@ window.WORDS = [
     "explain": "练习",
     "pos": "名",
     "note": "",
-    "idx": 535
+    "idx": 535,
+    "id": "cab82cddeab417b685dd9c124e1f64e1"
   },
   {
     "lesson": 10,
@@ -4295,7 +4831,8 @@ window.WORDS = [
     "explain": "仁川",
     "pos": "名",
     "note": "",
-    "idx": 536
+    "idx": 536,
+    "id": "b0ef0d66131a078e03dca528a125403b"
   },
   {
     "lesson": 11,
@@ -4303,7 +4840,8 @@ window.WORDS = [
     "explain": "头",
     "pos": "名",
     "note": "",
-    "idx": 537
+    "idx": 537,
+    "id": "10b2bd090da48f57ab855f1f0048c288"
   },
   {
     "lesson": 11,
@@ -4311,7 +4849,8 @@ window.WORDS = [
     "explain": "脖子，嗓子",
     "pos": "名",
     "note": "",
-    "idx": 538
+    "idx": 538,
+    "id": "d5f69950832dd5f244356619b3284224"
   },
   {
     "lesson": 11,
@@ -4319,7 +4858,8 @@ window.WORDS = [
     "explain": "肩膀",
     "pos": "名",
     "note": "",
-    "idx": 539
+    "idx": 539,
+    "id": "e4c0d5f3c53ab7c3dd9a3cf4a76dc567"
   },
   {
     "lesson": 11,
@@ -4327,7 +4867,8 @@ window.WORDS = [
     "explain": "胳膊",
     "pos": "名",
     "note": "",
-    "idx": 540
+    "idx": 540,
+    "id": "0c9dc7c072fea1a19e70de9708482537"
   },
   {
     "lesson": 11,
@@ -4335,7 +4876,8 @@ window.WORDS = [
     "explain": "手",
     "pos": "名",
     "note": "",
-    "idx": 541
+    "idx": 541,
+    "id": "e0204577db223dfbf86cbb48461ef98d"
   },
   {
     "lesson": 11,
@@ -4343,7 +4885,8 @@ window.WORDS = [
     "explain": "胸",
     "pos": "名",
     "note": "",
-    "idx": 542
+    "idx": 542,
+    "id": "7443cf7933c696b427658031b2e09693"
   },
   {
     "lesson": 11,
@@ -4351,7 +4894,8 @@ window.WORDS = [
     "explain": "肚子",
     "pos": "名",
     "note": "",
-    "idx": 543
+    "idx": 543,
+    "id": "494a1a86163888a563976d339cc2652d"
   },
   {
     "lesson": 11,
@@ -4359,7 +4903,8 @@ window.WORDS = [
     "explain": "腰",
     "pos": "名",
     "note": "",
-    "idx": 544
+    "idx": 544,
+    "id": "9ed81ad21fa9db07706f788836baaa22"
   },
   {
     "lesson": 11,
@@ -4367,7 +4912,8 @@ window.WORDS = [
     "explain": "腿",
     "pos": "名",
     "note": "",
-    "idx": 545
+    "idx": 545,
+    "id": "4286ddb807fe7499e0096688e976fb01"
   },
   {
     "lesson": 11,
@@ -4375,7 +4921,8 @@ window.WORDS = [
     "explain": "膝盖",
     "pos": "名",
     "note": "",
-    "idx": 546
+    "idx": 546,
+    "id": "bcbdaeadb75d2605b0c984243681d857"
   },
   {
     "lesson": 11,
@@ -4383,7 +4930,8 @@ window.WORDS = [
     "explain": "脚",
     "pos": "名",
     "note": "",
-    "idx": 547
+    "idx": 547,
+    "id": "8994d373cf61ebf4d5b4d47b47933125"
   },
   {
     "lesson": 11,
@@ -4391,7 +4939,8 @@ window.WORDS = [
     "explain": "身体",
     "pos": "名",
     "note": "",
-    "idx": 548
+    "idx": 548,
+    "id": "0c0a63a95fafd80fc866703ccaa38dda"
   },
   {
     "lesson": 11,
@@ -4399,7 +4948,8 @@ window.WORDS = [
     "explain": "脸",
     "pos": "名",
     "note": "",
-    "idx": 549
+    "idx": 549,
+    "id": "47fce18974c5061edd6ce0b62356f4a3"
   },
   {
     "lesson": 11,
@@ -4407,7 +4957,8 @@ window.WORDS = [
     "explain": "眼睛",
     "pos": "名",
     "note": "",
-    "idx": 550
+    "idx": 550,
+    "id": "0726db86e1da62b27539b7687dc928f8"
   },
   {
     "lesson": 11,
@@ -4415,7 +4966,8 @@ window.WORDS = [
     "explain": "鼻子",
     "pos": "名",
     "note": "",
-    "idx": 551
+    "idx": 551,
+    "id": "85ecb0e8c727c5d0e62fc07ab992edfa"
   },
   {
     "lesson": 11,
@@ -4423,7 +4975,8 @@ window.WORDS = [
     "explain": "嘴",
     "pos": "名",
     "note": "",
-    "idx": 552
+    "idx": 552,
+    "id": "62368820ee32507e26847752f5578b26"
   },
   {
     "lesson": 11,
@@ -4431,7 +4984,8 @@ window.WORDS = [
     "explain": "耳朵",
     "pos": "名",
     "note": "",
-    "idx": 553
+    "idx": 553,
+    "id": "6f866ee63502de240af3531433c04432"
   },
   {
     "lesson": 11,
@@ -4439,7 +4993,8 @@ window.WORDS = [
     "explain": "咳嗽",
     "pos": "词组",
     "note": "",
-    "idx": 554
+    "idx": 554,
+    "id": "b20c0cf35cfe73d89a1201a7befbbc83"
   },
   {
     "lesson": 11,
@@ -4447,7 +5002,8 @@ window.WORDS = [
     "explain": "嗓子疼",
     "pos": "词组",
     "note": "",
-    "idx": 555
+    "idx": 555,
+    "id": "05b2d82795635663726a94562c290804"
   },
   {
     "lesson": 11,
@@ -4455,7 +5011,8 @@ window.WORDS = [
     "explain": "发烧",
     "pos": "词组",
     "note": "",
-    "idx": 556
+    "idx": 556,
+    "id": "0bf17450fb7402bbffb5e30a55e1bb1a"
   },
   {
     "lesson": 11,
@@ -4463,7 +5020,8 @@ window.WORDS = [
     "explain": "流鼻涕",
     "pos": "词组",
     "note": "",
-    "idx": 557
+    "idx": 557,
+    "id": "d51f9e4bf8029731c81f131ff836354b"
   },
   {
     "lesson": 11,
@@ -4471,7 +5029,8 @@ window.WORDS = [
     "explain": "热",
     "pos": "名",
     "note": "",
-    "idx": 558
+    "idx": 558,
+    "id": "1de1d624091d24674a02309d1e9f78a7"
   },
   {
     "lesson": 11,
@@ -4479,7 +5038,8 @@ window.WORDS = [
     "explain": "流出，发出，出现",
     "pos": "动",
     "note": "",
-    "idx": 559
+    "idx": 559,
+    "id": "9cd22902e422b589e9bc72b4e48bb7db"
   },
   {
     "lesson": 11,
@@ -4487,7 +5047,8 @@ window.WORDS = [
     "explain": "疼",
     "pos": "形",
     "note": "",
-    "idx": 560
+    "idx": 560,
+    "id": "d1691e0fcb9e90cfcddf8a74e60a8dc0"
   },
   {
     "lesson": 11,
@@ -4495,7 +5056,8 @@ window.WORDS = [
     "explain": "忙",
     "pos": "形",
     "note": "",
-    "idx": 561
+    "idx": 561,
+    "id": "e3f820b59efda46cda87bb3c67642326"
   },
   {
     "lesson": 11,
@@ -4503,7 +5065,8 @@ window.WORDS = [
     "explain": "饿",
     "pos": "形",
     "note": "",
-    "idx": 562
+    "idx": 562,
+    "id": "a234a2e9beb8e5eb9f7c9b043975c245"
   },
   {
     "lesson": 11,
@@ -4511,7 +5074,8 @@ window.WORDS = [
     "explain": "漂亮",
     "pos": "形",
     "note": "",
-    "idx": 563
+    "idx": 563,
+    "id": "e78d115aaaf0b8c5ef06b68b7a8b8e33"
   },
   {
     "lesson": 11,
@@ -4519,7 +5083,8 @@ window.WORDS = [
     "explain": "信",
     "pos": "名",
     "note": "",
-    "idx": 564
+    "idx": 564,
+    "id": "1fad5a542fb0fc7254489f48e87037e5"
   },
   {
     "lesson": 11,
@@ -4527,7 +5092,8 @@ window.WORDS = [
     "explain": "写",
     "pos": "动",
     "note": "",
-    "idx": 565
+    "idx": 565,
+    "id": "b6aa6119faf1023dd651948e5d6d1fc8"
   },
   {
     "lesson": 11,
@@ -4535,7 +5101,8 @@ window.WORDS = [
     "explain": "坏，不好",
     "pos": "形",
     "note": "",
-    "idx": 566
+    "idx": 566,
+    "id": "aa62530448f70b8a8dac2dfe6e7f1c8f"
   },
   {
     "lesson": 11,
@@ -4543,7 +5110,8 @@ window.WORDS = [
     "explain": "关",
     "pos": "动",
     "note": "",
-    "idx": 567
+    "idx": 567,
+    "id": "1255dc0b4bd4ecdca6a780aa090f5a4f"
   },
   {
     "lesson": 11,
@@ -4551,7 +5119,8 @@ window.WORDS = [
     "explain": "抽烟",
     "pos": "词组",
     "note": "",
-    "idx": 568
+    "idx": 568,
+    "id": "f882effe32940bcf1822c856b4d80e86"
   },
   {
     "lesson": 11,
@@ -4559,7 +5128,8 @@ window.WORDS = [
     "explain": "知道",
     "pos": "动",
     "note": "",
-    "idx": 569
+    "idx": 569,
+    "id": "4d5956ac3f50ac298929cf89c6bd4a42"
   },
   {
     "lesson": 11,
@@ -4567,7 +5137,8 @@ window.WORDS = [
     "explain": "晚，迟",
     "pos": "形",
     "note": "",
-    "idx": 570
+    "idx": 570,
+    "id": "b3e5d9c93e17d03da6198ba7a1621131"
   },
   {
     "lesson": 11,
@@ -4575,7 +5146,8 @@ window.WORDS = [
     "explain": "停止，不要",
     "pos": "动",
     "note": "",
-    "idx": 571
+    "idx": 571,
+    "id": "db46f52b2bb5ba33accd0ca28d02b10f"
   },
   {
     "lesson": 11,
@@ -4583,7 +5155,8 @@ window.WORDS = [
     "explain": "大的",
     "pos": "形",
     "note": "",
-    "idx": 572
+    "idx": 572,
+    "id": "dd0f1a89dca114e72b0321b6a798a3bc"
   },
   {
     "lesson": 11,
@@ -4591,7 +5164,8 @@ window.WORDS = [
     "explain": "声音",
     "pos": "名",
     "note": "",
-    "idx": 573
+    "idx": 573,
+    "id": "41bcbca08f40343c6ff390c9e6e9db36"
   },
   {
     "lesson": 11,
@@ -4599,7 +5173,8 @@ window.WORDS = [
     "explain": "说话，讲故事",
     "pos": "词组",
     "note": "",
-    "idx": 574
+    "idx": 574,
+    "id": "44a48de0d2b611de320eba3661b5a663"
   },
   {
     "lesson": 11,
@@ -4607,7 +5182,8 @@ window.WORDS = [
     "explain": "食物",
     "pos": "名",
     "note": "",
-    "idx": 575
+    "idx": 575,
+    "id": "4aa26310d3a4ce10fa1d0b4c70af5d43"
   },
   {
     "lesson": 11,
@@ -4615,7 +5191,8 @@ window.WORDS = [
     "explain": "带来（物品）",
     "pos": "动",
     "note": "",
-    "idx": 576
+    "idx": 576,
+    "id": "b3f70e977dda8883e3959598cd0299ab"
   },
   {
     "lesson": 11,
@@ -4623,7 +5200,8 @@ window.WORDS = [
     "explain": "带来（人或动物）",
     "pos": "动",
     "note": "",
-    "idx": 577
+    "idx": 577,
+    "id": "9dd9d99dae8bc16af64547c4f048550a"
   },
   {
     "lesson": 11,
@@ -4631,7 +5209,8 @@ window.WORDS = [
     "explain": "进来",
     "pos": "动",
     "note": "",
-    "idx": 578
+    "idx": 578,
+    "id": "296f312a0195b13d50e32878e93c01a9"
   },
   {
     "lesson": 11,
@@ -4639,7 +5218,8 @@ window.WORDS = [
     "explain": "得感冒",
     "pos": "词组",
     "note": "",
-    "idx": 579
+    "idx": 579,
+    "id": "5b21f82a7890d89ac4c40ee44f3e148b"
   },
   {
     "lesson": 11,
@@ -4647,7 +5227,8 @@ window.WORDS = [
     "explain": "流行",
     "pos": "形",
     "note": "",
-    "idx": 580
+    "idx": 580,
+    "id": "f05cb98677d3285413112c5133103a46"
   },
   {
     "lesson": 11,
@@ -4655,7 +5236,8 @@ window.WORDS = [
     "explain": "药",
     "pos": "名",
     "note": "",
-    "idx": 581
+    "idx": 581,
+    "id": "7737656d7010def2abcfaec16cf4a7d5"
   },
   {
     "lesson": 11,
@@ -4663,7 +5245,8 @@ window.WORDS = [
     "explain": "好好休息，充分休息",
     "pos": "词组",
     "note": "",
-    "idx": 582
+    "idx": 582,
+    "id": "e9d6126270ef91c802db3c576f4b9f5b"
   },
   {
     "lesson": 11,
@@ -4671,7 +5254,8 @@ window.WORDS = [
     "explain": "说话",
     "pos": "词组",
     "note": "",
-    "idx": 583
+    "idx": 583,
+    "id": "ad3b666245c7d31c86be1ccde3e51798"
   },
   {
     "lesson": 11,
@@ -4679,7 +5263,8 @@ window.WORDS = [
     "explain": "很长时间",
     "pos": "副",
     "note": "",
-    "idx": 584
+    "idx": 584,
+    "id": "5697e6b33a6bdfa445d9e5a8aeeb74ce"
   },
   {
     "lesson": 11,
@@ -4687,7 +5272,8 @@ window.WORDS = [
     "explain": "洗澡",
     "pos": "动",
     "note": "",
-    "idx": 585
+    "idx": 585,
+    "id": "1a6ce9ab82af08c25a4aa267f5144923"
   },
   {
     "lesson": 11,
@@ -4695,7 +5281,8 @@ window.WORDS = [
     "explain": "酒",
     "pos": "名",
     "note": "",
-    "idx": 586
+    "idx": 586,
+    "id": "d925dc04c6cfcf796ba225db43a6a117"
   },
   {
     "lesson": 11,
@@ -4703,7 +5290,8 @@ window.WORDS = [
     "explain": "知道",
     "pos": "动",
     "note": "",
-    "idx": 587
+    "idx": 587,
+    "id": "4d5956ac3f50ac298929cf89c6bd4a42"
   },
   {
     "lesson": 11,
@@ -4711,7 +5299,8 @@ window.WORDS = [
     "explain": "患",
     "pos": "动",
     "note": "",
-    "idx": 588
+    "idx": 588,
+    "id": "f96ca5a3c97070f6f7649660ee5fbd58"
   },
   {
     "lesson": 11,
@@ -4719,7 +5308,8 @@ window.WORDS = [
     "explain": "怎么",
     "pos": "副",
     "note": "",
-    "idx": 589
+    "idx": 589,
+    "id": "3552addc1f2352807ae8ce612e532417"
   },
   {
     "lesson": 11,
@@ -4727,7 +5317,8 @@ window.WORDS = [
     "explain": "过去",
     "pos": "动",
     "note": "",
-    "idx": 590
+    "idx": 590,
+    "id": "bc8f648392466f5d2572d12e52058e3a"
   },
   {
     "lesson": 11,
@@ -4735,7 +5326,8 @@ window.WORDS = [
     "explain": "上周",
     "pos": "名",
     "note": "",
-    "idx": 591
+    "idx": 591,
+    "id": "317a8933b0ccee066dc776ffde2b9ed2"
   },
   {
     "lesson": 11,
@@ -4743,7 +5335,8 @@ window.WORDS = [
     "explain": "这周",
     "pos": "名",
     "note": "",
-    "idx": 592
+    "idx": 592,
+    "id": "134ec47baf4a55258ce6252156ddb738"
   },
   {
     "lesson": 11,
@@ -4751,7 +5344,8 @@ window.WORDS = [
     "explain": "下周",
     "pos": "名",
     "note": "",
-    "idx": 593
+    "idx": 593,
+    "id": "415e52948f1b8cdb3190ca46e4a9e7a7"
   },
   {
     "lesson": 11,
@@ -4759,7 +5353,8 @@ window.WORDS = [
     "explain": "最近",
     "pos": "名",
     "note": "",
-    "idx": 594
+    "idx": 594,
+    "id": "4659c5a446da82751076b97f568c515f"
   },
   {
     "lesson": 11,
@@ -4767,7 +5362,8 @@ window.WORDS = [
     "explain": "洗",
     "pos": "动",
     "note": "",
-    "idx": 595
+    "idx": 595,
+    "id": "d429a46fed52af3e798cb54364105d30"
   },
   {
     "lesson": 11,
@@ -4775,7 +5371,8 @@ window.WORDS = [
     "explain": "温水",
     "pos": "词组",
     "note": "",
-    "idx": 596
+    "idx": 596,
+    "id": "2b11072e1af1dcbae67b910f6587b4fb"
   },
   {
     "lesson": 11,
@@ -4783,7 +5380,8 @@ window.WORDS = [
     "explain": "冰水",
     "pos": "词组",
     "note": "",
-    "idx": 597
+    "idx": 597,
+    "id": "5c0a2a1f520d4adcc3cbc16212114527"
   },
   {
     "lesson": 11,
@@ -4791,7 +5389,8 @@ window.WORDS = [
     "explain": "可以，行得通",
     "pos": "动",
     "note": "",
-    "idx": 598
+    "idx": 598,
+    "id": "7533c28db9b4572d673e54f62eb0cd8a"
   },
   {
     "lesson": 11,
@@ -4799,7 +5398,8 @@ window.WORDS = [
     "explain": "客人",
     "pos": "名",
     "note": "",
-    "idx": 599
+    "idx": 599,
+    "id": "a5bb6d1af868da8511da4367ad7bd3a0"
   },
   {
     "lesson": 11,
@@ -4807,7 +5407,8 @@ window.WORDS = [
     "explain": "报告",
     "pos": "名",
     "note": "",
-    "idx": 600
+    "idx": 600,
+    "id": "cb8ebef388ccb772e4eac00f111ea3e6"
   },
   {
     "lesson": 11,
@@ -4815,7 +5416,8 @@ window.WORDS = [
     "explain": "明年",
     "pos": "名",
     "note": "",
-    "idx": 601
+    "idx": 601,
+    "id": "426f9c4d2e274d7d3432edc2e6ac9379"
   },
   {
     "lesson": 11,
@@ -4823,7 +5425,8 @@ window.WORDS = [
     "explain": "结婚",
     "pos": "动",
     "note": "",
-    "idx": 602
+    "idx": 602,
+    "id": "918dd4579cc2004159ff8e953da335b2"
   },
   {
     "lesson": 11,
@@ -4831,7 +5434,8 @@ window.WORDS = [
     "explain": "没关系，不错",
     "pos": "形",
     "note": "",
-    "idx": 603
+    "idx": 603,
+    "id": "b9c9ca1970cf2188293b6e0902d36cda"
   },
   {
     "lesson": 11,
@@ -4839,7 +5443,8 @@ window.WORDS = [
     "explain": "万幸",
     "pos": "词组",
     "note": "",
-    "idx": 604
+    "idx": 604,
+    "id": "2b19858452599beaeae41775e984ef0e"
   },
   {
     "lesson": 11,
@@ -4847,7 +5452,8 @@ window.WORDS = [
     "explain": "非常",
     "pos": "副",
     "note": "",
-    "idx": 605
+    "idx": 605,
+    "id": "5f8fad3be17f95b89511671f0d61a70e"
   },
   {
     "lesson": 11,
@@ -4855,7 +5461,8 @@ window.WORDS = [
     "explain": "勉强，为难",
     "pos": "动",
     "note": "",
-    "idx": 606
+    "idx": 606,
+    "id": "9181b3172d0b5a94dc8def7bc9926a48"
   },
   {
     "lesson": 11,
@@ -4863,7 +5470,8 @@ window.WORDS = [
     "explain": "生辰（敬）",
     "pos": "名",
     "note": "",
-    "idx": 607
+    "idx": 607,
+    "id": "32a5e8572cf0ea4349f66920ac6628b7"
   },
   {
     "lesson": 11,
@@ -4871,7 +5479,8 @@ window.WORDS = [
     "explain": "提交",
     "pos": "动",
     "note": "",
-    "idx": 608
+    "idx": 608,
+    "id": "467ec14cdd78edcb771c3d89d9bd32ac"
   },
   {
     "lesson": 11,
@@ -4879,7 +5488,8 @@ window.WORDS = [
     "explain": "闹钟",
     "pos": "名",
     "note": "",
-    "idx": 609
+    "idx": 609,
+    "id": "e4236382bc234fffc4c2e0483931be00"
   },
   {
     "lesson": 11,
@@ -4887,7 +5497,8 @@ window.WORDS = [
     "explain": "烦恼",
     "pos": "名",
     "note": "",
-    "idx": 610
+    "idx": 610,
+    "id": "44a9e71e14b2d9a138af6f306db1f7ce"
   },
   {
     "lesson": 11,
@@ -4895,7 +5506,8 @@ window.WORDS = [
     "explain": "发音",
     "pos": "名",
     "note": "",
-    "idx": 611
+    "idx": 611,
+    "id": "ddc45a9344520be344e1efc2a7c2ff55"
   },
   {
     "lesson": 11,
@@ -4903,7 +5515,8 @@ window.WORDS = [
     "explain": "网吧",
     "pos": "名",
     "note": "",
-    "idx": 612
+    "idx": 612,
+    "id": "d4f7431ad47e1c90a8092a780a052aff"
   },
   {
     "lesson": 11,
@@ -4911,7 +5524,8 @@ window.WORDS = [
     "explain": "吵架，打架",
     "pos": "动",
     "note": "",
-    "idx": 613
+    "idx": 613,
+    "id": "0c62455ea0b05eea7e2b1bef8b2313a7"
   },
   {
     "lesson": 11,
@@ -4919,7 +5533,8 @@ window.WORDS = [
     "explain": "独自",
     "pos": "副",
     "note": "",
-    "idx": 614
+    "idx": 614,
+    "id": "3e5fdba03158f2b50011dcbd43127ca8"
   },
   {
     "lesson": 11,
@@ -4927,6 +5542,7 @@ window.WORDS = [
     "explain": "无聊",
     "pos": "形",
     "note": "",
-    "idx": 615
+    "idx": 615,
+    "id": "644e823a5d9014bf88f43e3600201af9"
   }
 ];

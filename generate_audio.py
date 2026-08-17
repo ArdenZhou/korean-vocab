@@ -5,7 +5,8 @@
 用 macOS 自带的高质量韩语语音 Yuna，为每个单词生成发音音频。
 
 用法：python3 generate_audio.py
-生成结果存放在 audio/ 目录，文件名 0.m4a, 1.m4a, ... 与单词索引一一对应。
+生成结果存放在 audio/ 目录，文件名用单词内容的哈希（ID），
+这样无论在哪里插入/删除单词，音频都不会错位。
 """
 
 import os
@@ -16,16 +17,16 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUDIO_DIR = os.path.join(HERE, "audio")
 
-# 复用 build.py 的读取逻辑，保证排序一致
+# 复用 build.py 的读取逻辑和 word_id，保证一致
 sys.path.insert(0, HERE)
-from build import load_words, CSV_PATH
+from build import load_words, CSV_PATH, word_id
 
 VOICE = "Yuna"  # 韩语女声
 
 
-def gen_one(idx, word, out_path):
+def gen_one(word, out_path):
     """生成单个单词音频：say 输出 aiff -> afconvert 转 AAC m4a"""
-    tmp = os.path.join(tempfile.gettempdir(), "hangul_tmp_%d.aiff" % idx)
+    tmp = os.path.join(tempfile.gettempdir(), "hangul_tmp_%s.aiff" % word_id(word))
     try:
         subprocess.run(
             ["say", "-v", VOICE, "-o", tmp, word],
@@ -57,17 +58,18 @@ def main():
     failed = 0
     skipped = 0
 
-    print("开始生成 %d 个单词的音频（语音：%s）..." % (total, VOICE))
+    print("开始检查 %d 个单词的音频（语音：%s）..." % (total, VOICE))
     print("音频保存到：%s\n" % AUDIO_DIR)
 
     for i, w in enumerate(words):
-        out_path = os.path.join(AUDIO_DIR, "%d.m4a" % i)
+        wid = word_id(w["word"])
+        out_path = os.path.join(AUDIO_DIR, "%s.m4a" % wid)
         # 断点续传：已存在的跳过
         if os.path.exists(out_path) and os.path.getsize(out_path) > 0:
             skipped += 1
             continue
 
-        if gen_one(i, w["word"], out_path):
+        if gen_one(w["word"], out_path):
             done += 1
         else:
             failed += 1

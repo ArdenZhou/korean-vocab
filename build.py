@@ -8,6 +8,7 @@
 """
 
 import csv
+import hashlib
 import json
 import os
 import re
@@ -56,10 +57,17 @@ def load_words(csv_path):
     return words
 
 
+def word_id(word):
+    """用单词内容生成稳定的唯一 ID，作为音频文件名。
+    这样无论在哪里插入、删除、排序，音频都跟着单词走，不会错位。"""
+    return hashlib.md5(word.encode("utf-8")).hexdigest()
+
+
 def build(words):
-    # 给每个单词加索引，与 audio/ 目录下的音频文件名一一对应
+    # 给每个单词加索引和稳定 ID
     for i, w in enumerate(words):
         w["idx"] = i
+        w["id"] = word_id(w["word"])
 
     data_js = json.dumps(words, ensure_ascii=False, indent=2)
     words_js = (
