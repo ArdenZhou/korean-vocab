@@ -1,0 +1,5992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>韩语记单词</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #1a1a2e;
+    color: #e6e6e6;
+    line-height: 1.5;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+  h1 { font-size: 1.3rem; text-align: center; margin-bottom: 10px; letter-spacing: 1px; }
+  h1 .ko { color: #4ade80; }
+
+  /* 卡片 */
+  .card {
+    background: #16213e;
+    border: 1px solid #2a3b66;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+
+  /* 通用控件 */
+  label { font-size: 0.88rem; color: #9aa; display: block; margin-bottom: 4px; }
+  select, button, input[type=number] {
+    background: #0f1a30;
+    color: #e6e6e6;
+    border: 1px solid #2a3b66;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  select:hover, button:hover { border-color: #4ade80; }
+  button.primary { background: #2563eb; border-color: #2563eb; }
+  button.primary:hover { background: #1d4ed8; }
+  button.danger { background: #b91c1c; border-color: #b91c1c; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .row > * { flex: 0 0 auto; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .seg { display: flex; gap: 4px; flex-wrap: wrap; }
+  .seg button { padding: 6px 10px; font-size: 0.85rem; }
+  .seg button.active { background: #2563eb; border-color: #2563eb; }
+
+  /* 首页：课程列表 */
+  #home .lessons { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
+  #home .lessons button {
+    padding: 14px 0;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  #home .lessons button .cnt { display: block; font-size: 0.72rem; color: #9aa; margin-top: 2px; }
+
+  /* 单词显示 */
+  .word-ko { font-size: 2.6rem; text-align: center; letter-spacing: 1px; margin: 8px 0; }
+  .word-explain { font-size: 1.2rem; text-align: center; color: #cdd; margin-bottom: 6px; }
+  .word-meta { text-align: center; font-size: 0.85rem; color: #9aa; }
+  .word-note { text-align: center; font-size: 0.82rem; color: #fbbf24; margin-top: 6px; background: rgba(251,191,36,0.08); border-radius: 6px; padding: 6px; }
+  .progress { font-size: 0.8rem; color: #9aa; text-align: center; margin-bottom: 8px; }
+
+  /* 听写 */
+  .quiz-prompt { text-align: center; font-size: 1.15rem; color: #cdd; margin: 10px 0; min-height: 2rem; }
+  .quiz-input-area { margin: 10px 0; }
+  .quiz-answer-input {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    background: #0f1a30;
+    color: #4ade80;
+    border: 2px solid #2a3b66;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: inherit;
+  }
+  .quiz-answer-input:focus { outline: none; border-color: #4ade80; }
+  .quiz-correct { color: #4ade80; }
+  .quiz-wrong { color: #f87171; }
+  .quiz-result { text-align: center; margin: 10px 0; }
+  .quiz-result .correct-ko { font-size: 1.8rem; color: #4ade80; }
+  .quiz-result .your-ko { font-size: 1.1rem; color: #f87171; text-decoration: line-through; }
+
+  /* 虚拟键盘 */
+  .keyboard { margin-top: 10px; }
+  .keyboard-tabs { display: flex; gap: 4px; margin-bottom: 6px; }
+  .keyboard-tabs button { padding: 4px 10px; font-size: 0.8rem; }
+  .keyboard-tabs button.active { background: #2563eb; border-color: #2563eb; }
+  .keyboard-grid { display: grid; gap: 3px; }
+  .keyboard-grid button {
+    padding: 10px 0;
+    font-size: 1rem;
+    text-align: center;
+    background: #0f1a30;
+  }
+  .keyboard-grid button:hover { background: #1a2950; }
+  .keyboard-grid button.special { font-size: 0.75rem; color: #9aa; }
+
+  /* 手写画板 */
+  .draw-wrap { display: none; }
+  .draw-wrap.show { display: block; }
+  .draw-canvas {
+    background: #fff;
+    border: 2px solid #2a3b66;
+    border-radius: 8px;
+    width: 100%;
+    touch-action: none;
+    cursor: crosshair;
+  }
+  .draw-controls { display: flex; gap: 6px; margin-top: 6px; justify-content: center; }
+
+  /* 隐藏 */
+  .hidden { display: none !important; }
+
+  /* 导航底栏 */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .navbar button { flex: 1; padding: 10px; }
+
+  /* 结果统计 */
+  .stat-line { font-size: 0.95rem; margin: 4px 0; }
+  .stat-line .ok { color: #4ade80; }
+  .stat-line .bad { color: #f87171; }
+
+  @media (max-width: 500px) {
+    .word-ko { font-size: 2.2rem; }
+    h1 { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<h1>韩语记单词 <span class="ko">한국어</span></h1>
+
+<!-- 错误提示（正常时不显示，用于诊断） -->
+<div id="errorBox" style="display:none;background:#7f1d1d;border:1px solid #ef4444;border-radius:8px;padding:10px;margin:8px 0;font-size:0.85rem;color:#fecaca;white-space:pre-wrap;word-break:break-all;"></div>
+
+<!-- ========== 首页 ========== -->
+<div id="home">
+  <div class="card">
+    <label>选择课程</label>
+    <div class="lessons" id="lessonList"></div>
+  </div>
+  <div class="card">
+    <label>模式选择</label>
+    <div class="seg" id="modeSelect" style="margin-top:6px;">
+      <button data-mode="study" class="active">学习</button>
+      <button data-mode="quiz">听写复习</button>
+    </div>
+  </div>
+  <div class="card" id="quizOptions" style="display:none;">
+    <label>听写设置</label>
+    <div style="margin-top:6px;">
+      <label style="margin-top:8px;">出题方式</label>
+      <div class="seg" id="quizType">
+        <button data-type="sound" class="active">读发音+中文</button>
+        <button data-type="meaning">只看中文</button>
+      </div>
+      <label style="margin-top:10px;">顺序</label>
+      <div class="seg" id="orderType">
+        <button data-order="seq" class="active">正序</button>
+        <button data-order="rev">倒序</button>
+        <button data-order="rand">随机</button>
+      </div>
+      <label style="margin-top:10px;">每个单词朗读遍数</label>
+      <div class="seg" id="repeatType">
+        <button data-repeat="1" class="active">1 遍</button>
+        <button data-repeat="2">2 遍</button>
+        <button data-repeat="3">3 遍</button>
+        <button data-repeat="4">4 遍</button>
+        <button data-repeat="5">5 遍</button>
+      </div>
+      <label style="margin-top:10px;">每遍间隔（反应时间）</label>
+      <div class="seg" id="gapType">
+        <button data-gap="500">0.5 秒</button>
+        <button data-gap="1500" class="active">1.5 秒</button>
+        <button data-gap="3000">3 秒</button>
+        <button data-gap="5000">5 秒</button>
+      </div>
+      <label style="margin-top:10px;">答错词优先重练</label>
+      <div class="seg" id="retryType">
+        <button data-retry="1" class="active">开</button>
+        <button data-retry="0">关</button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <button class="primary" id="startBtn" style="width:100%;padding:12px;font-size:1.05rem;">开始</button>
+  </div>
+  <div class="card" id="voiceCard">
+    <label>🔊 发音状态</label>
+    <div id="voiceInfo" style="font-size:0.85rem;color:#9aa;margin-top:6px;">检测中...</div>
+    <button id="voiceTestBtn" style="margin-top:8px;font-size:0.85rem;">测试发音</button>
+    <div id="voiceHelp" style="font-size:0.78rem;color:#fbbf24;margin-top:6px;display:none;">
+      没有声音？iPhone/iPad 需在「设置 → 辅助功能 → 朗读内容 → 声音」里下载「韩语」语音，然后回到本页刷新。
+    </div>
+  </div>
+  <div class="card" id="progressCard">
+    <label>复习进度（保存在本机）</label>
+    <div id="progressInfo" style="font-size:0.85rem;color:#9aa;margin-top:6px;">加载中...</div>
+    <button id="clearProgressBtn" style="margin-top:8px;font-size:0.8rem;" class="danger">清除全部进度</button>
+  </div>
+</div>
+
+<!-- ========== 学习模式 ========== -->
+<div id="studyView" class="hidden">
+  <div class="progress" id="studyProgress"></div>
+  <div class="card">
+    <div class="word-ko" id="studyWord"></div>
+    <div class="word-explain" id="studyExplain"></div>
+    <div class="word-meta" id="studyMeta"></div>
+    <div class="word-note hidden" id="studyNote"></div>
+    <div style="text-align:center;margin-top:12px;">
+      <button id="studySpeakBtn" style="font-size:1rem;padding:10px 20px;">🔊 读发音</button>
+    </div>
+  </div>
+  <div class="navbar">
+    <button id="studyPrev">← 上一个</button>
+    <button id="studyAuto" class="primary">自动朗读</button>
+    <button id="studyNext">下一个 →</button>
+  </div>
+  <div class="navbar">
+    <button id="studyExit">返回首页</button>
+  </div>
+</div>
+
+<!-- ========== 听写模式 ========== -->
+<div id="quizView" class="hidden">
+  <div class="progress" id="quizProgress"></div>
+  <div class="card">
+    <div class="quiz-prompt" id="quizPrompt"></div>
+    <div style="text-align:center;margin-bottom:8px;">
+      <button id="quizSpeakBtn">🔊 再听一遍</button>
+    </div>
+
+    <!-- 拼写输入区 -->
+    <div class="quiz-input-area" id="quizSpellArea">
+      <input type="text" class="quiz-answer-input" id="quizInput" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="用键盘或下方虚拟键盘输入">
+      <!-- 虚拟键盘 -->
+      <div class="keyboard" id="keyboard">
+        <div class="keyboard-tabs">
+          <button data-kbd="consonant" class="active">辅音</button>
+          <button data-kbd="vowel">元音</button>
+          <button data-kbd="complex">复合</button>
+        </div>
+        <div class="keyboard-grid" id="kbdGrid"></div>
+      </div>
+    </div>
+
+    <!-- 手写画板区 -->
+    <div class="draw-wrap" id="drawWrap">
+      <canvas class="draw-canvas" id="drawCanvas"></canvas>
+      <div class="draw-controls">
+        <button id="drawClear">清空</button>
+      </div>
+    </div>
+
+    <!-- 答案显示区 -->
+    <div class="quiz-result hidden" id="quizResult"></div>
+
+    <div class="word-note hidden" id="quizNote"></div>
+  </div>
+
+  <!-- 输入方式切换 -->
+  <div class="seg" id="inputMode" style="margin-bottom:8px;">
+    <button data-im="spell" class="active">拼写输入</button>
+    <button data-im="draw">手写输入</button>
+  </div>
+
+  <div class="navbar">
+    <button id="quizPrev" disabled>← 上一个</button>
+    <button id="quizSubmit" class="primary">提交 / 看答案</button>
+    <button id="quizNext" class="hidden">下一个 →</button>
+  </div>
+  <div class="navbar">
+    <button id="quizExit">返回首页</button>
+  </div>
+</div>
+
+<!-- ========== 结束统计 ========== -->
+<div id="summaryView" class="hidden">
+  <div class="card">
+    <h2 style="text-align:center;margin-bottom:12px;">本轮结束 🎉</h2>
+    <div id="summaryContent"></div>
+  </div>
+  <div class="navbar">
+    <button id="summaryAgain" class="primary">再来一轮</button>
+    <button id="summaryHome">返回首页</button>
+  </div>
+</div>
+
+<script>
+// ===WORDS_DATA_BEGIN===
+// 韩语单词数据 - 自动从 Excel 生成
+// 共 616 个单词
+window.WORDS = [
+  {
+    "lesson": 1,
+    "word": "중국",
+    "explain": "中国",
+    "pos": "名",
+    "note": "",
+    "idx": 0
+  },
+  {
+    "lesson": 1,
+    "word": "일본",
+    "explain": "日本",
+    "pos": "名",
+    "note": "",
+    "idx": 1
+  },
+  {
+    "lesson": 1,
+    "word": "미국",
+    "explain": "美国",
+    "pos": "名",
+    "note": "",
+    "idx": 2
+  },
+  {
+    "lesson": 1,
+    "word": "한국",
+    "explain": "韩国",
+    "pos": "名",
+    "note": "",
+    "idx": 3
+  },
+  {
+    "lesson": 1,
+    "word": "프랑스",
+    "explain": "法国",
+    "pos": "名",
+    "note": "",
+    "idx": 4
+  },
+  {
+    "lesson": 1,
+    "word": "독일",
+    "explain": "德国",
+    "pos": "名",
+    "note": "",
+    "idx": 5
+  },
+  {
+    "lesson": 1,
+    "word": "호주",
+    "explain": "澳大利亚",
+    "pos": "名",
+    "note": "",
+    "idx": 6
+  },
+  {
+    "lesson": 1,
+    "word": "영국",
+    "explain": "英国",
+    "pos": "名",
+    "note": "",
+    "idx": 7
+  },
+  {
+    "lesson": 1,
+    "word": "선생님",
+    "explain": "老师",
+    "pos": "名",
+    "note": "",
+    "idx": 8
+  },
+  {
+    "lesson": 1,
+    "word": "학생",
+    "explain": "学生",
+    "pos": "名",
+    "note": "",
+    "idx": 9
+  },
+  {
+    "lesson": 1,
+    "word": "의사",
+    "explain": "医生",
+    "pos": "名",
+    "note": "",
+    "idx": 10
+  },
+  {
+    "lesson": 1,
+    "word": "회사원",
+    "explain": "公司职员",
+    "pos": "名",
+    "note": "",
+    "idx": 11
+  },
+  {
+    "lesson": 1,
+    "word": "요리사",
+    "explain": "厨师",
+    "pos": "名",
+    "note": "",
+    "idx": 12
+  },
+  {
+    "lesson": 1,
+    "word": "기자",
+    "explain": "记者",
+    "pos": "名",
+    "note": "",
+    "idx": 13
+  },
+  {
+    "lesson": 1,
+    "word": "가수",
+    "explain": "歌手",
+    "pos": "名",
+    "note": "",
+    "idx": 14
+  },
+  {
+    "lesson": 1,
+    "word": "군인",
+    "explain": "军人",
+    "pos": "名",
+    "note": "",
+    "idx": 15
+  },
+  {
+    "lesson": 1,
+    "word": "저",
+    "explain": "我",
+    "pos": "代",
+    "note": "",
+    "idx": 16
+  },
+  {
+    "lesson": 1,
+    "word": "씨",
+    "explain": "先生/女士",
+    "pos": "依存",
+    "note": "",
+    "idx": 17
+  },
+  {
+    "lesson": 1,
+    "word": "네",
+    "explain": "是",
+    "pos": "感",
+    "note": "",
+    "idx": 18
+  },
+  {
+    "lesson": 1,
+    "word": "주부",
+    "explain": "家庭主妇",
+    "pos": "名",
+    "note": "",
+    "idx": 19
+  },
+  {
+    "lesson": 1,
+    "word": "어느",
+    "explain": "哪（个）",
+    "pos": "冠",
+    "note": "",
+    "idx": 20
+  },
+  {
+    "lesson": 1,
+    "word": "나라",
+    "explain": "国家",
+    "pos": "名",
+    "note": "",
+    "idx": 21
+  },
+  {
+    "lesson": 1,
+    "word": "캐나다",
+    "explain": "加拿大",
+    "pos": "名",
+    "note": "",
+    "idx": 22
+  },
+  {
+    "lesson": 1,
+    "word": "인도",
+    "explain": "印度",
+    "pos": "名",
+    "note": "",
+    "idx": 23
+  },
+  {
+    "lesson": 1,
+    "word": "아니요.",
+    "explain": "不是。",
+    "pos": "句",
+    "note": "",
+    "idx": 24
+  },
+  {
+    "lesson": 1,
+    "word": "여러분",
+    "explain": "大家",
+    "pos": "代",
+    "note": "",
+    "idx": 25
+  },
+  {
+    "lesson": 1,
+    "word": "직업",
+    "explain": "职业",
+    "pos": "名",
+    "note": "",
+    "idx": 26
+  },
+  {
+    "lesson": 1,
+    "word": "무엇",
+    "explain": "什么",
+    "pos": "代",
+    "note": "",
+    "idx": 27
+  },
+  {
+    "lesson": 1,
+    "word": "러시아",
+    "explain": "俄罗斯",
+    "pos": "名",
+    "note": "",
+    "idx": 28
+  },
+  {
+    "lesson": 1,
+    "word": "파키스탄",
+    "explain": "巴基斯坦",
+    "pos": "名",
+    "note": "",
+    "idx": 29
+  },
+  {
+    "lesson": 1,
+    "word": "명함",
+    "explain": "名片",
+    "pos": "名",
+    "note": "",
+    "idx": 30
+  },
+  {
+    "lesson": 1,
+    "word": "이름",
+    "explain": "名字",
+    "pos": "名",
+    "note": "",
+    "idx": 31
+  },
+  {
+    "lesson": 1,
+    "word": "전화번호",
+    "explain": "电话号码",
+    "pos": "名",
+    "note": "",
+    "idx": 32
+  },
+  {
+    "lesson": 1,
+    "word": "영어",
+    "explain": "英语",
+    "pos": "名",
+    "note": "",
+    "idx": 33
+  },
+  {
+    "lesson": 1,
+    "word": "국적",
+    "explain": "国籍",
+    "pos": "名",
+    "note": "",
+    "idx": 34
+  },
+  {
+    "lesson": 2,
+    "word": "책상",
+    "explain": "书桌",
+    "pos": "名",
+    "note": "",
+    "idx": 35
+  },
+  {
+    "lesson": 2,
+    "word": "의자",
+    "explain": "椅子",
+    "pos": "名",
+    "note": "",
+    "idx": 36
+  },
+  {
+    "lesson": 2,
+    "word": "책",
+    "explain": "书",
+    "pos": "名",
+    "note": "",
+    "idx": 37
+  },
+  {
+    "lesson": 2,
+    "word": "공책",
+    "explain": "练习本",
+    "pos": "名",
+    "note": "",
+    "idx": 38
+  },
+  {
+    "lesson": 2,
+    "word": "볼펜",
+    "explain": "圆珠笔",
+    "pos": "名",
+    "note": "",
+    "idx": 39
+  },
+  {
+    "lesson": 2,
+    "word": "연필",
+    "explain": "铅笔",
+    "pos": "名",
+    "note": "",
+    "idx": 40
+  },
+  {
+    "lesson": 2,
+    "word": "가방",
+    "explain": "书包",
+    "pos": "名",
+    "note": "",
+    "idx": 41
+  },
+  {
+    "lesson": 2,
+    "word": "지우개",
+    "explain": "橡皮",
+    "pos": "名",
+    "note": "",
+    "idx": 42
+  },
+  {
+    "lesson": 2,
+    "word": "시계",
+    "explain": "手表",
+    "pos": "名",
+    "note": "",
+    "idx": 43
+  },
+  {
+    "lesson": 2,
+    "word": "모자",
+    "explain": "帽子",
+    "pos": "名",
+    "note": "",
+    "idx": 44
+  },
+  {
+    "lesson": 2,
+    "word": "우산",
+    "explain": "雨伞",
+    "pos": "名",
+    "note": "",
+    "idx": 45
+  },
+  {
+    "lesson": 2,
+    "word": "신문",
+    "explain": "报纸",
+    "pos": "名",
+    "note": "",
+    "idx": 46
+  },
+  {
+    "lesson": 2,
+    "word": "카메라",
+    "explain": "照相机",
+    "pos": "名",
+    "note": "",
+    "idx": 47
+  },
+  {
+    "lesson": 2,
+    "word": "사전",
+    "explain": "字典",
+    "pos": "名",
+    "note": "",
+    "idx": 48
+  },
+  {
+    "lesson": 2,
+    "word": "안경",
+    "explain": "眼镜",
+    "pos": "名",
+    "note": "",
+    "idx": 49
+  },
+  {
+    "lesson": 2,
+    "word": "휴대폰",
+    "explain": "手机",
+    "pos": "名",
+    "note": "",
+    "idx": 50
+  },
+  {
+    "lesson": 2,
+    "word": "남자 친구",
+    "explain": "男朋友",
+    "pos": "名",
+    "note": "",
+    "idx": 51
+  },
+  {
+    "lesson": 2,
+    "word": "동전",
+    "explain": "硬币",
+    "pos": "名",
+    "note": "",
+    "idx": 52
+  },
+  {
+    "lesson": 2,
+    "word": "차",
+    "explain": "茶",
+    "pos": "名",
+    "note": "",
+    "idx": 53
+  },
+  {
+    "lesson": 2,
+    "word": "한국어",
+    "explain": "韩国语",
+    "pos": "名",
+    "note": "",
+    "idx": 54
+  },
+  {
+    "lesson": 2,
+    "word": "친구",
+    "explain": "朋友",
+    "pos": "名",
+    "note": "",
+    "idx": 55
+  },
+  {
+    "lesson": 2,
+    "word": "여자 친구",
+    "explain": "女朋友",
+    "pos": "名",
+    "note": "",
+    "idx": 56
+  },
+  {
+    "lesson": 2,
+    "word": "뭐",
+    "explain": "什么",
+    "pos": "代",
+    "note": "",
+    "idx": 57
+  },
+  {
+    "lesson": 2,
+    "word": "창문",
+    "explain": "窗户",
+    "pos": "名",
+    "note": "",
+    "idx": 58
+  },
+  {
+    "lesson": 2,
+    "word": "지도",
+    "explain": "地图",
+    "pos": "名",
+    "note": "",
+    "idx": 59
+  },
+  {
+    "lesson": 2,
+    "word": "전자사전",
+    "explain": "电子词典",
+    "pos": "名",
+    "note": "",
+    "idx": 60
+  },
+  {
+    "lesson": 2,
+    "word": "한국어로",
+    "explain": "用韩国语",
+    "pos": "词组",
+    "note": "",
+    "idx": 61
+  },
+  {
+    "lesson": 2,
+    "word": "자",
+    "explain": "尺子",
+    "pos": "名",
+    "note": "",
+    "idx": 62
+  },
+  {
+    "lesson": 2,
+    "word": "필통",
+    "explain": "笔袋",
+    "pos": "名",
+    "note": "",
+    "idx": 63
+  },
+  {
+    "lesson": 2,
+    "word": "잡지",
+    "explain": "杂志",
+    "pos": "名",
+    "note": "",
+    "idx": 64
+  },
+  {
+    "lesson": 2,
+    "word": "지갑",
+    "explain": "钱包",
+    "pos": "名",
+    "note": "",
+    "idx": 65
+  },
+  {
+    "lesson": 2,
+    "word": "커피",
+    "explain": "咖啡",
+    "pos": "名",
+    "note": "",
+    "idx": 66
+  },
+  {
+    "lesson": 2,
+    "word": "좀",
+    "explain": "稍微，一点儿",
+    "pos": "副",
+    "note": "",
+    "idx": 67
+  },
+  {
+    "lesson": 2,
+    "word": "콜라",
+    "explain": "可乐",
+    "pos": "名",
+    "note": "",
+    "idx": 68
+  },
+  {
+    "lesson": 2,
+    "word": "주스",
+    "explain": "果汁",
+    "pos": "名",
+    "note": "",
+    "idx": 69
+  },
+  {
+    "lesson": 2,
+    "word": "교통카드",
+    "explain": "交通卡",
+    "pos": "名",
+    "note": "",
+    "idx": 70
+  },
+  {
+    "lesson": 2,
+    "word": "휴지",
+    "explain": "纸巾",
+    "pos": "名",
+    "note": "",
+    "idx": 71
+  },
+  {
+    "lesson": 2,
+    "word": "물",
+    "explain": "水",
+    "pos": "名",
+    "note": "",
+    "idx": 72
+  },
+  {
+    "lesson": 2,
+    "word": "어서 오세요",
+    "explain": "欢迎光临。",
+    "pos": "句",
+    "note": "",
+    "idx": 73
+  },
+  {
+    "lesson": 2,
+    "word": "사과",
+    "explain": "苹果",
+    "pos": "名",
+    "note": "",
+    "idx": 74
+  },
+  {
+    "lesson": 2,
+    "word": "오렌지",
+    "explain": "橙子",
+    "pos": "名",
+    "note": "",
+    "idx": 75
+  },
+  {
+    "lesson": 2,
+    "word": "영화",
+    "explain": "电影",
+    "pos": "名",
+    "note": "",
+    "idx": 76
+  },
+  {
+    "lesson": 2,
+    "word": "컴퓨터",
+    "explain": "电脑",
+    "pos": "名",
+    "note": "",
+    "idx": 77
+  },
+  {
+    "lesson": 2,
+    "word": "우유",
+    "explain": "牛奶",
+    "pos": "名",
+    "note": "",
+    "idx": 78
+  },
+  {
+    "lesson": 2,
+    "word": "바나나",
+    "explain": "香蕉",
+    "pos": "名",
+    "note": "",
+    "idx": 79
+  },
+  {
+    "lesson": 2,
+    "word": "딸기",
+    "explain": "草莓",
+    "pos": "名",
+    "note": "",
+    "idx": 80
+  },
+  {
+    "lesson": 2,
+    "word": "텔레비전",
+    "explain": "电视",
+    "pos": "名",
+    "note": "",
+    "idx": 81
+  },
+  {
+    "lesson": 2,
+    "word": "서울대학교",
+    "explain": "首尔大学",
+    "pos": "名",
+    "note": "",
+    "idx": 82
+  },
+  {
+    "lesson": 2,
+    "word": "제",
+    "explain": "我的",
+    "pos": "代",
+    "note": "",
+    "idx": 83
+  },
+  {
+    "lesson": 2,
+    "word": "방",
+    "explain": "房间",
+    "pos": "名",
+    "note": "",
+    "idx": 84
+  },
+  {
+    "lesson": 2,
+    "word": "침대",
+    "explain": "床",
+    "pos": "名",
+    "note": "",
+    "idx": 85
+  },
+  {
+    "lesson": 2,
+    "word": "냉장고",
+    "explain": "冰箱",
+    "pos": "名",
+    "note": "",
+    "idx": 86
+  },
+  {
+    "lesson": 2,
+    "word": "룸메이트",
+    "explain": "室友",
+    "pos": "名",
+    "note": "",
+    "idx": 87
+  },
+  {
+    "lesson": 2,
+    "word": "에어컨",
+    "explain": "空调",
+    "pos": "名",
+    "note": "",
+    "idx": 88
+  },
+  {
+    "lesson": 2,
+    "word": "우리",
+    "explain": "我们",
+    "pos": "代",
+    "note": "",
+    "idx": 89
+  },
+  {
+    "lesson": 3,
+    "word": "자다",
+    "explain": "睡觉",
+    "pos": "动",
+    "note": "",
+    "idx": 90
+  },
+  {
+    "lesson": 3,
+    "word": "공부하다",
+    "explain": "学习",
+    "pos": "动",
+    "note": "",
+    "idx": 91
+  },
+  {
+    "lesson": 3,
+    "word": "일하다",
+    "explain": "工作",
+    "pos": "动",
+    "note": "",
+    "idx": 92
+  },
+  {
+    "lesson": 3,
+    "word": "운동하다",
+    "explain": "运动",
+    "pos": "动",
+    "note": "",
+    "idx": 93
+  },
+  {
+    "lesson": 3,
+    "word": "하다",
+    "explain": "做",
+    "pos": "动",
+    "note": "",
+    "idx": 94
+  },
+  {
+    "lesson": 3,
+    "word": "숙제",
+    "explain": "作业",
+    "pos": "名",
+    "note": "",
+    "idx": 95
+  },
+  {
+    "lesson": 3,
+    "word": "사다",
+    "explain": "买",
+    "pos": "动",
+    "note": "",
+    "idx": 96
+  },
+  {
+    "lesson": 3,
+    "word": "옷",
+    "explain": "衣服",
+    "pos": "名",
+    "note": "",
+    "idx": 97
+  },
+  {
+    "lesson": 3,
+    "word": "보다",
+    "explain": "看",
+    "pos": "动",
+    "note": "",
+    "idx": 98
+  },
+  {
+    "lesson": 3,
+    "word": "영화",
+    "explain": "电影",
+    "pos": "名",
+    "note": "",
+    "idx": 99
+  },
+  {
+    "lesson": 3,
+    "word": "만나다",
+    "explain": "见",
+    "pos": "动",
+    "note": "",
+    "idx": 100
+  },
+  {
+    "lesson": 3,
+    "word": "친구",
+    "explain": "同学",
+    "pos": "名",
+    "note": "",
+    "idx": 101
+  },
+  {
+    "lesson": 3,
+    "word": "배우다",
+    "explain": "学",
+    "pos": "动",
+    "note": "",
+    "idx": 102
+  },
+  {
+    "lesson": 3,
+    "word": "태권도",
+    "explain": "跆拳道",
+    "pos": "名",
+    "note": "",
+    "idx": 103
+  },
+  {
+    "lesson": 3,
+    "word": "먹다",
+    "explain": "吃",
+    "pos": "动",
+    "note": "",
+    "idx": 104
+  },
+  {
+    "lesson": 3,
+    "word": "밥",
+    "explain": "饭",
+    "pos": "名",
+    "note": "",
+    "idx": 105
+  },
+  {
+    "lesson": 3,
+    "word": "마시다",
+    "explain": "喝",
+    "pos": "动",
+    "note": "",
+    "idx": 106
+  },
+  {
+    "lesson": 3,
+    "word": "커피",
+    "explain": "咖啡",
+    "pos": "名",
+    "note": "",
+    "idx": 107
+  },
+  {
+    "lesson": 3,
+    "word": "읽다",
+    "explain": "看",
+    "pos": "动",
+    "note": "",
+    "idx": 108
+  },
+  {
+    "lesson": 3,
+    "word": "책",
+    "explain": "书",
+    "pos": "名",
+    "note": "",
+    "idx": 109
+  },
+  {
+    "lesson": 3,
+    "word": "도서관",
+    "explain": "图书馆",
+    "pos": "名",
+    "note": "",
+    "idx": 110
+  },
+  {
+    "lesson": 3,
+    "word": "집",
+    "explain": "家",
+    "pos": "名",
+    "note": "",
+    "idx": 111
+  },
+  {
+    "lesson": 3,
+    "word": "백화점",
+    "explain": "百货商场",
+    "pos": "名",
+    "note": "",
+    "idx": 112
+  },
+  {
+    "lesson": 3,
+    "word": "시장",
+    "explain": "市场",
+    "pos": "名",
+    "note": "",
+    "idx": 113
+  },
+  {
+    "lesson": 3,
+    "word": "공원",
+    "explain": "公园",
+    "pos": "名",
+    "note": "",
+    "idx": 114
+  },
+  {
+    "lesson": 3,
+    "word": "커피숍",
+    "explain": "咖啡厅",
+    "pos": "名",
+    "note": "",
+    "idx": 115
+  },
+  {
+    "lesson": 3,
+    "word": "극장",
+    "explain": "剧场，电影院",
+    "pos": "名",
+    "note": "",
+    "idx": 116
+  },
+  {
+    "lesson": 3,
+    "word": "학교",
+    "explain": "学校",
+    "pos": "名",
+    "note": "",
+    "idx": 117
+  },
+  {
+    "lesson": 3,
+    "word": "식당",
+    "explain": "餐厅",
+    "pos": "名",
+    "note": "",
+    "idx": 118
+  },
+  {
+    "lesson": 3,
+    "word": "회사",
+    "explain": "公司",
+    "pos": "名",
+    "note": "",
+    "idx": 119
+  },
+  {
+    "lesson": 3,
+    "word": "지금",
+    "explain": "现在",
+    "pos": "副",
+    "note": "",
+    "idx": 120
+  },
+  {
+    "lesson": 3,
+    "word": "아르바이트하다",
+    "explain": "打工",
+    "pos": "动",
+    "note": "",
+    "idx": 121
+  },
+  {
+    "lesson": 3,
+    "word": "쉬다",
+    "explain": "休息",
+    "pos": "动",
+    "note": "",
+    "idx": 122
+  },
+  {
+    "lesson": 3,
+    "word": "피자",
+    "explain": "比萨",
+    "pos": "名",
+    "note": "",
+    "idx": 123
+  },
+  {
+    "lesson": 3,
+    "word": "일본어",
+    "explain": "日语",
+    "pos": "名",
+    "note": "",
+    "idx": 124
+  },
+  {
+    "lesson": 3,
+    "word": "요리",
+    "explain": "菜，料理",
+    "pos": "名",
+    "note": "",
+    "idx": 125
+  },
+  {
+    "lesson": 3,
+    "word": "오늘",
+    "explain": "今天",
+    "pos": "副",
+    "note": "",
+    "idx": 126
+  },
+  {
+    "lesson": 3,
+    "word": "그리고",
+    "explain": "还有",
+    "pos": "副",
+    "note": "",
+    "idx": 127
+  },
+  {
+    "lesson": 3,
+    "word": "어디",
+    "explain": "哪里",
+    "pos": "代",
+    "note": "",
+    "idx": 128
+  },
+  {
+    "lesson": 3,
+    "word": "고기",
+    "explain": "肉",
+    "pos": "名",
+    "note": "",
+    "idx": 129
+  },
+  {
+    "lesson": 3,
+    "word": "프랑스어",
+    "explain": "法语",
+    "pos": "名",
+    "note": "",
+    "idx": 130
+  },
+  {
+    "lesson": 3,
+    "word": "드라마",
+    "explain": "电视剧",
+    "pos": "名",
+    "note": "",
+    "idx": 131
+  },
+  {
+    "lesson": 3,
+    "word": "그럼",
+    "explain": "那么",
+    "pos": "副",
+    "note": "",
+    "idx": 132
+  },
+  {
+    "lesson": 3,
+    "word": "스포츠 센터",
+    "explain": "体育中心",
+    "pos": "名",
+    "note": "",
+    "idx": 133
+  },
+  {
+    "lesson": 3,
+    "word": "가르치다",
+    "explain": "教，教授",
+    "pos": "动",
+    "note": "",
+    "idx": 134
+  },
+  {
+    "lesson": 3,
+    "word": "언어교육원",
+    "explain": "语言教育院",
+    "pos": "名",
+    "note": "",
+    "idx": 135
+  },
+  {
+    "lesson": 3,
+    "word": "불고기",
+    "explain": "烤肉",
+    "pos": "名",
+    "note": "",
+    "idx": 136
+  },
+  {
+    "lesson": 4,
+    "word": "공항",
+    "explain": "机场",
+    "pos": "名",
+    "note": "",
+    "idx": 137
+  },
+  {
+    "lesson": 4,
+    "word": "우체국",
+    "explain": "邮局",
+    "pos": "名",
+    "note": "",
+    "idx": 138
+  },
+  {
+    "lesson": 4,
+    "word": "대사관",
+    "explain": "大使馆",
+    "pos": "名",
+    "note": "",
+    "idx": 139
+  },
+  {
+    "lesson": 4,
+    "word": "은행",
+    "explain": "银行",
+    "pos": "名",
+    "note": "",
+    "idx": 140
+  },
+  {
+    "lesson": 4,
+    "word": "가게",
+    "explain": "商店",
+    "pos": "名",
+    "note": "",
+    "idx": 141
+  },
+  {
+    "lesson": 4,
+    "word": "약국",
+    "explain": "药店",
+    "pos": "名",
+    "note": "",
+    "idx": 142
+  },
+  {
+    "lesson": 4,
+    "word": "병원",
+    "explain": "医院",
+    "pos": "名",
+    "note": "",
+    "idx": 143
+  },
+  {
+    "lesson": 4,
+    "word": "미용실",
+    "explain": "理发店",
+    "pos": "名",
+    "note": "",
+    "idx": 144
+  },
+  {
+    "lesson": 4,
+    "word": "앞",
+    "explain": "前面",
+    "pos": "名",
+    "note": "",
+    "idx": 145
+  },
+  {
+    "lesson": 4,
+    "word": "뒤",
+    "explain": "后面",
+    "pos": "名",
+    "note": "",
+    "idx": 146
+  },
+  {
+    "lesson": 4,
+    "word": "옆",
+    "explain": "旁边",
+    "pos": "名",
+    "note": "",
+    "idx": 147
+  },
+  {
+    "lesson": 4,
+    "word": "안",
+    "explain": "里面",
+    "pos": "名",
+    "note": "",
+    "idx": 148
+  },
+  {
+    "lesson": 4,
+    "word": "아래",
+    "explain": "下面",
+    "pos": "名",
+    "note": "",
+    "idx": 149
+  },
+  {
+    "lesson": 4,
+    "word": "밑",
+    "explain": "底部",
+    "pos": "名",
+    "note": "",
+    "idx": 150
+  },
+  {
+    "lesson": 4,
+    "word": "위",
+    "explain": "上面",
+    "pos": "名",
+    "note": "",
+    "idx": 151
+  },
+  {
+    "lesson": 4,
+    "word": "인사동",
+    "explain": "仁寺洞",
+    "pos": "名",
+    "note": "",
+    "idx": 152
+  },
+  {
+    "lesson": 4,
+    "word": "N서울타워",
+    "explain": "N首尔塔",
+    "pos": "名",
+    "note": "",
+    "idx": 153
+  },
+  {
+    "lesson": 4,
+    "word": "명동",
+    "explain": "明洞",
+    "pos": "名",
+    "note": "",
+    "idx": 154
+  },
+  {
+    "lesson": 4,
+    "word": "남산",
+    "explain": "南山",
+    "pos": "名",
+    "note": "",
+    "idx": 155
+  },
+  {
+    "lesson": 4,
+    "word": "대학로",
+    "explain": "大学路",
+    "pos": "名",
+    "note": "",
+    "idx": 156
+  },
+  {
+    "lesson": 4,
+    "word": "청계천",
+    "explain": "清溪川",
+    "pos": "名",
+    "note": "",
+    "idx": 157
+  },
+  {
+    "lesson": 4,
+    "word": "교실",
+    "explain": "教室",
+    "pos": "名",
+    "note": "",
+    "idx": 158
+  },
+  {
+    "lesson": 4,
+    "word": "찻집",
+    "explain": "茶馆儿",
+    "pos": "名",
+    "note": "",
+    "idx": 159
+  },
+  {
+    "lesson": 4,
+    "word": "서울",
+    "explain": "首尔",
+    "pos": "名",
+    "note": "",
+    "idx": 160
+  },
+  {
+    "lesson": 4,
+    "word": "시내",
+    "explain": "市内",
+    "pos": "名",
+    "note": "",
+    "idx": 161
+  },
+  {
+    "lesson": 4,
+    "word": "구경하다",
+    "explain": "观看，欣赏",
+    "pos": "动",
+    "note": "",
+    "idx": 162
+  },
+  {
+    "lesson": 4,
+    "word": "쇼핑하다",
+    "explain": "购物",
+    "pos": "动",
+    "note": "",
+    "idx": 163
+  },
+  {
+    "lesson": 4,
+    "word": "연극",
+    "explain": "话剧",
+    "pos": "名",
+    "note": "",
+    "idx": 164
+  },
+  {
+    "lesson": 4,
+    "word": "알다",
+    "explain": "知道",
+    "pos": "动",
+    "note": "",
+    "idx": 165
+  },
+  {
+    "lesson": 4,
+    "word": "어머니",
+    "explain": "妈妈",
+    "pos": "名",
+    "note": "",
+    "idx": 166
+  },
+  {
+    "lesson": 4,
+    "word": "아버지",
+    "explain": "爸爸",
+    "pos": "名",
+    "note": "",
+    "idx": 167
+  },
+  {
+    "lesson": 4,
+    "word": "잘 지내다",
+    "explain": "过得很好",
+    "pos": "词组",
+    "note": "",
+    "idx": 168
+  },
+  {
+    "lesson": 4,
+    "word": "기숙사",
+    "explain": "宿舍",
+    "pos": "名",
+    "note": "",
+    "idx": 169
+  },
+  {
+    "lesson": 4,
+    "word": "사진",
+    "explain": "照片",
+    "pos": "名",
+    "note": "",
+    "idx": 170
+  },
+  {
+    "lesson": 4,
+    "word": "매일",
+    "explain": "每天",
+    "pos": "副",
+    "note": "",
+    "idx": 171
+  },
+  {
+    "lesson": 4,
+    "word": "그",
+    "explain": "那",
+    "pos": "代",
+    "note": "",
+    "idx": 172
+  },
+  {
+    "lesson": 4,
+    "word": "반",
+    "explain": "班",
+    "pos": "名",
+    "note": "",
+    "idx": 173
+  },
+  {
+    "lesson": 4,
+    "word": "사랑하다",
+    "explain": "爱",
+    "pos": "动",
+    "note": "",
+    "idx": 174
+  },
+  {
+    "lesson": 4,
+    "word": "서점",
+    "explain": "书店",
+    "pos": "名",
+    "note": "",
+    "idx": 175
+  },
+  {
+    "lesson": 4,
+    "word": "빵집",
+    "explain": "面包店",
+    "pos": "名",
+    "note": "",
+    "idx": 176
+  },
+  {
+    "lesson": 4,
+    "word": "화장실",
+    "explain": "洗手间",
+    "pos": "名",
+    "note": "",
+    "idx": 177
+  },
+  {
+    "lesson": 5,
+    "word": "일",
+    "explain": "一",
+    "pos": "数",
+    "note": "",
+    "idx": 178
+  },
+  {
+    "lesson": 5,
+    "word": "이",
+    "explain": "二",
+    "pos": "数",
+    "note": "",
+    "idx": 179
+  },
+  {
+    "lesson": 5,
+    "word": "삼",
+    "explain": "三",
+    "pos": "数",
+    "note": "",
+    "idx": 180
+  },
+  {
+    "lesson": 5,
+    "word": "사",
+    "explain": "四",
+    "pos": "数",
+    "note": "",
+    "idx": 181
+  },
+  {
+    "lesson": 5,
+    "word": "오",
+    "explain": "五",
+    "pos": "数",
+    "note": "",
+    "idx": 182
+  },
+  {
+    "lesson": 5,
+    "word": "육",
+    "explain": "六",
+    "pos": "数",
+    "note": "",
+    "idx": 183
+  },
+  {
+    "lesson": 5,
+    "word": "칠",
+    "explain": "七",
+    "pos": "数",
+    "note": "",
+    "idx": 184
+  },
+  {
+    "lesson": 5,
+    "word": "팔",
+    "explain": "八",
+    "pos": "数",
+    "note": "",
+    "idx": 185
+  },
+  {
+    "lesson": 5,
+    "word": "구",
+    "explain": "九",
+    "pos": "数",
+    "note": "",
+    "idx": 186
+  },
+  {
+    "lesson": 5,
+    "word": "십",
+    "explain": "十",
+    "pos": "数",
+    "note": "",
+    "idx": 187
+  },
+  {
+    "lesson": 5,
+    "word": "월요일",
+    "explain": "星期一",
+    "pos": "名",
+    "note": "",
+    "idx": 188
+  },
+  {
+    "lesson": 5,
+    "word": "화요일",
+    "explain": "星期二",
+    "pos": "名",
+    "note": "",
+    "idx": 189
+  },
+  {
+    "lesson": 5,
+    "word": "수요일",
+    "explain": "星期三",
+    "pos": "名",
+    "note": "",
+    "idx": 190
+  },
+  {
+    "lesson": 5,
+    "word": "목요일",
+    "explain": "星期四",
+    "pos": "名",
+    "note": "",
+    "idx": 191
+  },
+  {
+    "lesson": 5,
+    "word": "금요일",
+    "explain": "星期五",
+    "pos": "名",
+    "note": "",
+    "idx": 192
+  },
+  {
+    "lesson": 5,
+    "word": "토요일",
+    "explain": "星期六",
+    "pos": "名",
+    "note": "",
+    "idx": 193
+  },
+  {
+    "lesson": 5,
+    "word": "일요일",
+    "explain": "星期日",
+    "pos": "名",
+    "note": "",
+    "idx": 194
+  },
+  {
+    "lesson": 5,
+    "word": "주말",
+    "explain": "周末",
+    "pos": "名",
+    "note": "",
+    "idx": 195
+  },
+  {
+    "lesson": 5,
+    "word": "며칠",
+    "explain": "几号",
+    "pos": "名",
+    "note": "",
+    "idx": 196
+  },
+  {
+    "lesson": 5,
+    "word": "시험",
+    "explain": "考试",
+    "pos": "名",
+    "note": "",
+    "idx": 197
+  },
+  {
+    "lesson": 5,
+    "word": "언제",
+    "explain": "什么时候",
+    "pos": "代",
+    "note": "",
+    "idx": 198
+  },
+  {
+    "lesson": 5,
+    "word": "무슨",
+    "explain": "什么",
+    "pos": "冠",
+    "note": "",
+    "idx": 199
+  },
+  {
+    "lesson": 5,
+    "word": "생일",
+    "explain": "生日",
+    "pos": "名",
+    "note": "",
+    "idx": 200
+  },
+  {
+    "lesson": 5,
+    "word": "하고",
+    "explain": "和",
+    "pos": "助",
+    "note": "",
+    "idx": 201
+  },
+  {
+    "lesson": 5,
+    "word": "크리스마스",
+    "explain": "圣诞节",
+    "pos": "名",
+    "note": "",
+    "idx": 202
+  },
+  {
+    "lesson": 5,
+    "word": "파티",
+    "explain": "派对，聚会",
+    "pos": "名",
+    "note": "",
+    "idx": 203
+  },
+  {
+    "lesson": 5,
+    "word": "시간",
+    "explain": "时间",
+    "pos": "名",
+    "note": "",
+    "idx": 204
+  },
+  {
+    "lesson": 5,
+    "word": "미안하다",
+    "explain": "对不起",
+    "pos": "形",
+    "note": "",
+    "idx": 205
+  },
+  {
+    "lesson": 5,
+    "word": "약속",
+    "explain": "约会",
+    "pos": "名",
+    "note": "",
+    "idx": 206
+  },
+  {
+    "lesson": 5,
+    "word": "같이",
+    "explain": "一起",
+    "pos": "副",
+    "note": "",
+    "idx": 207
+  },
+  {
+    "lesson": 5,
+    "word": "어제",
+    "explain": "昨天",
+    "pos": "副",
+    "note": "",
+    "idx": 208
+  },
+  {
+    "lesson": 5,
+    "word": "코엑스몰",
+    "explain": "COEX购物中心",
+    "pos": "名",
+    "note": "",
+    "idx": 209
+  },
+  {
+    "lesson": 5,
+    "word": "카드",
+    "explain": "卡片",
+    "pos": "名",
+    "note": "",
+    "idx": 210
+  },
+  {
+    "lesson": 5,
+    "word": "선물",
+    "explain": "礼物",
+    "pos": "名",
+    "note": "",
+    "idx": 211
+  },
+  {
+    "lesson": 5,
+    "word": "세수하다",
+    "explain": "洗漱",
+    "pos": "动",
+    "note": "",
+    "idx": 212
+  },
+  {
+    "lesson": 5,
+    "word": "이",
+    "explain": "牙",
+    "pos": "名",
+    "note": "",
+    "idx": 213
+  },
+  {
+    "lesson": 5,
+    "word": "닦다",
+    "explain": "刷",
+    "pos": "动",
+    "note": "",
+    "idx": 214
+  },
+  {
+    "lesson": 5,
+    "word": "거기",
+    "explain": "那里",
+    "pos": "代",
+    "note": "",
+    "idx": 215
+  },
+  {
+    "lesson": 5,
+    "word": "산책하다",
+    "explain": "散步",
+    "pos": "动",
+    "note": "",
+    "idx": 216
+  },
+  {
+    "lesson": 5,
+    "word": "사진을 찍다",
+    "explain": "拍照",
+    "pos": "词组",
+    "note": "",
+    "idx": 217
+  },
+  {
+    "lesson": 5,
+    "word": "누구",
+    "explain": "谁",
+    "pos": "代",
+    "note": "",
+    "idx": 218
+  },
+  {
+    "lesson": 5,
+    "word": "혼자",
+    "explain": "自己",
+    "pos": "名",
+    "note": "",
+    "idx": 219
+  },
+  {
+    "lesson": 5,
+    "word": "끝나다",
+    "explain": "结束",
+    "pos": "动",
+    "note": "",
+    "idx": 220
+  },
+  {
+    "lesson": 5,
+    "word": "그래서",
+    "explain": "所以",
+    "pos": "副",
+    "note": "",
+    "idx": 221
+  },
+  {
+    "lesson": 5,
+    "word": "내일",
+    "explain": "明天",
+    "pos": "副",
+    "note": "",
+    "idx": 222
+  },
+  {
+    "lesson": 5,
+    "word": "스케줄",
+    "explain": "日程安排",
+    "pos": "名",
+    "note": "",
+    "idx": 223
+  },
+  {
+    "lesson": 5,
+    "word": "지난주",
+    "explain": "上周",
+    "pos": "名",
+    "note": "",
+    "idx": 224
+  },
+  {
+    "lesson": 6,
+    "word": "갈비탕",
+    "explain": "排骨汤",
+    "pos": "名",
+    "note": "",
+    "idx": 225
+  },
+  {
+    "lesson": 6,
+    "word": "김밥",
+    "explain": "紫菜包饭",
+    "pos": "名",
+    "note": "",
+    "idx": 226
+  },
+  {
+    "lesson": 6,
+    "word": "김치",
+    "explain": "泡菜",
+    "pos": "名",
+    "note": "",
+    "idx": 227
+  },
+  {
+    "lesson": 6,
+    "word": "김치찌개",
+    "explain": "泡菜汤",
+    "pos": "名",
+    "note": "",
+    "idx": 228
+  },
+  {
+    "lesson": 6,
+    "word": "냉면",
+    "explain": "冷面",
+    "pos": "名",
+    "note": "",
+    "idx": 229
+  },
+  {
+    "lesson": 6,
+    "word": "라면",
+    "explain": "方便面",
+    "pos": "名",
+    "note": "",
+    "idx": 230
+  },
+  {
+    "lesson": 6,
+    "word": "불고기",
+    "explain": "烤肉",
+    "pos": "名",
+    "note": "",
+    "idx": 231
+  },
+  {
+    "lesson": 6,
+    "word": "비빔밥",
+    "explain": "拌饭",
+    "pos": "名",
+    "note": "",
+    "idx": 232
+  },
+  {
+    "lesson": 6,
+    "word": "샌드위치",
+    "explain": "三明治",
+    "pos": "名",
+    "note": "",
+    "idx": 233
+  },
+  {
+    "lesson": 6,
+    "word": "스파게티",
+    "explain": "意大利面",
+    "pos": "名",
+    "note": "",
+    "idx": 234
+  },
+  {
+    "lesson": 6,
+    "word": "햄버거",
+    "explain": "汉堡包",
+    "pos": "名",
+    "note": "",
+    "idx": 235
+  },
+  {
+    "lesson": 6,
+    "word": "피자",
+    "explain": "披萨",
+    "pos": "名",
+    "note": "",
+    "idx": 236
+  },
+  {
+    "lesson": 6,
+    "word": "귤",
+    "explain": "橘子",
+    "pos": "名",
+    "note": "",
+    "idx": 237
+  },
+  {
+    "lesson": 6,
+    "word": "딸기",
+    "explain": "草莓",
+    "pos": "名",
+    "note": "",
+    "idx": 238
+  },
+  {
+    "lesson": 6,
+    "word": "사과",
+    "explain": "苹果",
+    "pos": "名",
+    "note": "",
+    "idx": 239
+  },
+  {
+    "lesson": 6,
+    "word": "수박",
+    "explain": "西瓜",
+    "pos": "名",
+    "note": "",
+    "idx": 240
+  },
+  {
+    "lesson": 6,
+    "word": "하나",
+    "explain": "一",
+    "pos": "数",
+    "note": "",
+    "idx": 241
+  },
+  {
+    "lesson": 6,
+    "word": "둘",
+    "explain": "二",
+    "pos": "数",
+    "note": "",
+    "idx": 242
+  },
+  {
+    "lesson": 6,
+    "word": "셋",
+    "explain": "三",
+    "pos": "数",
+    "note": "",
+    "idx": 243
+  },
+  {
+    "lesson": 6,
+    "word": "넷",
+    "explain": "四",
+    "pos": "数",
+    "note": "",
+    "idx": 244
+  },
+  {
+    "lesson": 6,
+    "word": "다섯",
+    "explain": "五",
+    "pos": "数",
+    "note": "",
+    "idx": 245
+  },
+  {
+    "lesson": 6,
+    "word": "여섯",
+    "explain": "六",
+    "pos": "数",
+    "note": "",
+    "idx": 246
+  },
+  {
+    "lesson": 6,
+    "word": "일곱",
+    "explain": "七",
+    "pos": "数",
+    "note": "",
+    "idx": 247
+  },
+  {
+    "lesson": 6,
+    "word": "여덟",
+    "explain": "八",
+    "pos": "数",
+    "note": "",
+    "idx": 248
+  },
+  {
+    "lesson": 6,
+    "word": "아홉",
+    "explain": "九",
+    "pos": "数",
+    "note": "",
+    "idx": 249
+  },
+  {
+    "lesson": 6,
+    "word": "열",
+    "explain": "十",
+    "pos": "数",
+    "note": "",
+    "idx": 250
+  },
+  {
+    "lesson": 6,
+    "word": "얼마",
+    "explain": "多少",
+    "pos": "名",
+    "note": "",
+    "idx": 251
+  },
+  {
+    "lesson": 6,
+    "word": "십 원",
+    "explain": "10韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 252
+  },
+  {
+    "lesson": 6,
+    "word": "오십 원",
+    "explain": "50韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 253
+  },
+  {
+    "lesson": 6,
+    "word": "백 원",
+    "explain": "100韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 254
+  },
+  {
+    "lesson": 6,
+    "word": "오백 원",
+    "explain": "500韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 255
+  },
+  {
+    "lesson": 6,
+    "word": "천 원",
+    "explain": "1000韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 256
+  },
+  {
+    "lesson": 6,
+    "word": "오천 원",
+    "explain": "5000韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 257
+  },
+  {
+    "lesson": 6,
+    "word": "만 원",
+    "explain": "10000韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 258
+  },
+  {
+    "lesson": 6,
+    "word": "오만 원",
+    "explain": "50000韩元",
+    "pos": "名",
+    "note": "",
+    "idx": 259
+  },
+  {
+    "lesson": 6,
+    "word": "앉다",
+    "explain": "坐",
+    "pos": "动",
+    "note": "",
+    "idx": 260
+  },
+  {
+    "lesson": 6,
+    "word": "주다",
+    "explain": "给",
+    "pos": "动",
+    "note": "",
+    "idx": 261
+  },
+  {
+    "lesson": 6,
+    "word": "잠깐만",
+    "explain": "一会儿",
+    "pos": "名",
+    "note": "",
+    "idx": 262
+  },
+  {
+    "lesson": 6,
+    "word": "기다리다",
+    "explain": "等",
+    "pos": "动",
+    "note": "",
+    "idx": 263
+  },
+  {
+    "lesson": 6,
+    "word": "빵",
+    "explain": "面包",
+    "pos": "名",
+    "note": "",
+    "idx": 264
+  },
+  {
+    "lesson": 6,
+    "word": "몇",
+    "explain": "几",
+    "pos": "冠",
+    "note": "",
+    "idx": 265
+  },
+  {
+    "lesson": 6,
+    "word": "맥주",
+    "explain": "啤酒",
+    "pos": "名",
+    "note": "",
+    "idx": 266
+  },
+  {
+    "lesson": 6,
+    "word": "아이스크림",
+    "explain": "冰激凌",
+    "pos": "名",
+    "note": "",
+    "idx": 267
+  },
+  {
+    "lesson": 6,
+    "word": "메뉴",
+    "explain": "菜单",
+    "pos": "名",
+    "note": "",
+    "idx": 268
+  },
+  {
+    "lesson": 6,
+    "word": "좋아하다",
+    "explain": "喜欢",
+    "pos": "动",
+    "note": "",
+    "idx": 269
+  },
+  {
+    "lesson": 6,
+    "word": "싫다",
+    "explain": "不喜欢",
+    "pos": "动",
+    "note": "",
+    "idx": 270
+  },
+  {
+    "lesson": 6,
+    "word": "우동",
+    "explain": "乌冬面",
+    "pos": "名",
+    "note": "",
+    "idx": 271
+  },
+  {
+    "lesson": 6,
+    "word": "그래요?",
+    "explain": "是吗？",
+    "pos": "句",
+    "note": "",
+    "idx": 272
+  },
+  {
+    "lesson": 6,
+    "word": "여기요.",
+    "explain": "这里。",
+    "pos": "句",
+    "note": "",
+    "idx": 273
+  },
+  {
+    "lesson": 6,
+    "word": "맛있다",
+    "explain": "好吃，好喝",
+    "pos": "形",
+    "note": "",
+    "idx": 274
+  },
+  {
+    "lesson": 6,
+    "word": "맛없다",
+    "explain": "不好吃",
+    "pos": "形",
+    "note": "",
+    "idx": 275
+  },
+  {
+    "lesson": 6,
+    "word": "싸다",
+    "explain": "便宜",
+    "pos": "形",
+    "note": "",
+    "idx": 276
+  },
+  {
+    "lesson": 6,
+    "word": "비싸다",
+    "explain": "贵",
+    "pos": "形",
+    "note": "",
+    "idx": 277
+  },
+  {
+    "lesson": 6,
+    "word": "좋다",
+    "explain": "好",
+    "pos": "形",
+    "note": "",
+    "idx": 278
+  },
+  {
+    "lesson": 6,
+    "word": "길",
+    "explain": "路",
+    "pos": "名",
+    "note": "",
+    "idx": 279
+  },
+  {
+    "lesson": 6,
+    "word": "복잡하다",
+    "explain": "复杂",
+    "pos": "形",
+    "note": "",
+    "idx": 280
+  },
+  {
+    "lesson": 6,
+    "word": "재미있다",
+    "explain": "有趣",
+    "pos": "形",
+    "note": "",
+    "idx": 281
+  },
+  {
+    "lesson": 6,
+    "word": "재미없다",
+    "explain": "无趣",
+    "pos": "形",
+    "note": "",
+    "idx": 282
+  },
+  {
+    "lesson": 6,
+    "word": "노래",
+    "explain": "歌曲",
+    "pos": "名",
+    "note": "",
+    "idx": 283
+  },
+  {
+    "lesson": 6,
+    "word": "아리랑",
+    "explain": "阿里郎",
+    "pos": "名",
+    "note": "",
+    "idx": 284
+  },
+  {
+    "lesson": 6,
+    "word": "바지",
+    "explain": "裤子",
+    "pos": "名",
+    "note": "",
+    "idx": 285
+  },
+  {
+    "lesson": 6,
+    "word": "운동화",
+    "explain": "运动鞋",
+    "pos": "名",
+    "note": "",
+    "idx": 286
+  },
+  {
+    "lesson": 6,
+    "word": "아저씨",
+    "explain": "大叔",
+    "pos": "名",
+    "note": "",
+    "idx": 287
+  },
+  {
+    "lesson": 6,
+    "word": "에",
+    "explain": "表示基准或标准",
+    "pos": "助",
+    "note": "",
+    "idx": 288
+  },
+  {
+    "lesson": 6,
+    "word": "모두",
+    "explain": "全部",
+    "pos": "名",
+    "note": "",
+    "idx": 289
+  },
+  {
+    "lesson": 6,
+    "word": "또",
+    "explain": "又",
+    "pos": "副",
+    "note": "",
+    "idx": 290
+  },
+  {
+    "lesson": 6,
+    "word": "배",
+    "explain": "梨",
+    "pos": "名",
+    "note": "",
+    "idx": 291
+  },
+  {
+    "lesson": 6,
+    "word": "키위",
+    "explain": "猕猴桃",
+    "pos": "名",
+    "note": "",
+    "idx": 292
+  },
+  {
+    "lesson": 6,
+    "word": "파인애플",
+    "explain": "菠萝",
+    "pos": "名",
+    "note": "",
+    "idx": 293
+  },
+  {
+    "lesson": 6,
+    "word": "박스",
+    "explain": "盒",
+    "pos": "名",
+    "note": "",
+    "idx": 294
+  },
+  {
+    "lesson": 6,
+    "word": "달걀",
+    "explain": "鸡蛋",
+    "pos": "名",
+    "note": "",
+    "idx": 295
+  },
+  {
+    "lesson": 6,
+    "word": "과자",
+    "explain": "饼干",
+    "pos": "名",
+    "note": "",
+    "idx": 296
+  },
+  {
+    "lesson": 6,
+    "word": "케이크",
+    "explain": "蛋糕",
+    "pos": "名",
+    "note": "",
+    "idx": 297
+  },
+  {
+    "lesson": 6,
+    "word": "아이스커피",
+    "explain": "冰咖啡",
+    "pos": "名",
+    "note": "",
+    "idx": 298
+  },
+  {
+    "lesson": 6,
+    "word": "에스프레소",
+    "explain": "意式咖啡",
+    "pos": "名",
+    "note": "",
+    "idx": 299
+  },
+  {
+    "lesson": 6,
+    "word": "돈가스",
+    "explain": "炸猪排",
+    "pos": "名",
+    "note": "",
+    "idx": 300
+  },
+  {
+    "lesson": 6,
+    "word": "점심",
+    "explain": "午饭",
+    "pos": "名",
+    "note": "",
+    "idx": 301
+  },
+  {
+    "lesson": 6,
+    "word": "급",
+    "explain": "级别",
+    "pos": "名",
+    "note": "",
+    "idx": 302
+  },
+  {
+    "lesson": 6,
+    "word": "물건",
+    "explain": "东西",
+    "pos": "名",
+    "note": "",
+    "idx": 303
+  },
+  {
+    "lesson": 6,
+    "word": "팔다",
+    "explain": "卖",
+    "pos": "动",
+    "note": "",
+    "idx": 304
+  },
+  {
+    "lesson": 6,
+    "word": "인치",
+    "explain": "寸",
+    "pos": "依存",
+    "note": "",
+    "idx": 305
+  },
+  {
+    "lesson": 6,
+    "word": "아주",
+    "explain": "非常",
+    "pos": "副",
+    "note": "",
+    "idx": 306
+  },
+  {
+    "lesson": 6,
+    "word": "리모컨",
+    "explain": "遥控器",
+    "pos": "名",
+    "note": "",
+    "idx": 307
+  },
+  {
+    "lesson": 6,
+    "word": "깨끗하다",
+    "explain": "干净",
+    "pos": "形",
+    "note": "",
+    "idx": 308
+  },
+  {
+    "lesson": 6,
+    "word": "많이",
+    "explain": "很多",
+    "pos": "副",
+    "note": "",
+    "idx": 309
+  },
+  {
+    "lesson": 6,
+    "word": "권",
+    "explain": "册，本",
+    "pos": "依名",
+    "note": "",
+    "idx": 310
+  },
+  {
+    "lesson": 6,
+    "word": "전화하다",
+    "explain": "打电话",
+    "pos": "动",
+    "note": "",
+    "idx": 311
+  },
+  {
+    "lesson": 6,
+    "word": "깎아 주다",
+    "explain": "砍价",
+    "pos": "词组",
+    "note": "",
+    "idx": 312
+  },
+  {
+    "lesson": 7,
+    "word": "흐리다",
+    "explain": "阴",
+    "pos": "形",
+    "note": "",
+    "idx": 313
+  },
+  {
+    "lesson": 7,
+    "word": "맑다",
+    "explain": "晴朗",
+    "pos": "形",
+    "note": "",
+    "idx": 314
+  },
+  {
+    "lesson": 7,
+    "word": "덥다",
+    "explain": "热",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 315
+  },
+  {
+    "lesson": 7,
+    "word": "춥다",
+    "explain": "冷",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 316
+  },
+  {
+    "lesson": 7,
+    "word": "따뜻하다",
+    "explain": "温暖",
+    "pos": "形",
+    "note": "",
+    "idx": 317
+  },
+  {
+    "lesson": 7,
+    "word": "시원하다",
+    "explain": "凉爽",
+    "pos": "形",
+    "note": "",
+    "idx": 318
+  },
+  {
+    "lesson": 7,
+    "word": "비가 오다",
+    "explain": "下雨",
+    "pos": "词组",
+    "note": "",
+    "idx": 319
+  },
+  {
+    "lesson": 7,
+    "word": "눈이 오다",
+    "explain": "下雪",
+    "pos": "词组",
+    "note": "",
+    "idx": 320
+  },
+  {
+    "lesson": 7,
+    "word": "계절",
+    "explain": "季节",
+    "pos": "名",
+    "note": "",
+    "idx": 321
+  },
+  {
+    "lesson": 7,
+    "word": "봄",
+    "explain": "春天",
+    "pos": "名",
+    "note": "",
+    "idx": 322
+  },
+  {
+    "lesson": 7,
+    "word": "여름",
+    "explain": "夏天",
+    "pos": "名",
+    "note": "",
+    "idx": 323
+  },
+  {
+    "lesson": 7,
+    "word": "가을",
+    "explain": "秋天",
+    "pos": "名",
+    "note": "",
+    "idx": 324
+  },
+  {
+    "lesson": 7,
+    "word": "겨울",
+    "explain": "冬天",
+    "pos": "名",
+    "note": "",
+    "idx": 325
+  },
+  {
+    "lesson": 7,
+    "word": "쉽다",
+    "explain": "容易",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 326
+  },
+  {
+    "lesson": 7,
+    "word": "어렵다",
+    "explain": "难",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 327
+  },
+  {
+    "lesson": 7,
+    "word": "맵다",
+    "explain": "辣",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 328
+  },
+  {
+    "lesson": 7,
+    "word": "가볍다",
+    "explain": "轻",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 329
+  },
+  {
+    "lesson": 7,
+    "word": "무겁다",
+    "explain": "重",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 330
+  },
+  {
+    "lesson": 7,
+    "word": "날씨",
+    "explain": "天气",
+    "pos": "名",
+    "note": "",
+    "idx": 331
+  },
+  {
+    "lesson": 7,
+    "word": "어때요?",
+    "explain": "怎么样？",
+    "pos": "句",
+    "note": "",
+    "idx": 332
+  },
+  {
+    "lesson": 7,
+    "word": "동생",
+    "explain": "弟弟，妹妹",
+    "pos": "名",
+    "note": "",
+    "idx": 333
+  },
+  {
+    "lesson": 7,
+    "word": "휴대폰",
+    "explain": "手机",
+    "pos": "名",
+    "note": "",
+    "idx": 334
+  },
+  {
+    "lesson": 7,
+    "word": "떡볶이",
+    "explain": "炒年糕",
+    "pos": "名",
+    "note": "",
+    "idx": 335
+  },
+  {
+    "lesson": 7,
+    "word": "도쿄",
+    "explain": "东京",
+    "pos": "名",
+    "note": "",
+    "idx": 336
+  },
+  {
+    "lesson": 7,
+    "word": "조심해서 오세요.",
+    "explain": "来的路上注意安全。",
+    "pos": "句",
+    "note": "",
+    "idx": 337
+  },
+  {
+    "lesson": 7,
+    "word": "런던",
+    "explain": "伦敦",
+    "pos": "名",
+    "note": "",
+    "idx": 338
+  },
+  {
+    "lesson": 7,
+    "word": "싱가포르",
+    "explain": "新加坡",
+    "pos": "名",
+    "note": "",
+    "idx": 339
+  },
+  {
+    "lesson": 7,
+    "word": "모스크바",
+    "explain": "莫斯科",
+    "pos": "名",
+    "note": "",
+    "idx": 340
+  },
+  {
+    "lesson": 7,
+    "word": "어떻다",
+    "explain": "怎么样",
+    "pos": "形",
+    "note": "",
+    "idx": 341
+  },
+  {
+    "lesson": 7,
+    "word": "파리",
+    "explain": "巴黎",
+    "pos": "名",
+    "note": "",
+    "idx": 342
+  },
+  {
+    "lesson": 7,
+    "word": "요즘",
+    "explain": "最近",
+    "pos": "名",
+    "note": "",
+    "idx": 343
+  },
+  {
+    "lesson": 7,
+    "word": "쉬는 시간",
+    "explain": "休息时间",
+    "pos": "词组",
+    "note": "",
+    "idx": 344
+  },
+  {
+    "lesson": 7,
+    "word": "이야기하다",
+    "explain": "聊天",
+    "pos": "动",
+    "note": "",
+    "idx": 345
+  },
+  {
+    "lesson": 7,
+    "word": "고향",
+    "explain": "家乡",
+    "pos": "名",
+    "note": "",
+    "idx": 346
+  },
+  {
+    "lesson": 7,
+    "word": "스키장",
+    "explain": "滑雪场",
+    "pos": "名",
+    "note": "",
+    "idx": 347
+  },
+  {
+    "lesson": 7,
+    "word": "뉴욕",
+    "explain": "纽约",
+    "pos": "名",
+    "note": "",
+    "idx": 348
+  },
+  {
+    "lesson": 7,
+    "word": "단풍",
+    "explain": "枫叶",
+    "pos": "名",
+    "note": "",
+    "idx": 349
+  },
+  {
+    "lesson": 7,
+    "word": "베이징",
+    "explain": "北京",
+    "pos": "名",
+    "note": "",
+    "idx": 350
+  },
+  {
+    "lesson": 7,
+    "word": "수영장",
+    "explain": "游泳馆",
+    "pos": "名",
+    "note": "",
+    "idx": 351
+  },
+  {
+    "lesson": 7,
+    "word": "꽃",
+    "explain": "花",
+    "pos": "名",
+    "note": "",
+    "idx": 352
+  },
+  {
+    "lesson": 7,
+    "word": "바다",
+    "explain": "海",
+    "pos": "名",
+    "note": "",
+    "idx": 353
+  },
+  {
+    "lesson": 7,
+    "word": "생선",
+    "explain": "鱼",
+    "pos": "名",
+    "note": "",
+    "idx": 354
+  },
+  {
+    "lesson": 7,
+    "word": "부산",
+    "explain": "釜山",
+    "pos": "名",
+    "note": "",
+    "idx": 355
+  },
+  {
+    "lesson": 7,
+    "word": "작년",
+    "explain": "去年",
+    "pos": "名",
+    "note": "",
+    "idx": 356
+  },
+  {
+    "lesson": 7,
+    "word": "브라질",
+    "explain": "巴西",
+    "pos": "名",
+    "note": "",
+    "idx": 357
+  },
+  {
+    "lesson": 7,
+    "word": "에서",
+    "explain": "从",
+    "pos": "助",
+    "note": "",
+    "idx": 358
+  },
+  {
+    "lesson": 7,
+    "word": "브라질리아",
+    "explain": "巴西利亚",
+    "pos": "名",
+    "note": "",
+    "idx": 359
+  },
+  {
+    "lesson": 7,
+    "word": "항상",
+    "explain": "经常",
+    "pos": "副",
+    "note": "",
+    "idx": 360
+  },
+  {
+    "lesson": 7,
+    "word": "처음",
+    "explain": "第一次",
+    "pos": "名",
+    "note": "",
+    "idx": 361
+  },
+  {
+    "lesson": 7,
+    "word": "하늘",
+    "explain": "天空",
+    "pos": "名",
+    "note": "",
+    "idx": 362
+  },
+  {
+    "lesson": 7,
+    "word": "눈사람",
+    "explain": "雪人",
+    "pos": "名",
+    "note": "",
+    "idx": 363
+  },
+  {
+    "lesson": 7,
+    "word": "만들다",
+    "explain": "做",
+    "pos": "动",
+    "note": "",
+    "idx": 364
+  },
+  {
+    "lesson": 7,
+    "word": "태국",
+    "explain": "泰国",
+    "pos": "名",
+    "note": "",
+    "idx": 365
+  },
+  {
+    "lesson": 7,
+    "word": "수영하다",
+    "explain": "游泳",
+    "pos": "动",
+    "note": "",
+    "idx": 366
+  },
+  {
+    "lesson": 7,
+    "word": "망고",
+    "explain": "芒果",
+    "pos": "名",
+    "note": "",
+    "idx": 367
+  },
+  {
+    "lesson": 7,
+    "word": "선글라스",
+    "explain": "墨镜",
+    "pos": "名",
+    "note": "",
+    "idx": 368
+  },
+  {
+    "lesson": 7,
+    "word": "부채",
+    "explain": "扇子",
+    "pos": "名",
+    "note": "",
+    "idx": 369
+  },
+  {
+    "lesson": 7,
+    "word": "슬리퍼",
+    "explain": "拖鞋",
+    "pos": "名",
+    "note": "",
+    "idx": 370
+  },
+  {
+    "lesson": 8,
+    "word": "골프를 치다",
+    "explain": "打高尔夫",
+    "pos": "词组",
+    "note": "",
+    "idx": 371
+  },
+  {
+    "lesson": 8,
+    "word": "자전거를 타다",
+    "explain": "骑自行车",
+    "pos": "词组",
+    "note": "",
+    "idx": 372
+  },
+  {
+    "lesson": 8,
+    "word": "게임을 하다",
+    "explain": "打游戏",
+    "pos": "词组",
+    "note": "",
+    "idx": 373
+  },
+  {
+    "lesson": 8,
+    "word": "테니스를 치다",
+    "explain": "打网球",
+    "pos": "词组",
+    "note": "",
+    "idx": 374
+  },
+  {
+    "lesson": 8,
+    "word": "농구를 하다",
+    "explain": "打篮球",
+    "pos": "词组",
+    "note": "",
+    "idx": 375
+  },
+  {
+    "lesson": 8,
+    "word": "피아노를 치다",
+    "explain": "弹钢琴",
+    "pos": "词组",
+    "note": "",
+    "idx": 376
+  },
+  {
+    "lesson": 8,
+    "word": "당구를 치다",
+    "explain": "打台球",
+    "pos": "词组",
+    "note": "",
+    "idx": 377
+  },
+  {
+    "lesson": 8,
+    "word": "스키를 타다",
+    "explain": "滑雪",
+    "pos": "词组",
+    "note": "",
+    "idx": 378
+  },
+  {
+    "lesson": 8,
+    "word": "기타를 치다",
+    "explain": "弹吉他",
+    "pos": "词组",
+    "note": "",
+    "idx": 379
+  },
+  {
+    "lesson": 8,
+    "word": "스케이트를 타다",
+    "explain": "滑冰",
+    "pos": "词组",
+    "note": "",
+    "idx": 380
+  },
+  {
+    "lesson": 8,
+    "word": "축구를 하다",
+    "explain": "踢足球",
+    "pos": "词组",
+    "note": "",
+    "idx": 381
+  },
+  {
+    "lesson": 8,
+    "word": "낮잠을 자다",
+    "explain": "睡懒觉",
+    "pos": "词组",
+    "note": "",
+    "idx": 382
+  },
+  {
+    "lesson": 8,
+    "word": "노래방을 가다",
+    "explain": "去练歌房",
+    "pos": "词组",
+    "note": "",
+    "idx": 383
+  },
+  {
+    "lesson": 8,
+    "word": "등산을 하다",
+    "explain": "登山",
+    "pos": "词组",
+    "note": "",
+    "idx": 384
+  },
+  {
+    "lesson": 8,
+    "word": "찜질방에 가다",
+    "explain": "去汗蒸房",
+    "pos": "词组",
+    "note": "",
+    "idx": 385
+  },
+  {
+    "lesson": 8,
+    "word": "산책을 하다",
+    "explain": "散步",
+    "pos": "词组",
+    "note": "",
+    "idx": 386
+  },
+  {
+    "lesson": 8,
+    "word": "여행을 하다",
+    "explain": "旅行",
+    "pos": "词组",
+    "note": "",
+    "idx": 387
+  },
+  {
+    "lesson": 8,
+    "word": "걷다",
+    "explain": "走",
+    "pos": "动",
+    "note": "ㄷ的不规则变化",
+    "idx": 388
+  },
+  {
+    "lesson": 8,
+    "word": "버스",
+    "explain": "公共汽车",
+    "pos": "名",
+    "note": "",
+    "idx": 389
+  },
+  {
+    "lesson": 8,
+    "word": "타다",
+    "explain": "乘坐，骑",
+    "pos": "动",
+    "note": "",
+    "idx": 390
+  },
+  {
+    "lesson": 8,
+    "word": "걸어서 가다",
+    "explain": "走着去",
+    "pos": "词组",
+    "note": "",
+    "idx": 391
+  },
+  {
+    "lesson": 8,
+    "word": "음악",
+    "explain": "音乐",
+    "pos": "名",
+    "note": "",
+    "idx": 392
+  },
+  {
+    "lesson": 8,
+    "word": "듣다",
+    "explain": "听",
+    "pos": "动",
+    "note": "ㄷ的不规则变化",
+    "idx": 393
+  },
+  {
+    "lesson": 8,
+    "word": "뉴스",
+    "explain": "新闻",
+    "pos": "名",
+    "note": "",
+    "idx": 394
+  },
+  {
+    "lesson": 8,
+    "word": "라디오",
+    "explain": "广播",
+    "pos": "名",
+    "note": "",
+    "idx": 395
+  },
+  {
+    "lesson": 8,
+    "word": "잘",
+    "explain": "好好地",
+    "pos": "副",
+    "note": "",
+    "idx": 396
+  },
+  {
+    "lesson": 8,
+    "word": "생활",
+    "explain": "生活",
+    "pos": "名",
+    "note": "",
+    "idx": 397
+  },
+  {
+    "lesson": 8,
+    "word": "조금",
+    "explain": "一点儿",
+    "pos": "副",
+    "note": "",
+    "idx": 398
+  },
+  {
+    "lesson": 8,
+    "word": "심심하다",
+    "explain": "无聊",
+    "pos": "形",
+    "note": "",
+    "idx": 399
+  },
+  {
+    "lesson": 8,
+    "word": "한강",
+    "explain": "汉江",
+    "pos": "名",
+    "note": "",
+    "idx": 400
+  },
+  {
+    "lesson": 8,
+    "word": "그런데",
+    "explain": "但是，可是",
+    "pos": "副",
+    "note": "",
+    "idx": 401
+  },
+  {
+    "lesson": 8,
+    "word": "어떻게",
+    "explain": "怎么",
+    "pos": "副",
+    "note": "",
+    "idx": 402
+  },
+  {
+    "lesson": 8,
+    "word": "가깝다",
+    "explain": "近",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 403
+  },
+  {
+    "lesson": 8,
+    "word": "관악산",
+    "explain": "冠岳山",
+    "pos": "名",
+    "note": "",
+    "idx": 404
+  },
+  {
+    "lesson": 8,
+    "word": "시청",
+    "explain": "市政府",
+    "pos": "名",
+    "note": "",
+    "idx": 405
+  },
+  {
+    "lesson": 8,
+    "word": "정말",
+    "explain": "真的",
+    "pos": "副",
+    "note": "",
+    "idx": 406
+  },
+  {
+    "lesson": 8,
+    "word": "많다",
+    "explain": "多",
+    "pos": "形",
+    "note": "",
+    "idx": 407
+  },
+  {
+    "lesson": 8,
+    "word": "자주",
+    "explain": "经常",
+    "pos": "副",
+    "note": "",
+    "idx": 408
+  },
+  {
+    "lesson": 8,
+    "word": "그래요.",
+    "explain": "好啊。",
+    "pos": "句",
+    "note": "",
+    "idx": 409
+  },
+  {
+    "lesson": 8,
+    "word": "다음",
+    "explain": "下次，下一个",
+    "pos": "名",
+    "note": "",
+    "idx": 410
+  },
+  {
+    "lesson": 8,
+    "word": "피곤하다",
+    "explain": "累",
+    "pos": "形",
+    "note": "",
+    "idx": 411
+  },
+  {
+    "lesson": 8,
+    "word": "크다",
+    "explain": "大",
+    "pos": "形",
+    "note": "",
+    "idx": 412
+  },
+  {
+    "lesson": 8,
+    "word": "식혜",
+    "explain": "甜米露",
+    "pos": "名",
+    "note": "",
+    "idx": 413
+  },
+  {
+    "lesson": 8,
+    "word": "저기",
+    "explain": "那里",
+    "pos": "代",
+    "note": "",
+    "idx": 414
+  },
+  {
+    "lesson": 8,
+    "word": "수업",
+    "explain": "课",
+    "pos": "名",
+    "note": "",
+    "idx": 415
+  },
+  {
+    "lesson": 8,
+    "word": "오후",
+    "explain": "下午",
+    "pos": "名",
+    "note": "",
+    "idx": 416
+  },
+  {
+    "lesson": 8,
+    "word": "운동장",
+    "explain": "运动场",
+    "pos": "名",
+    "note": "",
+    "idx": 417
+  },
+  {
+    "lesson": 8,
+    "word": "번",
+    "explain": "号",
+    "pos": "依名",
+    "note": "",
+    "idx": 418
+  },
+  {
+    "lesson": 9,
+    "word": "가족",
+    "explain": "家人",
+    "pos": "名",
+    "note": "",
+    "idx": 419
+  },
+  {
+    "lesson": 9,
+    "word": "할머니",
+    "explain": "奶奶",
+    "pos": "名",
+    "note": "",
+    "idx": 420
+  },
+  {
+    "lesson": 9,
+    "word": "할아버지",
+    "explain": "爷爷",
+    "pos": "名",
+    "note": "",
+    "idx": 421
+  },
+  {
+    "lesson": 9,
+    "word": "어머니",
+    "explain": "妈妈",
+    "pos": "名",
+    "note": "",
+    "idx": 422
+  },
+  {
+    "lesson": 9,
+    "word": "아버지",
+    "explain": "爸爸",
+    "pos": "名",
+    "note": "",
+    "idx": 423
+  },
+  {
+    "lesson": 9,
+    "word": "언니",
+    "explain": "姐",
+    "pos": "名",
+    "note": "",
+    "idx": 424
+  },
+  {
+    "lesson": 9,
+    "word": "오빠",
+    "explain": "哥",
+    "pos": "名",
+    "note": "",
+    "idx": 425
+  },
+  {
+    "lesson": 9,
+    "word": "누나",
+    "explain": "姐",
+    "pos": "名",
+    "note": "",
+    "idx": 426
+  },
+  {
+    "lesson": 9,
+    "word": "형",
+    "explain": "哥",
+    "pos": "名",
+    "note": "",
+    "idx": 427
+  },
+  {
+    "lesson": 9,
+    "word": "여동생",
+    "explain": "妹妹",
+    "pos": "名",
+    "note": "",
+    "idx": 428
+  },
+  {
+    "lesson": 9,
+    "word": "남동생",
+    "explain": "弟弟",
+    "pos": "名",
+    "note": "",
+    "idx": 429
+  },
+  {
+    "lesson": 9,
+    "word": "아내",
+    "explain": "妻子",
+    "pos": "名",
+    "note": "",
+    "idx": 430
+  },
+  {
+    "lesson": 9,
+    "word": "남편",
+    "explain": "丈夫",
+    "pos": "名",
+    "note": "",
+    "idx": 431
+  },
+  {
+    "lesson": 9,
+    "word": "아들",
+    "explain": "儿子",
+    "pos": "名",
+    "note": "",
+    "idx": 432
+  },
+  {
+    "lesson": 9,
+    "word": "딸",
+    "explain": "女儿",
+    "pos": "名",
+    "note": "",
+    "idx": 433
+  },
+  {
+    "lesson": 9,
+    "word": "열",
+    "explain": "十",
+    "pos": "数",
+    "note": "",
+    "idx": 434
+  },
+  {
+    "lesson": 9,
+    "word": "스물",
+    "explain": "二十",
+    "pos": "数",
+    "note": "",
+    "idx": 435
+  },
+  {
+    "lesson": 9,
+    "word": "서른",
+    "explain": "三十",
+    "pos": "数",
+    "note": "",
+    "idx": 436
+  },
+  {
+    "lesson": 9,
+    "word": "마흔",
+    "explain": "四十",
+    "pos": "数",
+    "note": "",
+    "idx": 437
+  },
+  {
+    "lesson": 9,
+    "word": "쉰",
+    "explain": "五十",
+    "pos": "数",
+    "note": "",
+    "idx": 438
+  },
+  {
+    "lesson": 9,
+    "word": "예순",
+    "explain": "六十",
+    "pos": "数",
+    "note": "",
+    "idx": 439
+  },
+  {
+    "lesson": 9,
+    "word": "일흔",
+    "explain": "七十",
+    "pos": "数",
+    "note": "",
+    "idx": 440
+  },
+  {
+    "lesson": 9,
+    "word": "여든",
+    "explain": "八十",
+    "pos": "数",
+    "note": "",
+    "idx": 441
+  },
+  {
+    "lesson": 9,
+    "word": "아흔",
+    "explain": "九十",
+    "pos": "数",
+    "note": "",
+    "idx": 442
+  },
+  {
+    "lesson": 9,
+    "word": "백",
+    "explain": "一百",
+    "pos": "数",
+    "note": "",
+    "idx": 443
+  },
+  {
+    "lesson": 9,
+    "word": "살",
+    "explain": "岁",
+    "pos": "依名",
+    "note": "",
+    "idx": 444
+  },
+  {
+    "lesson": 9,
+    "word": "나이",
+    "explain": "年龄",
+    "pos": "名",
+    "note": "",
+    "idx": 445
+  },
+  {
+    "lesson": 9,
+    "word": "연세",
+    "explain": "贵庚",
+    "pos": "名",
+    "note": "",
+    "idx": 446
+  },
+  {
+    "lesson": 9,
+    "word": "먹다",
+    "explain": "吃",
+    "pos": "动",
+    "note": "",
+    "idx": 447
+  },
+  {
+    "lesson": 9,
+    "word": "마시다",
+    "explain": "喝",
+    "pos": "动",
+    "note": "",
+    "idx": 448
+  },
+  {
+    "lesson": 9,
+    "word": "드시다",
+    "explain": "吃，喝（敬语）",
+    "pos": "动",
+    "note": "",
+    "idx": 449
+  },
+  {
+    "lesson": 9,
+    "word": "사람",
+    "explain": "-人",
+    "pos": "依名",
+    "note": "",
+    "idx": 450
+  },
+  {
+    "lesson": 9,
+    "word": "명",
+    "explain": "-名",
+    "pos": "依名",
+    "note": "",
+    "idx": 451
+  },
+  {
+    "lesson": 9,
+    "word": "분",
+    "explain": "-位",
+    "pos": "依名",
+    "note": "",
+    "idx": 452
+  },
+  {
+    "lesson": 9,
+    "word": "이름",
+    "explain": "名字",
+    "pos": "名",
+    "note": "",
+    "idx": 453
+  },
+  {
+    "lesson": 9,
+    "word": "성함",
+    "explain": "姓名",
+    "pos": "名",
+    "note": "",
+    "idx": 454
+  },
+  {
+    "lesson": 9,
+    "word": "있다",
+    "explain": "在",
+    "pos": "动",
+    "note": "",
+    "idx": 455
+  },
+  {
+    "lesson": 9,
+    "word": "계시다",
+    "explain": "在（敬语）",
+    "pos": "动",
+    "note": "",
+    "idx": 456
+  },
+  {
+    "lesson": 9,
+    "word": "자다",
+    "explain": "睡觉",
+    "pos": "动",
+    "note": "",
+    "idx": 457
+  },
+  {
+    "lesson": 9,
+    "word": "주무시다",
+    "explain": "睡觉（敬语）",
+    "pos": "动",
+    "note": "",
+    "idx": 458
+  },
+  {
+    "lesson": 9,
+    "word": "집",
+    "explain": "家",
+    "pos": "名",
+    "note": "",
+    "idx": 459
+  },
+  {
+    "lesson": 9,
+    "word": "댁",
+    "explain": "贵府",
+    "pos": "名",
+    "note": "",
+    "idx": 460
+  },
+  {
+    "lesson": 9,
+    "word": "운전",
+    "explain": "驾驶",
+    "pos": "名",
+    "note": "",
+    "idx": 461
+  },
+  {
+    "lesson": 9,
+    "word": "수학",
+    "explain": "数学",
+    "pos": "名",
+    "note": "",
+    "idx": 462
+  },
+  {
+    "lesson": 9,
+    "word": "수영",
+    "explain": "游泳",
+    "pos": "名",
+    "note": "",
+    "idx": 463
+  },
+  {
+    "lesson": 9,
+    "word": "인사하다",
+    "explain": "问好，打招呼",
+    "pos": "动",
+    "note": "",
+    "idx": 464
+  },
+  {
+    "lesson": 9,
+    "word": "이쪽",
+    "explain": "这，这边",
+    "pos": "代",
+    "note": "",
+    "idx": 465
+  },
+  {
+    "lesson": 9,
+    "word": "한테서",
+    "explain": "从",
+    "pos": "助",
+    "note": "",
+    "idx": 466
+  },
+  {
+    "lesson": 9,
+    "word": "뭘요",
+    "explain": "哪里。",
+    "pos": "句",
+    "note": "",
+    "idx": 467
+  },
+  {
+    "lesson": 9,
+    "word": "동아리",
+    "explain": "兴趣小组，社团",
+    "pos": "名",
+    "note": "",
+    "idx": 468
+  },
+  {
+    "lesson": 9,
+    "word": "같은 과",
+    "explain": "同系，同专业",
+    "pos": "词组",
+    "note": "",
+    "idx": 469
+  },
+  {
+    "lesson": 9,
+    "word": "청소",
+    "explain": "清扫",
+    "pos": "名",
+    "note": "",
+    "idx": 470
+  },
+  {
+    "lesson": 9,
+    "word": "반갑다",
+    "explain": "高兴，喜悦",
+    "pos": "形",
+    "note": "ㅂ的不规则变化",
+    "idx": 471
+  },
+  {
+    "lesson": 9,
+    "word": "역사",
+    "explain": "历史",
+    "pos": "名",
+    "note": "",
+    "idx": 472
+  },
+  {
+    "lesson": 9,
+    "word": "이분",
+    "explain": "这位",
+    "pos": "代",
+    "note": "",
+    "idx": 473
+  },
+  {
+    "lesson": 9,
+    "word": "우리",
+    "explain": "我们",
+    "pos": "代",
+    "note": "",
+    "idx": 474
+  },
+  {
+    "lesson": 9,
+    "word": "주부",
+    "explain": "主妇",
+    "pos": "名",
+    "note": "",
+    "idx": 475
+  },
+  {
+    "lesson": 9,
+    "word": "회사원",
+    "explain": "公司职员",
+    "pos": "名",
+    "note": "",
+    "idx": 476
+  },
+  {
+    "lesson": 9,
+    "word": "다니다",
+    "explain": "上班，上学",
+    "pos": "动",
+    "note": "",
+    "idx": 477
+  },
+  {
+    "lesson": 9,
+    "word": "찬절하다",
+    "explain": "亲切",
+    "pos": "形",
+    "note": "",
+    "idx": 478
+  },
+  {
+    "lesson": 9,
+    "word": "사장님",
+    "explain": "社长",
+    "pos": "名",
+    "note": "",
+    "idx": 479
+  },
+  {
+    "lesson": 9,
+    "word": "전에",
+    "explain": "之前",
+    "pos": "名",
+    "note": "",
+    "idx": 480
+  },
+  {
+    "lesson": 9,
+    "word": "멋있다",
+    "explain": "帅",
+    "pos": "形",
+    "note": "",
+    "idx": 481
+  },
+  {
+    "lesson": 9,
+    "word": "부모님",
+    "explain": "父母",
+    "pos": "名",
+    "note": "",
+    "idx": 482
+  },
+  {
+    "lesson": 9,
+    "word": "미인",
+    "explain": "美人",
+    "pos": "名",
+    "note": "",
+    "idx": 483
+  },
+  {
+    "lesson": 9,
+    "word": "대학교",
+    "explain": "大学",
+    "pos": "名",
+    "note": "",
+    "idx": 484
+  },
+  {
+    "lesson": 9,
+    "word": "신문사",
+    "explain": "报社",
+    "pos": "名",
+    "note": "",
+    "idx": 485
+  },
+  {
+    "lesson": 9,
+    "word": "중학교",
+    "explain": "中学",
+    "pos": "名",
+    "note": "",
+    "idx": 486
+  },
+  {
+    "lesson": 9,
+    "word": "가족",
+    "explain": "家，家族",
+    "pos": "名",
+    "note": "",
+    "idx": 487
+  },
+  {
+    "lesson": 9,
+    "word": "되다",
+    "explain": "成为，变成",
+    "pos": "动",
+    "note": "",
+    "idx": 488
+  },
+  {
+    "lesson": 9,
+    "word": "강아지",
+    "explain": "小狗",
+    "pos": "名",
+    "note": "",
+    "idx": 489
+  },
+  {
+    "lesson": 9,
+    "word": "가족사진",
+    "explain": "全家福",
+    "pos": "名",
+    "note": "",
+    "idx": 490
+  },
+  {
+    "lesson": 9,
+    "word": "웃다",
+    "explain": "笑",
+    "pos": "动",
+    "note": "",
+    "idx": 491
+  },
+  {
+    "lesson": 9,
+    "word": "항상",
+    "explain": "经常",
+    "pos": "副",
+    "note": "",
+    "idx": 492
+  },
+  {
+    "lesson": 9,
+    "word": "들",
+    "explain": "表“复数”",
+    "pos": "助",
+    "note": "",
+    "idx": 493
+  },
+  {
+    "lesson": 9,
+    "word": "그래서",
+    "explain": "所以",
+    "pos": "副",
+    "note": "",
+    "idx": 494
+  },
+  {
+    "lesson": 9,
+    "word": "그리고",
+    "explain": "还有",
+    "pos": "副",
+    "note": "",
+    "idx": 495
+  },
+  {
+    "lesson": 9,
+    "word": "동아리",
+    "explain": "社团",
+    "pos": "名",
+    "note": "",
+    "idx": 496
+  },
+  {
+    "lesson": 9,
+    "word": "정말",
+    "explain": "真的",
+    "pos": "副",
+    "note": "",
+    "idx": 497
+  },
+  {
+    "lesson": 9,
+    "word": "취미",
+    "explain": "兴趣爱好",
+    "pos": "名",
+    "note": "",
+    "idx": 498
+  },
+  {
+    "lesson": 10,
+    "word": "새벽",
+    "explain": "凌晨",
+    "pos": "名",
+    "note": "",
+    "idx": 499
+  },
+  {
+    "lesson": 10,
+    "word": "아침",
+    "explain": "早上；早餐",
+    "pos": "名",
+    "note": "",
+    "idx": 500
+  },
+  {
+    "lesson": 10,
+    "word": "낮",
+    "explain": "白天",
+    "pos": "名",
+    "note": "",
+    "idx": 501
+  },
+  {
+    "lesson": 10,
+    "word": "점심",
+    "explain": "午餐",
+    "pos": "名",
+    "note": "",
+    "idx": 502
+  },
+  {
+    "lesson": 10,
+    "word": "저녁",
+    "explain": "傍晚；晚餐",
+    "pos": "名",
+    "note": "",
+    "idx": 503
+  },
+  {
+    "lesson": 10,
+    "word": "밤",
+    "explain": "晚上",
+    "pos": "名",
+    "note": "",
+    "idx": 504
+  },
+  {
+    "lesson": 10,
+    "word": "오잔",
+    "explain": "上午",
+    "pos": "名",
+    "note": "",
+    "idx": 505
+  },
+  {
+    "lesson": 10,
+    "word": "오후",
+    "explain": "下午",
+    "pos": "名",
+    "note": "",
+    "idx": 506
+  },
+  {
+    "lesson": 10,
+    "word": "버스를 기다리다",
+    "explain": "等公交车",
+    "pos": "词组",
+    "note": "",
+    "idx": 507
+  },
+  {
+    "lesson": 10,
+    "word": "버스를 타다",
+    "explain": "坐公交车",
+    "pos": "词组",
+    "note": "",
+    "idx": 508
+  },
+  {
+    "lesson": 10,
+    "word": "빨래하다",
+    "explain": "洗衣服",
+    "pos": "动",
+    "note": "",
+    "idx": 509
+  },
+  {
+    "lesson": 10,
+    "word": "샤워하다",
+    "explain": "洗澡",
+    "pos": "动",
+    "note": "",
+    "idx": 510
+  },
+  {
+    "lesson": 10,
+    "word": "세수하다",
+    "explain": "洗漱",
+    "pos": "动",
+    "note": "",
+    "idx": 511
+  },
+  {
+    "lesson": 10,
+    "word": "요리하다",
+    "explain": "做饭",
+    "pos": "动",
+    "note": "",
+    "idx": 512
+  },
+  {
+    "lesson": 10,
+    "word": "일어하다",
+    "explain": "起来，起床",
+    "pos": "动",
+    "note": "",
+    "idx": 513
+  },
+  {
+    "lesson": 10,
+    "word": "전화하다",
+    "explain": "打电话",
+    "pos": "动",
+    "note": "",
+    "idx": 514
+  },
+  {
+    "lesson": 10,
+    "word": "청소하다",
+    "explain": "打扫卫生",
+    "pos": "动",
+    "note": "",
+    "idx": 515
+  },
+  {
+    "lesson": 10,
+    "word": "컴퓨터를 하다",
+    "explain": "用电脑",
+    "pos": "词组",
+    "note": "",
+    "idx": 516
+  },
+  {
+    "lesson": 10,
+    "word": "회의하다",
+    "explain": "开会",
+    "pos": "动",
+    "note": "",
+    "idx": 517
+  },
+  {
+    "lesson": 10,
+    "word": "시",
+    "explain": "点、时",
+    "pos": "依名",
+    "note": "",
+    "idx": 518
+  },
+  {
+    "lesson": 10,
+    "word": "분",
+    "explain": "分",
+    "pos": "依名",
+    "note": "",
+    "idx": 519
+  },
+  {
+    "lesson": 10,
+    "word": "반",
+    "explain": "半",
+    "pos": "名",
+    "note": "",
+    "idx": 520
+  },
+  {
+    "lesson": 10,
+    "word": "쯤",
+    "explain": "左右，大概",
+    "pos": "后缀",
+    "note": "",
+    "idx": 521
+  },
+  {
+    "lesson": 10,
+    "word": "보통",
+    "explain": "普通，一般，通常",
+    "pos": "名",
+    "note": "",
+    "idx": 522
+  },
+  {
+    "lesson": 10,
+    "word": "수업(을)하다",
+    "explain": "上课",
+    "pos": "词组",
+    "note": "",
+    "idx": 523
+  },
+  {
+    "lesson": 10,
+    "word": "시험믈 보다",
+    "explain": "考试",
+    "pos": "词组",
+    "note": "",
+    "idx": 524
+  },
+  {
+    "lesson": 10,
+    "word": "내리다",
+    "explain": "下，落",
+    "pos": "动",
+    "note": "",
+    "idx": 525
+  },
+  {
+    "lesson": 10,
+    "word": "그리다",
+    "explain": "画",
+    "pos": "动",
+    "note": "",
+    "idx": 526
+  },
+  {
+    "lesson": 10,
+    "word": "조금 후",
+    "explain": "一会儿",
+    "pos": "名",
+    "note": "",
+    "idx": 527
+  },
+  {
+    "lesson": 10,
+    "word": "이번",
+    "explain": "这次，这回",
+    "pos": "名",
+    "note": "",
+    "idx": 528
+  },
+  {
+    "lesson": 10,
+    "word": "방학",
+    "explain": "假期",
+    "pos": "名",
+    "note": "",
+    "idx": 529
+  },
+  {
+    "lesson": 10,
+    "word": "주날 잘 보내다",
+    "explain": "度过愉快的周末",
+    "pos": "句",
+    "note": "",
+    "idx": 530
+  },
+  {
+    "lesson": 10,
+    "word": "데이트하다",
+    "explain": "约会",
+    "pos": "动",
+    "note": "",
+    "idx": 531
+  },
+  {
+    "lesson": 10,
+    "word": "당남",
+    "explain": "江南",
+    "pos": "名",
+    "note": "",
+    "idx": 532
+  },
+  {
+    "lesson": 10,
+    "word": "여의도",
+    "explain": "汝矣岛",
+    "pos": "名",
+    "note": "",
+    "idx": 533
+  },
+  {
+    "lesson": 10,
+    "word": "박물관",
+    "explain": "博物馆",
+    "pos": "名",
+    "note": "",
+    "idx": 534
+  },
+  {
+    "lesson": 10,
+    "word": "연습",
+    "explain": "练习",
+    "pos": "名",
+    "note": "",
+    "idx": 535
+  },
+  {
+    "lesson": 10,
+    "word": "인천",
+    "explain": "仁川",
+    "pos": "名",
+    "note": "",
+    "idx": 536
+  },
+  {
+    "lesson": 11,
+    "word": "머리",
+    "explain": "头",
+    "pos": "名",
+    "note": "",
+    "idx": 537
+  },
+  {
+    "lesson": 11,
+    "word": "목",
+    "explain": "脖子，嗓子",
+    "pos": "名",
+    "note": "",
+    "idx": 538
+  },
+  {
+    "lesson": 11,
+    "word": "어깨",
+    "explain": "肩膀",
+    "pos": "名",
+    "note": "",
+    "idx": 539
+  },
+  {
+    "lesson": 11,
+    "word": "팔",
+    "explain": "胳膊",
+    "pos": "名",
+    "note": "",
+    "idx": 540
+  },
+  {
+    "lesson": 11,
+    "word": "손",
+    "explain": "手",
+    "pos": "名",
+    "note": "",
+    "idx": 541
+  },
+  {
+    "lesson": 11,
+    "word": "가슴",
+    "explain": "胸",
+    "pos": "名",
+    "note": "",
+    "idx": 542
+  },
+  {
+    "lesson": 11,
+    "word": "배",
+    "explain": "肚子",
+    "pos": "名",
+    "note": "",
+    "idx": 543
+  },
+  {
+    "lesson": 11,
+    "word": "허리",
+    "explain": "腰",
+    "pos": "名",
+    "note": "",
+    "idx": 544
+  },
+  {
+    "lesson": 11,
+    "word": "다리",
+    "explain": "腿",
+    "pos": "名",
+    "note": "",
+    "idx": 545
+  },
+  {
+    "lesson": 11,
+    "word": "무릎",
+    "explain": "膝盖",
+    "pos": "名",
+    "note": "",
+    "idx": 546
+  },
+  {
+    "lesson": 11,
+    "word": "발",
+    "explain": "脚",
+    "pos": "名",
+    "note": "",
+    "idx": 547
+  },
+  {
+    "lesson": 11,
+    "word": "몸",
+    "explain": "身体",
+    "pos": "名",
+    "note": "",
+    "idx": 548
+  },
+  {
+    "lesson": 11,
+    "word": "얼굴",
+    "explain": "脸",
+    "pos": "名",
+    "note": "",
+    "idx": 549
+  },
+  {
+    "lesson": 11,
+    "word": "눈",
+    "explain": "眼睛",
+    "pos": "名",
+    "note": "",
+    "idx": 550
+  },
+  {
+    "lesson": 11,
+    "word": "코",
+    "explain": "鼻子",
+    "pos": "名",
+    "note": "",
+    "idx": 551
+  },
+  {
+    "lesson": 11,
+    "word": "입",
+    "explain": "嘴",
+    "pos": "名",
+    "note": "",
+    "idx": 552
+  },
+  {
+    "lesson": 11,
+    "word": "귀",
+    "explain": "耳朵",
+    "pos": "名",
+    "note": "",
+    "idx": 553
+  },
+  {
+    "lesson": 11,
+    "word": "기침을 하다",
+    "explain": "咳嗽",
+    "pos": "词组",
+    "note": "",
+    "idx": 554
+  },
+  {
+    "lesson": 11,
+    "word": "목이 아프다",
+    "explain": "嗓子疼",
+    "pos": "词组",
+    "note": "",
+    "idx": 555
+  },
+  {
+    "lesson": 11,
+    "word": "열이 나다",
+    "explain": "发烧",
+    "pos": "词组",
+    "note": "",
+    "idx": 556
+  },
+  {
+    "lesson": 11,
+    "word": "콧물이 나다",
+    "explain": "流鼻涕",
+    "pos": "词组",
+    "note": "",
+    "idx": 557
+  },
+  {
+    "lesson": 11,
+    "word": "열",
+    "explain": "热",
+    "pos": "名",
+    "note": "",
+    "idx": 558
+  },
+  {
+    "lesson": 11,
+    "word": "나다",
+    "explain": "流出，发出，出现",
+    "pos": "动",
+    "note": "",
+    "idx": 559
+  },
+  {
+    "lesson": 11,
+    "word": "아프다",
+    "explain": "疼",
+    "pos": "形",
+    "note": "",
+    "idx": 560
+  },
+  {
+    "lesson": 11,
+    "word": "바쁘다",
+    "explain": "忙",
+    "pos": "形",
+    "note": "",
+    "idx": 561
+  },
+  {
+    "lesson": 11,
+    "word": "배고프다",
+    "explain": "饿",
+    "pos": "形",
+    "note": "",
+    "idx": 562
+  },
+  {
+    "lesson": 11,
+    "word": "예쁘다",
+    "explain": "漂亮",
+    "pos": "形",
+    "note": "",
+    "idx": 563
+  },
+  {
+    "lesson": 11,
+    "word": "편지",
+    "explain": "信",
+    "pos": "名",
+    "note": "",
+    "idx": 564
+  },
+  {
+    "lesson": 11,
+    "word": "쓰다",
+    "explain": "写",
+    "pos": "动",
+    "note": "",
+    "idx": 565
+  },
+  {
+    "lesson": 11,
+    "word": "나쁘다",
+    "explain": "坏，不好",
+    "pos": "形",
+    "note": "",
+    "idx": 566
+  },
+  {
+    "lesson": 11,
+    "word": "끄다",
+    "explain": "关",
+    "pos": "动",
+    "note": "",
+    "idx": 567
+  },
+  {
+    "lesson": 11,
+    "word": "담배를 피우다",
+    "explain": "抽烟",
+    "pos": "词组",
+    "note": "",
+    "idx": 568
+  },
+  {
+    "lesson": 11,
+    "word": "알다",
+    "explain": "知道",
+    "pos": "动",
+    "note": "",
+    "idx": 569
+  },
+  {
+    "lesson": 11,
+    "word": "늦다",
+    "explain": "晚，迟",
+    "pos": "形",
+    "note": "",
+    "idx": 570
+  },
+  {
+    "lesson": 11,
+    "word": "말다",
+    "explain": "停止，不要",
+    "pos": "动",
+    "note": "",
+    "idx": 571
+  },
+  {
+    "lesson": 11,
+    "word": "크다",
+    "explain": "大的",
+    "pos": "形",
+    "note": "",
+    "idx": 572
+  },
+  {
+    "lesson": 11,
+    "word": "소리",
+    "explain": "声音",
+    "pos": "名",
+    "note": "",
+    "idx": 573
+  },
+  {
+    "lesson": 11,
+    "word": "이야기하다",
+    "explain": "说话，讲故事",
+    "pos": "词组",
+    "note": "",
+    "idx": 574
+  },
+  {
+    "lesson": 11,
+    "word": "음식",
+    "explain": "食物",
+    "pos": "名",
+    "note": "",
+    "idx": 575
+  },
+  {
+    "lesson": 11,
+    "word": "가져오다",
+    "explain": "带来（物品）",
+    "pos": "动",
+    "note": "",
+    "idx": 576
+  },
+  {
+    "lesson": 11,
+    "word": "데리다",
+    "explain": "带来（人或动物）",
+    "pos": "动",
+    "note": "",
+    "idx": 577
+  },
+  {
+    "lesson": 11,
+    "word": "들어오다",
+    "explain": "进来",
+    "pos": "动",
+    "note": "",
+    "idx": 578
+  },
+  {
+    "lesson": 11,
+    "word": "감기에 걸리다",
+    "explain": "得感冒",
+    "pos": "词组",
+    "note": "",
+    "idx": 579
+  },
+  {
+    "lesson": 11,
+    "word": "유행이다",
+    "explain": "流行",
+    "pos": "形",
+    "note": "",
+    "idx": 580
+  },
+  {
+    "lesson": 11,
+    "word": "약",
+    "explain": "药",
+    "pos": "名",
+    "note": "",
+    "idx": 581
+  },
+  {
+    "lesson": 11,
+    "word": "푹 쉬다",
+    "explain": "好好休息，充分休息",
+    "pos": "词组",
+    "note": "",
+    "idx": 582
+  },
+  {
+    "lesson": 11,
+    "word": "말을 하다",
+    "explain": "说话",
+    "pos": "词组",
+    "note": "",
+    "idx": 583
+  },
+  {
+    "lesson": 11,
+    "word": "오랫동안",
+    "explain": "很长时间",
+    "pos": "副",
+    "note": "",
+    "idx": 584
+  },
+  {
+    "lesson": 11,
+    "word": "샤워하다",
+    "explain": "洗澡",
+    "pos": "动",
+    "note": "",
+    "idx": 585
+  },
+  {
+    "lesson": 11,
+    "word": "술",
+    "explain": "酒",
+    "pos": "名",
+    "note": "",
+    "idx": 586
+  },
+  {
+    "lesson": 11,
+    "word": "알다",
+    "explain": "知道",
+    "pos": "动",
+    "note": "",
+    "idx": 587
+  },
+  {
+    "lesson": 11,
+    "word": "걸리다",
+    "explain": "患",
+    "pos": "动",
+    "note": "",
+    "idx": 588
+  },
+  {
+    "lesson": 11,
+    "word": "어떻게",
+    "explain": "怎么",
+    "pos": "副",
+    "note": "",
+    "idx": 589
+  },
+  {
+    "lesson": 11,
+    "word": "지나다",
+    "explain": "过去",
+    "pos": "动",
+    "note": "",
+    "idx": 590
+  },
+  {
+    "lesson": 11,
+    "word": "지난주",
+    "explain": "上周",
+    "pos": "名",
+    "note": "",
+    "idx": 591
+  },
+  {
+    "lesson": 11,
+    "word": "이번 주",
+    "explain": "这周",
+    "pos": "名",
+    "note": "",
+    "idx": 592
+  },
+  {
+    "lesson": 11,
+    "word": "다음 주",
+    "explain": "下周",
+    "pos": "名",
+    "note": "",
+    "idx": 593
+  },
+  {
+    "lesson": 11,
+    "word": "요즘",
+    "explain": "最近",
+    "pos": "名",
+    "note": "",
+    "idx": 594
+  },
+  {
+    "lesson": 11,
+    "word": "씻다",
+    "explain": "洗",
+    "pos": "动",
+    "note": "",
+    "idx": 595
+  },
+  {
+    "lesson": 11,
+    "word": "따뜻한 물",
+    "explain": "温水",
+    "pos": "词组",
+    "note": "",
+    "idx": 596
+  },
+  {
+    "lesson": 11,
+    "word": "찬 물",
+    "explain": "冰水",
+    "pos": "词组",
+    "note": "",
+    "idx": 597
+  },
+  {
+    "lesson": 11,
+    "word": "되다",
+    "explain": "可以，行得通",
+    "pos": "动",
+    "note": "",
+    "idx": 598
+  },
+  {
+    "lesson": 11,
+    "word": "손님",
+    "explain": "客人",
+    "pos": "名",
+    "note": "",
+    "idx": 599
+  },
+  {
+    "lesson": 11,
+    "word": "리포트",
+    "explain": "报告",
+    "pos": "名",
+    "note": "",
+    "idx": 600
+  },
+  {
+    "lesson": 11,
+    "word": "내년",
+    "explain": "明年",
+    "pos": "名",
+    "note": "",
+    "idx": 601
+  },
+  {
+    "lesson": 11,
+    "word": "결혼하다",
+    "explain": "结婚",
+    "pos": "动",
+    "note": "",
+    "idx": 602
+  },
+  {
+    "lesson": 11,
+    "word": "괜찮아",
+    "explain": "没关系，不错",
+    "pos": "形",
+    "note": "",
+    "idx": 603
+  },
+  {
+    "lesson": 11,
+    "word": "다행이다",
+    "explain": "万幸",
+    "pos": "词组",
+    "note": "",
+    "idx": 604
+  },
+  {
+    "lesson": 11,
+    "word": "너무",
+    "explain": "非常",
+    "pos": "副",
+    "note": "",
+    "idx": 605
+  },
+  {
+    "lesson": 11,
+    "word": "무리하다",
+    "explain": "勉强，为难",
+    "pos": "动",
+    "note": "",
+    "idx": 606
+  },
+  {
+    "lesson": 11,
+    "word": "생신",
+    "explain": "生辰（敬）",
+    "pos": "名",
+    "note": "",
+    "idx": 607
+  },
+  {
+    "lesson": 11,
+    "word": "제출하다",
+    "explain": "提交",
+    "pos": "动",
+    "note": "",
+    "idx": 608
+  },
+  {
+    "lesson": 11,
+    "word": "알람",
+    "explain": "闹钟",
+    "pos": "名",
+    "note": "",
+    "idx": 609
+  },
+  {
+    "lesson": 11,
+    "word": "걱정",
+    "explain": "烦恼",
+    "pos": "名",
+    "note": "",
+    "idx": 610
+  },
+  {
+    "lesson": 11,
+    "word": "발음",
+    "explain": "发音",
+    "pos": "名",
+    "note": "",
+    "idx": 611
+  },
+  {
+    "lesson": 11,
+    "word": "PC방",
+    "explain": "网吧",
+    "pos": "名",
+    "note": "",
+    "idx": 612
+  },
+  {
+    "lesson": 11,
+    "word": "싸우다",
+    "explain": "吵架，打架",
+    "pos": "动",
+    "note": "",
+    "idx": 613
+  },
+  {
+    "lesson": 11,
+    "word": "혼자",
+    "explain": "独自",
+    "pos": "副",
+    "note": "",
+    "idx": 614
+  },
+  {
+    "lesson": 11,
+    "word": "심심하다",
+    "explain": "无聊",
+    "pos": "形",
+    "note": "",
+    "idx": 615
+  }
+];
+// ===WORDS_DATA_END===
+</script>
+<script>
+(function () {
+  "use strict";
+
+  // 全局错误捕获：任何 JS 错误都显示到页面上，方便诊断
+  window.onerror = function (msg, src, line, col) {
+    try {
+      var el = document.getElementById("errorBox");
+      if (el) {
+        el.style.display = "block";
+        el.textContent = "⚠️ 出错了：" + msg + "\n位置：第 " + line + " 行";
+      }
+    } catch (e) {}
+    return false;
+  };
+
+  // ====== 单词数据按课分组 ======
+  var LESSONS = {};
+  var LESSON_NUMS = [];
+  (window.WORDS || []).forEach(function (w) {
+    if (!LESSONS[w.lesson]) { LESSONS[w.lesson] = []; LESSON_NUMS.push(w.lesson); }
+    LESSONS[w.lesson].push(w);
+  });
+  LESSON_NUMS.sort(function (a, b) { return a - b; });
+
+  // ====== 进度存储 ======
+  var STORE_KEY = "hangeul_progress_v1";
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function saveProgress(p) {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(p)); } catch (e) {}
+  }
+  var progress = loadProgress();
+  function recordResult(word, ok) {
+    if (!progress[word]) progress[word] = { seen: 0, correct: 0, wrong: 0 };
+    progress[word].seen++;
+    if (ok) progress[word].correct++; else progress[word].wrong++;
+    saveProgress(progress);
+  }
+
+  // ====== TTS ======
+  var gapMs = 1500; // 朗读间隔（毫秒），可在听写设置里调整
+  var ttsVoice = null;
+  var koVoices = [];
+  function pickVoice() {
+    try {
+      var v = speechSynthesis.getVoices();
+      var voices = (v && v.length) ? v : [];
+      koVoices = voices.filter(function (x) {
+        return x && (x.lang || "").toLowerCase().indexOf("ko") === 0;
+      });
+      // 优先选韩语，且优先「韩国」口音
+      ttsVoice = koVoices.filter(function (x) { return (x.lang || "").indexOf("ko-KR") === 0; })[0]
+        || koVoices[0]
+        || null;
+    } catch (e) {
+      koVoices = [];
+      ttsVoice = null;
+    }
+  }
+  // 语音引擎初始化绝不阻塞主流程：任何异常都吞掉
+  try {
+    if ('speechSynthesis' in window) {
+      pickVoice();
+      if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = pickVoice;
+      }
+    }
+  } catch (e) {}
+
+  // 检测韩语语音是否可用（用于首页提示）
+  function checkVoiceStatus() {
+    try {
+      if (!('speechSynthesis' in window)) {
+        return { ok: false, msg: "此浏览器不支持语音朗读" };
+      }
+      if (koVoices.length > 0) {
+        return { ok: true, msg: "韩语发音可用 ✓" };
+      }
+      return { ok: false, msg: "未检测到韩语语音 → 见下方说明" };
+    } catch (e) {
+      return { ok: false, msg: "语音功能不可用" };
+    }
+  }
+
+  // 预热：iOS 上必须在用户手势里触发一次，后续自动朗读才出声
+  function warmUpTTS() {
+    try {
+      if (!('speechSynthesis' in window)) return;
+      pickVoice();
+      var u = new SpeechSynthesisUtterance(" ");
+      u.volume = 0;
+      u.lang = "ko-KR";
+      if (ttsVoice) u.voice = ttsVoice;
+      speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+
+  function speakTTS(text, times, cb) {
+    try {
+      if (!('speechSynthesis' in window)) { if (cb) cb(); return; }
+    } catch (e) { if (cb) cb(); return; }
+    times = times || 1;
+    var i = 0;
+    function once() {
+      if (i >= times) { if (cb) cb(); return; }
+      i++;
+      try {
+        if (!ttsVoice) pickVoice(); // 语音列表可能刚加载完
+        try { speechSynthesis.cancel(); } catch (e) {}
+        var u = new SpeechSynthesisUtterance(text);
+        u.lang = "ko-KR";
+        if (ttsVoice) u.voice = ttsVoice;
+        u.rate = 0.9;
+        u.onend = function () { setTimeout(once, gapMs); };
+        u.onerror = function () { setTimeout(once, gapMs); };
+        speechSynthesis.speak(u);
+      } catch (e) {
+        // 语音失败不影响其他功能，直接跳到下一遍
+        setTimeout(once, gapMs);
+      }
+    }
+    once();
+  }
+
+  // 统一朗读入口：优先用预生成音频（audio/{idx}.m4a），失败则回退到浏览器 TTS
+  function speak(text, times, cb, idx) {
+    times = times || 1;
+    var hasIdx = (typeof idx === "number");
+    if (!hasIdx) {
+      speakTTS(text, times, cb);
+      return;
+    }
+    var i = 0;
+    function next() {
+      if (i >= times) { if (cb) cb(); return; }
+      i++;
+      var a = new Audio("audio/" + idx + ".m4a");
+      var finished = false;
+      function onDone() {
+        if (finished) return;
+        finished = true;
+        setTimeout(next, gapMs);
+      }
+      function onFail() {
+        if (finished) return;
+        finished = true;
+        // 音频加载/播放失败，回退到 TTS 播放剩余遍数
+        speakTTS(text, times - i + 1, cb);
+      }
+      a.onended = onDone;
+      a.onerror = onFail;
+      try {
+        var p = a.play();
+        if (p && p.catch) p.catch(onFail);
+      } catch (e) {
+        onFail();
+      }
+    }
+    next();
+  }
+
+  // ====== 状态 ======
+  var state = {
+    mode: "study",       // study / quiz
+    lesson: 1,
+    // quiz options
+    quizType: "sound",   // sound / meaning
+    order: "seq",        // seq / rev / rand
+    repeat: 1,
+    retryWrong: true,
+    // 运行时
+    queue: [],
+    idx: 0,
+    wrongSet: [],
+    quizHistory: [],  // 已答单词的索引栈，用于「上一个」回退
+    inputMode: "spell"   // spell / draw
+  };
+
+  // ====== UI 辅助 ======
+  function $(id) { return document.getElementById(id); }
+  function show(view) {
+    ["home", "studyView", "quizView", "summaryView"].forEach(function (v) {
+      $(v).classList.add("hidden");
+    });
+    $(view).classList.remove("hidden");
+  }
+
+  // ====== 首页：课程列表 ======
+  function buildLessonList() {
+    var html = "";
+    LESSON_NUMS.forEach(function (n) {
+      html += '<button data-lesson="' + n + '">第' + n + '课<span class="cnt">' + LESSONS[n].length + '词</span></button>';
+    });
+    $("lessonList").innerHTML = html;
+    // 默认选第1课
+    selectLesson(state.lesson);
+  }
+  function selectLesson(n) {
+    state.lesson = n;
+    var btns = $("lessonList").querySelectorAll("button");
+    btns.forEach(function (b) {
+      b.classList.toggle("active", parseInt(b.dataset.lesson, 10) === n);
+      if (b.classList.contains("active")) { b.style.background = "#2563eb"; b.style.borderColor = "#2563eb"; }
+      else { b.style.background = ""; b.style.borderColor = ""; }
+    });
+  }
+
+  // ====== 首页：进度显示 ======
+  function renderProgress() {
+    var total = 0, seen = 0, wrongWords = 0;
+    (window.WORDS || []).forEach(function (w) {
+      total++;
+      var p = progress[w.word];
+      if (p) { seen++; if (p.wrong > p.correct) wrongWords++; }
+    });
+    $("progressInfo").innerHTML =
+      "已练过 " + seen + " / " + total + " 个单词<br>" +
+      "易错词（错>对）：" + wrongWords + " 个";
+  }
+
+  function renderVoiceStatus() {
+    var st = checkVoiceStatus();
+    $("voiceInfo").textContent = st.msg;
+    $("voiceInfo").style.color = st.ok ? "#4ade80" : "#fbbf24";
+    $("voiceHelp").style.display = st.ok ? "none" : "";
+  }
+
+  // ====== 构建队列 ======
+  function buildQueue() {
+    var arr = LESSONS[state.lesson].slice();
+    if (state.order === "rev") arr.reverse();
+    else if (state.order === "rand") {
+      // Fisher-Yates
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+    }
+    return arr;
+  }
+
+  // ====== 学习模式 ======
+  function startStudy() {
+    state.queue = buildQueue();
+    state.idx = 0;
+    show("studyView");
+    renderStudy();
+  }
+  function renderStudy() {
+    if (state.idx >= state.queue.length) {
+      showSummary("study");
+      return;
+    }
+    var w = state.queue[state.idx];
+    $("studyProgress").textContent = (state.idx + 1) + " / " + state.queue.length + " — 第" + w.lesson + "课";
+    $("studyWord").textContent = w.word;
+    $("studyExplain").textContent = w.explain;
+    $("studyMeta").textContent = w.pos;
+    var noteEl = $("studyNote");
+    if (w.note) { noteEl.textContent = "📝 " + w.note; noteEl.classList.remove("hidden"); }
+    else { noteEl.classList.add("hidden"); }
+    // 自动读
+    speak(w.word, 1, null, w.idx);
+  }
+  $("studySpeakBtn").addEventListener("click", function () {
+    if (state.queue[state.idx]) speak(state.queue[state.idx].word, 1, null, state.queue[state.idx].idx);
+  });
+  $("studyPrev").addEventListener("click", function () {
+    if (state.idx > 0) { state.idx--; renderStudy(); }
+  });
+  $("studyNext").addEventListener("click", function () {
+    state.idx++; renderStudy();
+  });
+  var autoTimer = null;
+  $("studyAuto").addEventListener("click", function () {
+    if (autoTimer) {
+      clearInterval(autoTimer); autoTimer = null;
+      this.textContent = "自动朗读"; this.classList.add("primary");
+    } else {
+      this.textContent = "停止自动"; this.classList.remove("primary");
+      autoTimer = setInterval(function () {
+        state.idx++;
+        if (state.idx >= state.queue.length) {
+          clearInterval(autoTimer); autoTimer = null;
+          $("studyAuto").textContent = "自动朗读"; $("studyAuto").classList.add("primary");
+          showSummary("study");
+          return;
+        }
+        renderStudy();
+      }, 3500);
+    }
+  });
+  $("studyExit").addEventListener("click", function () {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; $("studyAuto").textContent = "自动朗读"; $("studyAuto").classList.add("primary"); }
+    goHome();
+  });
+
+  // ====== 听写模式 ======
+  var currentWord = null;
+  var answered = false;
+
+  function startQuiz() {
+    state.queue = buildQueue();
+    state.wrongSet = [];
+    state.quizHistory = [];
+    state.idx = 0;
+    show("quizView");
+    nextQuiz();
+  }
+
+  function nextQuiz() {
+    answered = false;
+    $("quizResult").classList.add("hidden");
+    $("quizNote").classList.add("hidden");
+    $("quizNext").classList.add("hidden");
+    $("quizSubmit").classList.remove("hidden");
+    $("quizPrev").disabled = (state.quizHistory.length === 0);
+    $("quizInput").value = "";
+    clearDraw();
+
+    if (state.idx >= state.queue.length) {
+      // 如果开了重练且本轮有错词，把错词重新入队
+      if (state.retryWrong && state.wrongSet.length > 0) {
+        state.queue = state.wrongSet.slice();
+        state.wrongSet = [];
+        state.idx = 0;
+      } else {
+        showSummary("quiz");
+        return;
+      }
+    }
+    currentWord = state.queue[state.idx];
+    $("quizProgress").textContent = (state.idx + 1) + " / " + state.queue.length + " — 第" + currentWord.lesson + "课";
+
+    // 出题
+    if (state.quizType === "sound") {
+      $("quizPrompt").innerHTML = '🔊 听发音并拼写<span style="display:block;font-size:1.4rem;color:#4ade80;margin-top:4px;">' + currentWord.explain + '</span>';
+      speak(currentWord.word, state.repeat, null, currentWord.idx);
+    } else {
+      $("quizPrompt").innerHTML = '请拼写下面单词的韩文：<span style="display:block;font-size:1.4rem;color:#4ade80;margin-top:4px;">' + currentWord.explain + '</span>';
+    }
+  }
+
+  function checkAnswer() {
+    if (answered) return;
+    answered = true;
+    var correct = currentWord.word;
+
+    // 手写模式：显示答案，让用户自己对照并标记对错
+    if (state.inputMode === "draw") {
+      var drawHtml = '<div style="margin-bottom:6px;">正确答案：</div>' +
+        wordInfoHtml(currentWord) +
+        '<div class="row" style="justify-content:center;margin-top:12px;">' +
+        '<button id="selfCorrect" class="primary">✓ 我写对了</button>' +
+        '<button id="selfWrong" class="danger">✗ 我写错了</button>' +
+        '</div>';
+      $("quizResult").innerHTML = drawHtml;
+      $("quizResult").classList.remove("hidden");
+      $("selfCorrect").addEventListener("click", function () { selfJudge(true); });
+      $("selfWrong").addEventListener("click", function () { selfJudge(false); });
+      speak(currentWord.word, 1, null, currentWord.idx);
+      $("quizSubmit").classList.add("hidden");
+      return;
+    }
+
+    // 拼写模式：自动判分
+    var userAns = $("quizInput").value.trim();
+    var isRight = (userAns === correct);
+    recordResult(correct, isRight);
+
+    var html = "";
+    if (isRight) {
+      html = '<div class="quiz-correct">✓ 正确！</div>' + wordInfoHtml(currentWord);
+    } else {
+      html = '<div class="quiz-wrong">✗ 错误</div>' +
+             (userAns ? '<div class="your-ko">你的答案：' + userAns + '</div>' : '') +
+             wordInfoHtml(currentWord);
+      state.wrongSet.push(currentWord);
+    }
+    $("quizResult").innerHTML = html;
+    $("quizResult").classList.remove("hidden");
+    speak(currentWord.word, 1, null, currentWord.idx);
+
+    state.quizHistory.push(state.idx);
+    $("quizPrev").disabled = false;
+    $("quizSubmit").classList.add("hidden");
+    $("quizNext").classList.remove("hidden");
+  }
+
+  // 手写模式：用户自评对错
+  function selfJudge(ok) {
+    recordResult(currentWord.word, ok);
+    if (!ok) state.wrongSet.push(currentWord);
+    var mark = ok
+      ? '<span class="quiz-correct">✓ 已标记：写对了</span>'
+      : '<span class="quiz-wrong">✗ 已标记：写错了</span>';
+    var btns = $("quizResult").querySelector(".row");
+    if (btns) btns.outerHTML = mark;
+    state.quizHistory.push(state.idx);
+    $("quizPrev").disabled = false;
+    $("quizNext").classList.remove("hidden");
+  }
+
+  // 生成单词完整信息（韩文、中文、词性、备注）
+  function wordInfoHtml(w) {
+    var h = '<div class="correct-ko">' + w.word + '</div>';
+    h += '<div style="color:#cdd;font-size:1.05rem;margin-top:4px;">' + w.explain + '</div>';
+    if (w.pos) {
+      h += '<div style="color:#9aa;font-size:0.85rem;margin-top:2px;">' + w.pos + '</div>';
+    }
+    if (w.note) {
+      h += '<div style="color:#fbbf24;font-size:0.82rem;margin-top:6px;background:rgba(251,191,36,0.08);border-radius:6px;padding:6px;">📝 ' + w.note + '</div>';
+    }
+    return h;
+  }
+
+  $("quizSubmit").addEventListener("click", checkAnswer);
+  $("quizInput").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); checkAnswer(); }
+  });
+  $("quizSpeakBtn").addEventListener("click", function () {
+    if (currentWord) speak(currentWord.word, state.repeat, null, currentWord.idx);
+  });
+  $("quizNext").addEventListener("click", function () {
+    state.idx++;
+    nextQuiz();
+  });
+  $("quizPrev").addEventListener("click", function () {
+    // 回到上一个已答的单词，重新出题
+    if (state.quizHistory.length > 0) {
+      state.idx = state.quizHistory.pop();
+      // 如果回退的是错词，从错词集合里去掉，避免重复计错
+      var w = state.queue[state.idx];
+      var wi = state.wrongSet.indexOf(w);
+      if (wi >= 0) state.wrongSet.splice(wi, 1);
+      nextQuiz();
+    }
+  });
+  $("quizExit").addEventListener("click", goHome);
+
+  // 输入方式切换
+  $("inputMode").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("inputMode").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      state.inputMode = b.dataset.im;
+      if (state.inputMode === "spell") {
+        $("quizSpellArea").classList.remove("hidden");
+        $("drawWrap").classList.remove("show");
+      } else {
+        $("quizSpellArea").classList.add("hidden");
+        $("drawWrap").classList.add("show");
+        initDraw();
+      }
+    });
+  });
+
+  // ====== 虚拟韩文键盘 ======
+  var KBD = {
+    consonant: [
+      "ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ",
+      "ㅋ","ㅌ","ㅍ","ㅎ","ㄲ","ㄸ","ㅃ","ㅆ","ㅉ"
+    ],
+    vowel: [
+      "ㅏ","ㅑ","ㅓ","ㅕ","ㅗ","ㅛ","ㅜ","ㅠ","ㅡ","ㅣ",
+      "ㅐ","ㅒ","ㅔ","ㅖ","ㅘ","ㅙ","ㅚ","ㅝ","ㅞ","ㅟ","ㅢ"
+    ],
+    complex: [
+      "ㄳ","ㄵ","ㄶ","ㄺ","ㄻ","ㄼ","ㄽ","ㄾ","ㄿ","ㅀ","ㅄ"
+    ]
+  };
+  var kbdTab = "consonant";
+  function renderKbd() {
+    var keys = KBD[kbdTab].slice();
+    keys.push("⌫"); // 退格
+    keys.push("空"); // 空格
+    var cols = kbdTab === "vowel" ? 7 : 7;
+    var html = "";
+    html += '<div style="display:grid;grid-template-columns:repeat(' + cols + ',1fr);gap:3px;">';
+    keys.forEach(function (k) {
+      var cls = (k === "⌫" || k === "空") ? 'special' : '';
+      html += '<button class="' + cls + '" data-key="' + k + '">' + k + '</button>';
+    });
+    html += '</div>';
+    $("kbdGrid").innerHTML = html;
+    $("kbdGrid").querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var k = b.dataset.key;
+        var inp = $("quizInput");
+        if (k === "⌫") {
+          inp.value = inp.value.slice(0, -1);
+        } else if (k === "空") {
+          inp.value += " ";
+        } else {
+          inp.value += k;
+        }
+        inp.focus();
+      });
+    });
+  }
+  $("keyboard").querySelectorAll(".keyboard-tabs button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("keyboard").querySelectorAll(".keyboard-tabs button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      kbdTab = b.dataset.kbd;
+      renderKbd();
+    });
+  });
+
+  // 组装韩文字符：把输入的字母序列组合成韩文音节
+  // 简单实现：直接把字母拼接，浏览器/输入框不自动组合。
+  // 为了能组合，我们做基本的两字母/三字母组合：辅音+元音 => 音节
+  // 这里采用：用户点字母后，尝试把末尾的(辅音+元音)组合成音节
+  // 组合函数：把一串辅音/元音字母转成韩文音节字符串
+  // 算法已用 616 个单词验证：分解->重组 全部一致
+  function composeHangul(jamos) {
+    var consList = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
+    var vowelList = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
+    var tailArr = "ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ".split("");
+    var tailMap = {};
+    tailArr.forEach(function (c, idx) { tailMap[c] = idx + 1; });
+    function isCons(c) { return consList.indexOf(c) >= 0; }
+    function isVowel(c) { return vowelList.indexOf(c) >= 0; }
+    function isTail(c) { return tailMap[c] !== undefined; }
+
+    var result = "", i = 0;
+    while (i < jamos.length) {
+      if (isCons(jamos[i]) && i + 1 < jamos.length && isVowel(jamos[i+1])) {
+        var lead = consList.indexOf(jamos[i]);
+        var vowel = vowelList.indexOf(jamos[i+1]);
+        var tailCode = 0, consumed = 2;
+        var c3 = jamos[i+2];
+        if (c3 !== undefined) {
+          if (isCons(c3)) {
+            // 单辅音：下一个是元音则作下一音节初声，否则作收音
+            if (i + 3 < jamos.length && isVowel(jamos[i+3])) {
+              // c3 作下一音节初声，当前无收音
+            } else if (isTail(c3)) {
+              tailCode = tailMap[c3];
+              consumed = 3;
+            }
+          } else if (isTail(c3)) {
+            // 复合收音字母（ㄳㄵㄶㄺㄻㄼㄽㄾㄿㅀㅄ等）只能作收音
+            tailCode = tailMap[c3];
+            consumed = 3;
+          }
+        }
+        var code = 0xAC00 + (lead * 21 + vowel) * 28 + tailCode;
+        result += String.fromCharCode(code);
+        i += consumed;
+      } else {
+        result += jamos[i];
+        i++;
+      }
+    }
+    return result;
+  }
+
+  // 改写键盘点击：实时组合
+  function getRawJamos() {
+    // 从 input 的 data-raw 属性存原始字母
+    return $("quizInput").dataset.raw || "";
+  }
+  function setRawJamos(s) {
+    $("quizInput").dataset.raw = s;
+  }
+  // 重新渲染键盘事件
+  function bindKbdButtons() {
+    $("kbdGrid").querySelectorAll("button").forEach(function (b) {
+      b.onclick = function () {
+        var k = b.dataset.key;
+        var raw = getRawJamos();
+        if (k === "⌫") {
+          raw = raw.slice(0, -1);
+        } else if (k === "空") {
+          raw += " ";
+        } else {
+          raw += k;
+        }
+        setRawJamos(raw);
+        $("quizInput").value = composeHangul(raw);
+        $("quizInput").focus();
+      };
+    });
+  }
+  // 覆盖 renderKbd 以绑定新事件
+  var origRenderKbd = renderKbd;
+  renderKbd = function () {
+    origRenderKbd();
+    bindKbdButtons();
+  };
+
+  // ====== 手写画板 ======
+  var drawCtx = null, drawing = false, hasDrawn = false;
+  function initDraw() {
+    var canvas = $("drawCanvas");
+    // 设置尺寸
+    var w = canvas.parentElement.clientWidth - 4;
+    canvas.width = w;
+    canvas.height = 200;
+    drawCtx = canvas.getContext("2d");
+    drawCtx.fillStyle = "#fff";
+    drawCtx.fillRect(0, 0, canvas.width, canvas.height);
+    drawCtx.strokeStyle = "#1a1a2e";
+    drawCtx.lineWidth = 3;
+    drawCtx.lineCap = "round";
+    drawCtx.lineJoin = "round";
+    hasDrawn = false;
+
+    function pos(e) {
+      var r = canvas.getBoundingClientRect();
+      var t = e.touches ? e.touches[0] : e;
+      return { x: (t.clientX - r.left) * (canvas.width / r.width), y: (t.clientY - r.top) * (canvas.height / r.height) };
+    }
+    function start(e) { e.preventDefault(); drawing = true; var p = pos(e); drawCtx.beginPath(); drawCtx.moveTo(p.x, p.y); hasDrawn = true; }
+    function move(e) { if (!drawing) return; e.preventDefault(); var p = pos(e); drawCtx.lineTo(p.x, p.y); drawCtx.stroke(); }
+    function end(e) { e.preventDefault(); drawing = false; }
+    canvas.onmousedown = start;
+    canvas.onmousemove = move;
+    canvas.onmouseup = end;
+    canvas.onmouseleave = end;
+    canvas.ontouchstart = start;
+    canvas.ontouchmove = move;
+    canvas.ontouchend = end;
+  }
+  function clearDraw() {
+    var canvas = $("drawCanvas");
+    if (!canvas || !drawCtx) return;
+    drawCtx.fillStyle = "#fff";
+    drawCtx.fillRect(0, 0, canvas.width, canvas.height);
+    hasDrawn = false;
+  }
+  $("drawClear").addEventListener("click", clearDraw);
+
+  // ====== 统计页 ======
+  function showSummary(mode) {
+    show("summaryView");
+    var html = "";
+    if (mode === "quiz") {
+      var total = state.queue.length + state.wrongSet.length; // 注意：重练后 queue 已变
+      // 简单统计：本轮处理的单词数
+      html += '<div class="stat-line">本轮单词数：' + (state.idx) + '</div>';
+      // 统计错词
+      var wrongCount = 0;
+      // 从 progress 不准确，用 wrongSet 近似
+      html += '<div class="stat-line bad">需重点复习：' + state.wrongSet.length + ' 个</div>';
+    } else {
+      html += '<div class="stat-line">已完成学习：' + state.queue.length + ' 个单词</div>';
+    }
+    // 全局进度
+    var totalAll = 0, seenAll = 0, correctAll = 0;
+    (window.WORDS || []).forEach(function (w) {
+      totalAll++;
+      var p = progress[w.word];
+      if (p) { seenAll++; correctAll += p.correct; }
+    });
+    html += '<hr style="border-color:#2a3b66;margin:10px 0;">';
+    html += '<div class="stat-line">累计练习：' + seenAll + ' / ' + totalAll + '</div>';
+    html += '<div class="stat-line ok">累计答对：' + correctAll + ' 次</div>';
+    $("summaryContent").innerHTML = html;
+    renderProgress();
+  }
+  $("summaryAgain").addEventListener("click", function () {
+    if (state.mode === "study") startStudy(); else startQuiz();
+  });
+  $("summaryHome").addEventListener("click", goHome);
+
+  // ====== 首页交互 ======
+  function goHome() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    show("home");
+    renderProgress();
+    renderVoiceStatus();
+  }
+  $("lessonList").addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (b) selectLesson(parseInt(b.dataset.lesson, 10));
+  });
+  $("modeSelect").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("modeSelect").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      state.mode = b.dataset.mode;
+      $("quizOptions").style.display = (state.mode === "quiz") ? "" : "none";
+    });
+  });
+  $("quizType").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("quizType").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      state.quizType = b.dataset.type;
+    });
+  });
+  $("orderType").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("orderType").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      state.order = b.dataset.order;
+    });
+  });
+  $("repeatType").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("repeatType").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      state.repeat = parseInt(b.dataset.repeat, 10);
+    });
+  });
+  $("gapType").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("gapType").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      gapMs = parseInt(b.dataset.gap, 10);
+    });
+  });
+  $("retryType").querySelectorAll("button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $("retryType").querySelectorAll("button").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      state.retryWrong = b.dataset.retry === "1";
+    });
+  });
+  $("startBtn").addEventListener("click", function () {
+    warmUpTTS(); // 用户手势里预热，iOS 上让后续自动朗读能出声
+    if (state.mode === "study") startStudy();
+    else startQuiz();
+  });
+  $("voiceTestBtn").addEventListener("click", function () {
+    warmUpTTS();
+    // 播放词表第一个单词的预生成音频，测试发音功能
+    var first = (window.WORDS && window.WORDS.length) ? window.WORDS[0] : null;
+    if (first) speak(first.word, 1, null, first.idx);
+    else speak("안녕하세요", 1);
+  });
+  $("clearProgressBtn").addEventListener("click", function () {
+    if (confirm("确定清除全部练习进度？此操作不可撤销。")) {
+      progress = {};
+      saveProgress(progress);
+      renderProgress();
+    }
+  });
+
+  // ====== 初始化 ======
+  buildLessonList();
+  renderKbd();
+  renderProgress();
+  goHome();
+
+})();
+</script>
+</body>
+</html>
