@@ -9,3 +9,7 @@ __pycache__/
 # 临时文件
 /tmp/
 *.log
+
+# Excel 源文件（个人文件，不上传）
+*.xlsx
+*.xls
