@@ -19,9 +19,23 @@ AUDIO_DIR = os.path.join(HERE, "audio")
 
 # 复用 build.py 的读取逻辑和 word_id，保证一致
 sys.path.insert(0, HERE)
-from build import load_words, CSV_PATH, word_id
+from build import load_words, load_yonsei, CSV_PATH, YONSEI_PATH, word_id
 
 VOICE = "Yuna"  # 韩语女声
+
+
+def collect_all_words():
+    """收集所有需要音频的单词：首尔大 + 延世（按 word 哈希去重）。"""
+    seen = {}
+    # 首尔大
+    if os.path.exists(CSV_PATH):
+        for w in load_words(CSV_PATH):
+            seen[w["word"]] = True
+    # 延世
+    if os.path.exists(YONSEI_PATH):
+        for w in load_yonsei(YONSEI_PATH):
+            seen[w["word"]] = True
+    return list(seen.keys())
 
 
 def gen_one(word, out_path):
@@ -46,11 +60,7 @@ def gen_one(word, out_path):
 
 
 def main():
-    if not os.path.exists(CSV_PATH):
-        print("错误：找不到 单词.csv")
-        sys.exit(1)
-
-    words = load_words(CSV_PATH)
+    words = collect_all_words()
     os.makedirs(AUDIO_DIR, exist_ok=True)
 
     total = len(words)
@@ -61,15 +71,15 @@ def main():
     print("开始检查 %d 个单词的音频（语音：%s）..." % (total, VOICE))
     print("音频保存到：%s\n" % AUDIO_DIR)
 
-    for i, w in enumerate(words):
-        wid = word_id(w["word"])
+    for i, word in enumerate(words):
+        wid = word_id(word)
         out_path = os.path.join(AUDIO_DIR, "%s.m4a" % wid)
         # 断点续传：已存在的跳过
         if os.path.exists(out_path) and os.path.getsize(out_path) > 0:
             skipped += 1
             continue
 
-        if gen_one(w["word"], out_path):
+        if gen_one(word, out_path):
             done += 1
         else:
             failed += 1
