@@ -41,9 +41,13 @@ def collect_all_words():
 def gen_one(word, out_path):
     """生成单个单词音频：say 输出 aiff -> afconvert 转 AAC m4a"""
     tmp = os.path.join(tempfile.gettempdir(), "hangul_tmp_%s.aiff" % word_id(word))
+    textfile = os.path.join(tempfile.gettempdir(), "hangul_txt_%s.txt" % word_id(word))
     try:
+        # 把文本写入临时文件，用 -f 传入，避免以「-」开头的词被 say 当成选项
+        with open(textfile, "w", encoding="utf-8") as f:
+            f.write(word)
         subprocess.run(
-            ["say", "-v", VOICE, "-o", tmp, word],
+            ["say", "-v", VOICE, "-o", tmp, "-f", textfile],
             check=True, capture_output=True,
         )
         subprocess.run(
