@@ -1,5 +1,5 @@
 // 韩语单词数据 - 自动从 Excel 生成
-// 共 616 个单词
+// 共 668 个单词
 window.WORDS = [
   {
     "lesson": 1,
@@ -4054,7 +4054,7 @@ window.WORDS = [
   {
     "lesson": 9,
     "word": "사람",
-    "explain": "-人",
+    "explain": "#NAME?",
     "pos": "依名",
     "note": "",
     "idx": 450,
@@ -4063,7 +4063,7 @@ window.WORDS = [
   {
     "lesson": 9,
     "word": "명",
-    "explain": "-名",
+    "explain": "#NAME?",
     "pos": "依名",
     "note": "",
     "idx": 451,
@@ -4072,7 +4072,7 @@ window.WORDS = [
   {
     "lesson": 9,
     "word": "분",
-    "explain": "-位",
+    "explain": "#NAME?",
     "pos": "依名",
     "note": "",
     "idx": 452,
@@ -5544,5 +5544,473 @@ window.WORDS = [
     "note": "",
     "idx": 615,
     "id": "644e823a5d9014bf88f43e3600201af9"
+  },
+  {
+    "lesson": 12,
+    "word": "영",
+    "explain": "零",
+    "pos": "数",
+    "note": "",
+    "idx": 616,
+    "id": "4d42bea8d0248d12e54504308a03c980"
+  },
+  {
+    "lesson": 12,
+    "word": "실례지만 누구세요?",
+    "explain": "请问是哪位？",
+    "pos": "句",
+    "note": "",
+    "idx": 617,
+    "id": "39ed8120c8e0b51ff1c8e7f04c38942b"
+  },
+  {
+    "lesson": 12,
+    "word": "여보세요!",
+    "explain": "喂！",
+    "pos": "句",
+    "note": "",
+    "idx": 618,
+    "id": "8636928a2c867a1881905c27d4eebfc4"
+  },
+  {
+    "lesson": 12,
+    "word": "전화번호",
+    "explain": "电话号码",
+    "pos": "名",
+    "note": "",
+    "idx": 619,
+    "id": "ba8df02322a21c6042337a53a6332a52"
+  },
+  {
+    "lesson": 12,
+    "word": "휴대폰번호",
+    "explain": "手机号码",
+    "pos": "名",
+    "note": "",
+    "idx": 620,
+    "id": "cfef7ccb824b5b4650ee210621444352"
+  },
+  {
+    "lesson": 12,
+    "word": "문자를 받다",
+    "explain": "收到短信",
+    "pos": "词组",
+    "note": "",
+    "idx": 621,
+    "id": "3463a6df33fa5f8f50724ddbb7215179"
+  },
+  {
+    "lesson": 12,
+    "word": "문자를 보내다",
+    "explain": "发短信",
+    "pos": "词组",
+    "note": "",
+    "idx": 622,
+    "id": "e87a4e1055af3f2d5333d36208a3e39e"
+  },
+  {
+    "lesson": 12,
+    "word": "전화를 받다",
+    "explain": "接电话",
+    "pos": "词组",
+    "note": "",
+    "idx": 623,
+    "id": "a2f1b89355964f20d9fa510a9f090cfb"
+  },
+  {
+    "lesson": 12,
+    "word": "전화(를) 하다",
+    "explain": "打电话",
+    "pos": "词组",
+    "note": "",
+    "idx": 624,
+    "id": "f1aff7955225a9f4d60a55d0162aae8c"
+  },
+  {
+    "lesson": 12,
+    "word": "그렇습니다.",
+    "explain": "是这样的。",
+    "pos": "句",
+    "note": "",
+    "idx": 625,
+    "id": "007c31a1f3a3edd52b304cc732cb3167"
+  },
+  {
+    "lesson": 12,
+    "word": "지내다",
+    "explain": "度日，生活，度过",
+    "pos": "动",
+    "note": "",
+    "idx": 626,
+    "id": "1cb50cfbf500391546565b18347ffb8e"
+  },
+  {
+    "lesson": 12,
+    "word": "북적하다",
+    "explain": "热闹",
+    "pos": "形",
+    "note": "",
+    "idx": 627,
+    "id": "f3d0d011b0a99e66fefef7468cad1cdb"
+  },
+  {
+    "lesson": 12,
+    "word": "있다",
+    "explain": "在/有（一般）",
+    "pos": "动",
+    "note": "",
+    "idx": 628,
+    "id": "dfe763f3f38ff85fbc87f1aebdf3f903"
+  },
+  {
+    "lesson": 12,
+    "word": "계시다",
+    "explain": "在/有（敬语）",
+    "pos": "动",
+    "note": "",
+    "idx": 629,
+    "id": "f06a28780a453ed3a287a78a4227030f"
+  },
+  {
+    "lesson": 12,
+    "word": "햄버거",
+    "explain": "汉堡",
+    "pos": "名",
+    "note": "",
+    "idx": 630,
+    "id": "13a98fcee3bd17593d8b04e3c579d231"
+  },
+  {
+    "lesson": 12,
+    "word": "회의하다",
+    "explain": "开会",
+    "pos": "动",
+    "note": "",
+    "idx": 631,
+    "id": "e9e21d54ad119aedab4d776259624871"
+  },
+  {
+    "lesson": 12,
+    "word": "컴퓨터",
+    "explain": "电脑",
+    "pos": "名",
+    "note": "",
+    "idx": 632,
+    "id": "c5c36583dc912495b8f360305fe21d2d"
+  },
+  {
+    "lesson": 12,
+    "word": "음악을 듣다",
+    "explain": "听音乐",
+    "pos": "词组",
+    "note": "",
+    "idx": 633,
+    "id": "63cb9fdb9f0cf359c55e0065c4c4a7a7"
+  },
+  {
+    "lesson": 12,
+    "word": "신문",
+    "explain": "报纸",
+    "pos": "名",
+    "note": "",
+    "idx": 634,
+    "id": "457b3dc44b055a9a129d3a28f437910d"
+  },
+  {
+    "lesson": 12,
+    "word": "사무실",
+    "explain": "办公室",
+    "pos": "名",
+    "note": "",
+    "idx": 635,
+    "id": "65af0222f9718482ccd06de4212c043c"
+  },
+  {
+    "lesson": 12,
+    "word": "들어가다",
+    "explain": "进入",
+    "pos": "动",
+    "note": "",
+    "idx": 636,
+    "id": "cc190ba7a215d7d478e5f28378f961cc"
+  },
+  {
+    "lesson": 12,
+    "word": "오랜만이에요.",
+    "explain": "好久不见。",
+    "pos": "句",
+    "note": "",
+    "idx": 637,
+    "id": "1831619cef4396fcb7035d5c2c334be2"
+  },
+  {
+    "lesson": 12,
+    "word": "일",
+    "explain": "事情",
+    "pos": "名",
+    "note": "",
+    "idx": 638,
+    "id": "95e4313c7bc7ca3b4453870879870109"
+  },
+  {
+    "lesson": 12,
+    "word": "뭘요.",
+    "explain": "哪里。",
+    "pos": "句",
+    "note": "",
+    "idx": 639,
+    "id": "6c907d400f9bb6e98abc759286e0f9cb"
+  },
+  {
+    "lesson": 12,
+    "word": "등산",
+    "explain": "登山",
+    "pos": "名",
+    "note": "",
+    "idx": 640,
+    "id": "81a1637fea7001aa1370c4bac6a45e87"
+  },
+  {
+    "lesson": 12,
+    "word": "청소하다",
+    "explain": "打扫",
+    "pos": "动",
+    "note": "",
+    "idx": 641,
+    "id": "0b2b1dbf344ee14304377544598e148e"
+  },
+  {
+    "lesson": 12,
+    "word": "피곤하다",
+    "explain": "累",
+    "pos": "形",
+    "note": "",
+    "idx": 642,
+    "id": "eda8003808bc50b39c26987eaac83998"
+  },
+  {
+    "lesson": 12,
+    "word": "잠",
+    "explain": "觉，睡眠",
+    "pos": "名",
+    "note": "",
+    "idx": 643,
+    "id": "285a7032aba8e149e6237f290733381e"
+  },
+  {
+    "lesson": 12,
+    "word": "쇼핑",
+    "explain": "购物",
+    "pos": "名",
+    "note": "",
+    "idx": 644,
+    "id": "7b377197fec4c5c294bf68f5e6480886"
+  },
+  {
+    "lesson": 12,
+    "word": "고향",
+    "explain": "故乡",
+    "pos": "名",
+    "note": "",
+    "idx": 645,
+    "id": "d8e6b97678bf45533aae4fa34031fe2e"
+  },
+  {
+    "lesson": 12,
+    "word": "숙제",
+    "explain": "作业",
+    "pos": "名",
+    "note": "",
+    "idx": 646,
+    "id": "7dc2110d59045ac82bc58c5d13b7001e"
+  },
+  {
+    "lesson": 12,
+    "word": "결혼",
+    "explain": "结婚",
+    "pos": "名",
+    "note": "",
+    "idx": 647,
+    "id": "c9b93da02ae9d8ddc8c71ce8480ebec6"
+  },
+  {
+    "lesson": 12,
+    "word": "많다",
+    "explain": "多",
+    "pos": "形",
+    "note": "",
+    "idx": 648,
+    "id": "15b67567361f0f9798c566f7883eff29"
+  },
+  {
+    "lesson": 12,
+    "word": "길",
+    "explain": "路",
+    "pos": "名",
+    "note": "",
+    "idx": 649,
+    "id": "50534628d75ad44691f1c7920cef062e"
+  },
+  {
+    "lesson": 12,
+    "word": "여행",
+    "explain": "旅行",
+    "pos": "名",
+    "note": "",
+    "idx": 650,
+    "id": "1aaf85e3d5d0ed69222bff95163e41da"
+  },
+  {
+    "lesson": 12,
+    "word": "많이",
+    "explain": "很多地，大量地",
+    "pos": "副",
+    "note": "",
+    "idx": 651,
+    "id": "711574c8fe65da675ea37044c64b2229"
+  },
+  {
+    "lesson": 12,
+    "word": "비가 오다",
+    "explain": "下雨",
+    "pos": "词组",
+    "note": "",
+    "idx": 652,
+    "id": "6646fbe80392a63f83134a1198990685"
+  },
+  {
+    "lesson": 12,
+    "word": "좀",
+    "explain": "稍微，一点儿",
+    "pos": "副",
+    "note": "",
+    "idx": 653,
+    "id": "f5b98d99c4d2dc9816146fdec9753fc6"
+  },
+  {
+    "lesson": 12,
+    "word": "아까",
+    "explain": "刚才，不久前",
+    "pos": "副",
+    "note": "",
+    "idx": 654,
+    "id": "b0925be00b73ff6a9e7832f7a51b0cb4"
+  },
+  {
+    "lesson": 12,
+    "word": "기분",
+    "explain": "心情",
+    "pos": "名",
+    "note": "",
+    "idx": 655,
+    "id": "233021f36cd7a149d570a556e9946267"
+  },
+  {
+    "lesson": 12,
+    "word": "싸우다",
+    "explain": "吵架，打架",
+    "pos": "动",
+    "note": "",
+    "idx": 656,
+    "id": "0c62455ea0b05eea7e2b1bef8b2313a7"
+  },
+  {
+    "lesson": 12,
+    "word": "잔",
+    "explain": "～杯",
+    "pos": "名",
+    "note": "",
+    "idx": 657,
+    "id": "292e67090563c5f8e1766d8b6cf37397"
+  },
+  {
+    "lesson": 12,
+    "word": "걷다",
+    "explain": "走",
+    "pos": "动",
+    "note": "",
+    "idx": 658,
+    "id": "b2a5547280201bfd3e94569d371ca538"
+  },
+  {
+    "lesson": 12,
+    "word": "늦잠",
+    "explain": "懒觉",
+    "pos": "名",
+    "note": "",
+    "idx": 659,
+    "id": "3d8beeb1cd35093aff09702f0df99565"
+  },
+  {
+    "lesson": 12,
+    "word": "여행사",
+    "explain": "旅行社",
+    "pos": "名",
+    "note": "",
+    "idx": 660,
+    "id": "53fa01be4b04e993f35ba4f9ffb9af54"
+  },
+  {
+    "lesson": 12,
+    "word": "아까",
+    "explain": "刚才",
+    "pos": "副",
+    "note": "",
+    "idx": 661,
+    "id": "b0925be00b73ff6a9e7832f7a51b0cb4"
+  },
+  {
+    "lesson": 12,
+    "word": "그럼요.",
+    "explain": "当然。",
+    "pos": "句",
+    "note": "",
+    "idx": 662,
+    "id": "ea77a69db4e07f2eace7156c68dc02f8"
+  },
+  {
+    "lesson": 12,
+    "word": "잠깐",
+    "explain": "稍后，一会儿",
+    "pos": "副",
+    "note": "",
+    "idx": 663,
+    "id": "c4c1f128ac31c4a7ee6db06813d603e8"
+  },
+  {
+    "lesson": 12,
+    "word": "다른",
+    "explain": "别的",
+    "pos": "冠",
+    "note": "",
+    "idx": 664,
+    "id": "1928629af436b2cdeb11723e54a774fe"
+  },
+  {
+    "lesson": 12,
+    "word": "강남역",
+    "explain": "江南站",
+    "pos": "名",
+    "note": "",
+    "idx": 665,
+    "id": "a55492595fead1256ae4188d10372ba6"
+  },
+  {
+    "lesson": 12,
+    "word": "수업을 듣다",
+    "explain": "听课",
+    "pos": "词组",
+    "note": "",
+    "idx": 666,
+    "id": "0db1a729ee80790a0dc59a39d00a2fb6"
+  },
+  {
+    "lesson": 12,
+    "word": "한테서",
+    "explain": "从～",
+    "pos": "助词",
+    "note": "",
+    "idx": 667,
+    "id": "c13a09ae22ffd6c36a9b8a23113cdc52"
   }
 ];
