@@ -257,11 +257,6 @@
   <div class="card" id="voiceCard">
     <label>🔊 发音状态</label>
     <div id="voiceInfo" style="font-size:0.85rem;color:#9aa;margin-top:6px;">检测中...</div>
-    <label style="margin-top:8px;">发音源</label>
-    <div class="seg" id="voiceSourceSelect" style="margin-top:6px;">
-      <button data-src="yuna" class="active">Yuna 合成音</button>
-      <button data-src="krdict">官方真人</button>
-    </div>
     <button id="voiceTestBtn" style="margin-top:8px;font-size:0.85rem;">测试发音</button>
     <div id="voiceHelp" style="font-size:0.78rem;color:#fbbf24;margin-top:6px;display:none;">
       没有声音？iPhone/iPad 需在「设置 → 辅助功能 → 朗读内容 → 声音」里下载「韩语」语音，然后回到本页刷新。
@@ -77366,16 +77361,6 @@ window.BOOKS = [
   var gapMs = 1500; // 朗读间隔（毫秒），可在听写设置里调整
   var ttsVoice = null;
   var koVoices = [];
-  // 发音源：yuna = macOS Yuna 合成音（audio/*.m4a），krdict = 官方真人发音（audio_krdict/*.mp3）
-  var VOICE_KEY = "hangeul_voice_source";
-  function loadVoiceSource() {
-    try { return localStorage.getItem(VOICE_KEY) || "yuna"; }
-    catch (e) { return "yuna"; }
-  }
-  function saveVoiceSource(v) {
-    try { localStorage.setItem(VOICE_KEY, v); } catch (e) {}
-  }
-  var voiceSource = loadVoiceSource();
   function pickVoice() {
     try {
       var v = speechSynthesis.getVoices();
@@ -77457,7 +77442,7 @@ window.BOOKS = [
     once();
   }
 
-  // 统一朗读入口：按发音源播放预生成音频，失败逐级回退（krdict→yuna→TTS）
+  // 统一朗读入口：真人发音优先，没有真人则用 Yuna 合成音，再失败回退浏览器 TTS
   function speak(text, times, cb, id) {
     times = times || 1;
     var hasAudio = (id !== null && id !== undefined && id !== "");
@@ -77465,14 +77450,11 @@ window.BOOKS = [
       speakTTS(text, times, cb);
       return;
     }
-    // 构建音频源列表（按优先级）
-    var sources = [];
-    if (voiceSource === "krdict") {
-      sources.push("audio_krdict/" + id + ".mp3");
-      sources.push("audio/" + id + ".m4a");
-    } else {
-      sources.push("audio/" + id + ".m4a");
-    }
+    // 固定优先级：官方真人 → Yuna 合成音（保证词组/句子也能出声）
+    var sources = [
+      "audio_krdict/" + id + ".mp3",
+      "audio/" + id + ".m4a"
+    ];
 
     var i = 0;
     function playSource(srcIdx) {
@@ -78143,20 +78125,6 @@ window.BOOKS = [
     else speak("안녕하세요", 1);
   });
 
-  // 发音源切换
-  function renderVoiceSource() {
-    var btns = $("voiceSourceSelect").querySelectorAll("button");
-    btns.forEach(function (b) {
-      b.classList.toggle("active", b.dataset.src === voiceSource);
-    });
-  }
-  $("voiceSourceSelect").addEventListener("click", function (e) {
-    var b = e.target.closest("button");
-    if (!b) return;
-    voiceSource = b.dataset.src;
-    saveVoiceSource(voiceSource);
-    renderVoiceSource();
-  });
   $("clearProgressBtn").addEventListener("click", function () {
     if (confirm("确定清除全部练习进度？此操作不可撤销。")) {
       progress = {};
@@ -78235,11 +78203,21 @@ window.BOOKS = [
           (w.origin ? '<span class="s-origin">' + w.origin + '</span>' : '') +
         '</div>' +
         '<div class="s-meta">' + metaParts.join(' · ') + (w.english ? ' · 英：' + w.english : '') + '</div>' +
+        '<div class="s-actions" style="margin-top:4px;">' +
+          '<button data-speak="' + w.id + '" data-word="' + w.word + '" style="font-size:0.8rem;padding:4px 10px;">🔊 发音</button>' +
+        '</div>' +
         (w.originDetail ? '<div class="s-note">📝 ' + w.originDetail + '</div>' : '') +
         (w.note ? '<div class="s-note">📝 ' + w.note + '</div>' : '') +
         '</div>';
     });
     box.innerHTML = html;
+
+    // 发音按钮
+    box.querySelectorAll("button[data-speak]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        speak(btn.dataset.word, 1, null, btn.dataset.speak);
+      });
+    });
   }
   $("searchInput").addEventListener("input", doSearch);
 
@@ -78251,7 +78229,6 @@ window.BOOKS = [
   }
   renderBookSelect();
   renderVolumeSelect();
-  renderVoiceSource();
   buildLessonList();
   renderKbd();
   renderProgress();
