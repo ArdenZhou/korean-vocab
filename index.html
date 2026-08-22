@@ -77456,13 +77456,12 @@ window.BOOKS = [
       "audio/" + id + ".m4a"
     ];
 
-    var i = 0;
+    var round = 0; // 已成功播放的遍数
     function playSource(srcIdx) {
-      if (i >= times) { if (cb) cb(); return; }
-      i++;
+      if (round >= times) { if (cb) cb(); return; }
       if (srcIdx >= sources.length) {
         // 所有音频源都失败，回退 TTS 播放剩余遍数
-        speakTTS(text, times - i + 1, cb);
+        speakTTS(text, times - round, cb);
         return;
       }
       var a = new Audio(sources[srcIdx]);
@@ -77470,12 +77469,13 @@ window.BOOKS = [
       function onDone() {
         if (finished) return;
         finished = true;
+        round++; // 这一遍成功播放完
         setTimeout(function () { playSource(0); }, gapMs);
       }
       function onFail() {
         if (finished) return;
         finished = true;
-        playSource(srcIdx + 1); // 换下一个音频源
+        playSource(srcIdx + 1); // 换下一个音频源，不计入遍数
       }
       a.onended = onDone;
       a.onerror = onFail;
