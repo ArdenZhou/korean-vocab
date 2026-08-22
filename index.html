@@ -6447,11 +6447,12 @@ window.WORDS = [
     once();
   }
 
-  // 统一朗读入口：优先用预生成音频（audio/{idx}.m4a），失败则回退到浏览器 TTS
-  function speak(text, times, cb, idx) {
+  // 统一朗读入口：优先用预生成音频（audio/{id}.m4a），失败则回退到浏览器 TTS
+  function speak(text, times, cb, id) {
     times = times || 1;
-    var hasIdx = (typeof idx === "number");
-    if (!hasIdx) {
+    // id 现在是单词内容的哈希字符串，只要非空就走音频
+    var hasAudio = (id !== null && id !== undefined && id !== "");
+    if (!hasAudio) {
       speakTTS(text, times, cb);
       return;
     }
@@ -6459,7 +6460,7 @@ window.WORDS = [
     function next() {
       if (i >= times) { if (cb) cb(); return; }
       i++;
-      var a = new Audio("audio/" + idx + ".m4a");
+      var a = new Audio("audio/" + id + ".m4a");
       var finished = false;
       function onDone() {
         if (finished) return;
