@@ -134,6 +134,28 @@
   .stat-line .ok { color: #4ade80; }
   .stat-line .bad { color: #f87171; }
 
+  /* 错题集 */
+  .wrongbook-summary { font-size: 0.85rem; color: #9aa; margin-bottom: 10px; text-align: center; }
+  .wrongbook-summary .hl { color: #4ade80; font-weight: bold; }
+  .wrongbook-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+  .wrongbook-filters select { flex: 1; min-width: 100px; }
+  .wrongbook-item {
+    background: #16213e;
+    border: 1px solid #2a3b66;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+  }
+  .wrongbook-item .wb-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .wrongbook-item .wb-word { font-size: 1.6rem; color: #4ade80; letter-spacing: 1px; }
+  .wrongbook-item .wb-badge { font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+  .wrongbook-item .wb-explain { font-size: 1.05rem; color: #cdd; margin: 2px 0; }
+  .wrongbook-item .wb-meta { font-size: 0.82rem; color: #9aa; }
+  .wrongbook-item .wb-note { font-size: 0.8rem; color: #fbbf24; margin-top: 6px; background: rgba(251,191,36,0.08); border-radius: 6px; padding: 6px; }
+  .wrongbook-item .wb-actions { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .wrongbook-item .wb-actions button { font-size: 0.8rem; padding: 6px 10px; }
+  .wrongbook-empty { text-align: center; color: #9aa; padding: 30px 0; font-size: 0.95rem; }
+
   @media (max-width: 500px) {
     .word-ko { font-size: 2.2rem; }
     h1 { font-size: 1.1rem; }
@@ -158,6 +180,9 @@
       <button data-mode="study" class="active">学习</button>
       <button data-mode="quiz">听写复习</button>
     </div>
+  </div>
+  <div class="card">
+    <button class="primary" id="openWrongbook" style="width:100%;padding:12px;font-size:1.05rem;">📕 错题集</button>
   </div>
   <div class="card" id="quizOptions" style="display:none;">
     <label>听写设置</label>
@@ -297,6 +322,32 @@
   <div class="navbar">
     <button id="summaryAgain" class="primary">再来一轮</button>
     <button id="summaryHome">返回首页</button>
+  </div>
+</div>
+
+<!-- ========== 错题集 ========== -->
+<div id="wrongbookView" class="hidden">
+  <div class="card">
+    <h2 style="text-align:center;margin-bottom:8px;">📕 错题集</h2>
+    <div class="wrongbook-summary" id="wrongbookSummary"></div>
+    <div class="wrongbook-filters">
+      <select id="wrongbookFilter">
+        <option value="all">全部</option>
+        <option value="due">待复习</option>
+        <option value="mastered">已掌握</option>
+      </select>
+      <select id="wrongbookLesson">
+        <option value="0">全部课程</option>
+      </select>
+    </div>
+    <div id="wrongbookList"></div>
+    <div style="margin-top:10px;display:flex;gap:8px;">
+      <button id="wrongbookReview" class="primary" style="flex:1;">▶ 复习错题</button>
+      <button id="wrongbookClear" class="danger" style="flex:0 0 auto;">清空</button>
+    </div>
+  </div>
+  <div class="navbar">
+    <button id="wrongbookBack">返回首页</button>
   </div>
 </div>
 
@@ -6362,6 +6413,166 @@ window.WORDS = [
     saveProgress(progress);
   }
 
+  // ====== 错题集（错误次数递减法）======
+  var WRONGBOOK_KEY = "hangeul_wrongbook_v1";
+  function loadWrongbook() {
+    try { return JSON.parse(localStorage.getItem(WRONGBOOK_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function saveWrongbook(wb) {
+    try { localStorage.setItem(WRONGBOOK_KEY, JSON.stringify(wb)); } catch (e) {}
+  }
+  var wrongbook = loadWrongbook();
+
+  // 根据当前错误次数计算复习间隔（毫秒）
+  function wrongbookInterval(err) {
+    if (err >= 5) return 1 * 86400000; // 每天复习
+    if (err >= 3) return 2 * 86400000; // 每2天复习
+    if (err >= 1) return 3 * 86400000; // 每3天复习
+    return 7 * 86400000;               // 已掌握，每周抽查
+  }
+  function wrongbookIntervalText(err) {
+    if (err >= 5) return "每天复习";
+    if (err >= 3) return "每2天复习";
+    if (err >= 1) return "每3天复习";
+    return "每周抽查";
+  }
+
+  // 答题时更新错题集：答错 err+1 立即排最前，答对 err-1（减到0为止）
+  function updateWrongbook(w, ok) {
+    if (!w || !w.id) return;
+    var key = w.id;
+    var now = Date.now();
+    if (ok) {
+      var e = wrongbook[key];
+      if (!e || e.total === 0) return; // 从没错过，答对不纳入错题集
+      e.err = Math.max(0, e.err - 1);
+      e.lastReview = now;
+      e.nextReview = now + wrongbookInterval(e.err);
+      saveWrongbook(wrongbook);
+    } else {
+      var e2 = wrongbook[key];
+      if (!e2) {
+        e2 = wrongbook[key] = {
+          err: 0, total: 0,
+          word: w.word, lesson: w.lesson, pos: w.pos || "", explain: w.explain || "", note: w.note || "",
+          lastWrong: 0, lastReview: 0, nextReview: 0
+        };
+      }
+      // 同步最新信息（词义可能更新过）
+      e2.word = w.word; e2.lesson = w.lesson; e2.pos = w.pos || ""; e2.explain = w.explain || ""; e2.note = w.note || "";
+      e2.err += 1;
+      e2.total += 1;
+      e2.lastWrong = now;
+      e2.nextReview = now; // 答错立即排最前待复习
+      saveWrongbook(wrongbook);
+    }
+  }
+
+  // 取错题集条目（错误次数降序、最近答错优先）
+  function getWrongbookItems() {
+    var arr = [];
+    Object.keys(wrongbook).forEach(function (id) {
+      var e = wrongbook[id];
+      if (!e || e.total === 0) return;
+      arr.push({ id: id, err: e.err, total: e.total, word: e.word, lesson: e.lesson, pos: e.pos, explain: e.explain, note: e.note, lastWrong: e.lastWrong, lastReview: e.lastReview, nextReview: e.nextReview });
+    });
+    arr.sort(function (a, b) {
+      if (a.err !== b.err) return b.err - a.err;
+      return b.lastWrong - a.lastWrong;
+    });
+    return arr;
+  }
+
+  function isDue(e) {
+    return Date.now() >= (e.nextReview || 0);
+  }
+
+  function renderWrongbook() {
+    var filter = $("wrongbookFilter").value;
+    var lessonFilter = parseInt($("wrongbookLesson").value, 10) || 0;
+    var items = getWrongbookItems();
+    var dueCount = items.filter(isDue).length;
+    var masteredCount = items.filter(function (e) { return e.err === 0; }).length;
+
+    $("wrongbookSummary").innerHTML =
+      '共 <span class="hl">' + items.length + '</span> 个错词 · ' +
+      '待复习 <span class="hl">' + dueCount + '</span> · ' +
+      '已掌握 <span class="hl">' + masteredCount + '</span>';
+
+    // 填充课程筛选（保留已选值）
+    var curLesson = lessonFilter;
+    var lessonOpts = '<option value="0">全部课程</option>';
+    LESSON_NUMS.forEach(function (n) {
+      lessonOpts += '<option value="' + n + '"' + (curLesson === n ? ' selected' : '') + '>第' + n + '课</option>';
+    });
+    $("wrongbookLesson").innerHTML = lessonOpts;
+
+    var filtered = items.filter(function (e) {
+      if (lessonFilter && e.lesson !== lessonFilter) return false;
+      if (filter === "due") return isDue(e);
+      if (filter === "mastered") return e.err === 0;
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      $("wrongbookList").innerHTML = '<div class="wrongbook-empty">' +
+        (items.length === 0 ? '还没有错题。去做「听写复习」吧，答错的词会自动收进来～' : '当前筛选下没有单词') +
+        '</div>';
+      $("wrongbookReview").disabled = (dueCount === 0);
+      return;
+    }
+
+    var html = "";
+    filtered.forEach(function (e) {
+      var st;
+      if (e.err === 0) {
+        st = isDue(e) ? { label: "待抽查", color: "#f59e0b" } : { label: "已掌握", color: "#2563eb" };
+      } else {
+        st = isDue(e) ? { label: "待复习", color: "#b91c1c" } : { label: "未到期", color: "#6b7280" };
+      }
+      html += '<div class="wrongbook-item">' +
+        '<div class="wb-top">' +
+          '<span class="wb-word">' + e.word + '</span>' +
+          '<span class="wb-badge" style="background:' + st.color + ';color:#fff;">' + st.label + '</span>' +
+        '</div>' +
+        '<div class="wb-explain">' + e.explain + '</div>' +
+        '<div class="wb-meta">第' + e.lesson + '课 · ' + (e.pos || '—') + ' · 错 ' + e.err + ' 次 · ' + wrongbookIntervalText(e.err) + '</div>' +
+        (e.note ? '<div class="wb-note">📝 ' + e.note + '</div>' : '') +
+        '<div class="wb-actions">' +
+          '<button data-speak="' + e.id + '" data-word="' + e.word + '">🔊 发音</button>' +
+        '</div>' +
+        '</div>';
+    });
+    $("wrongbookList").innerHTML = html;
+
+    $("wrongbookList").querySelectorAll("button[data-speak]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        speak(b.dataset.word, 1, null, b.dataset.speak);
+      });
+    });
+
+    $("wrongbookReview").disabled = (dueCount === 0);
+  }
+
+  function reviewWrongbook() {
+    var items = getWrongbookItems().filter(isDue);
+    if (items.length === 0) {
+      alert("没有待复习的错词了 🎉");
+      goHome();
+      return;
+    }
+    state.queue = items.map(function (e) {
+      return { word: e.word, lesson: e.lesson, pos: e.pos, explain: e.explain, note: e.note, id: e.id };
+    });
+    state.wrongSet = [];
+    state.quizHistory = [];
+    state.idx = 0;
+    state.fromWrongbook = true;
+    show("quizView");
+    nextQuiz();
+  }
+
   // ====== TTS ======
   var gapMs = 1500; // 朗读间隔（毫秒），可在听写设置里调整
   var ttsVoice = null;
@@ -6499,13 +6710,14 @@ window.WORDS = [
     idx: 0,
     wrongSet: [],
     quizHistory: [],  // 已答单词的索引栈，用于「上一个」回退
-    inputMode: "spell"   // spell / draw
+    inputMode: "spell",   // spell / draw
+    fromWrongbook: false  // 是否从错题集复习进入
   };
 
   // ====== UI 辅助 ======
   function $(id) { return document.getElementById(id); }
   function show(view) {
-    ["home", "studyView", "quizView", "summaryView"].forEach(function (v) {
+    ["home", "studyView", "quizView", "summaryView", "wrongbookView"].forEach(function (v) {
       $(v).classList.add("hidden");
     });
     $(view).classList.remove("hidden");
@@ -6569,6 +6781,7 @@ window.WORDS = [
   function startStudy() {
     state.queue = buildQueue();
     state.idx = 0;
+    state.fromWrongbook = false;
     show("studyView");
     renderStudy();
   }
@@ -6630,6 +6843,7 @@ window.WORDS = [
     state.wrongSet = [];
     state.quizHistory = [];
     state.idx = 0;
+    state.fromWrongbook = false;
     show("quizView");
     nextQuiz();
   }
@@ -6693,6 +6907,7 @@ window.WORDS = [
     var userAns = $("quizInput").value.trim();
     var isRight = (userAns === correct);
     recordResult(correct, isRight);
+    updateWrongbook(currentWord, isRight);
 
     var html = "";
     if (isRight) {
@@ -6716,6 +6931,7 @@ window.WORDS = [
   // 手写模式：用户自评对错
   function selfJudge(ok) {
     recordResult(currentWord.word, ok);
+    updateWrongbook(currentWord, ok);
     if (!ok) state.wrongSet.push(currentWord);
     var mark = ok
       ? '<span class="quiz-correct">✓ 已标记：写对了</span>'
@@ -6987,6 +7203,7 @@ window.WORDS = [
     renderProgress();
   }
   $("summaryAgain").addEventListener("click", function () {
+    if (state.fromWrongbook) { reviewWrongbook(); return; }
     if (state.mode === "study") startStudy(); else startQuiz();
   });
   $("summaryHome").addEventListener("click", goHome);
@@ -7062,6 +7279,28 @@ window.WORDS = [
       progress = {};
       saveProgress(progress);
       renderProgress();
+    }
+  });
+
+  // ====== 错题集交互 ======
+  $("openWrongbook").addEventListener("click", function () {
+    renderWrongbook();
+    show("wrongbookView");
+  });
+  $("wrongbookBack").addEventListener("click", function () {
+    goHome();
+  });
+  $("wrongbookFilter").addEventListener("change", renderWrongbook);
+  $("wrongbookLesson").addEventListener("change", renderWrongbook);
+  $("wrongbookReview").addEventListener("click", function () {
+    warmUpTTS();
+    reviewWrongbook();
+  });
+  $("wrongbookClear").addEventListener("click", function () {
+    if (confirm("确定清空错题集？已掌握的单词也会一并清除。此操作不可撤销。")) {
+      wrongbook = {};
+      saveWrongbook(wrongbook);
+      renderWrongbook();
     }
   });
 
