@@ -13,3 +13,6 @@ __pycache__/
 # Excel 源文件（个人文件，不上传）
 *.xlsx
 *.xls
+
+# krdict API 密钥（个人密钥，不上传）
+krdict_key.txt

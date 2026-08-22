@@ -18,6 +18,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 CSV_PATH = os.path.join(HERE, "单词.csv")
 YONSEI_PATH = os.path.join(HERE, "yonsei_words.json")
+PRON_PATH = os.path.join(HERE, "krdict_pron.json")
 HTML_PATH = os.path.join(HERE, "index.html")
 WORDSJS_PATH = os.path.join(HERE, "words.js")
 
@@ -134,6 +135,17 @@ def enrich_snu(snu_words, yonsei_words):
 
 
 def build(snu_words, yonsei_words):
+    # 发音标注（krdict）：hash -> 实际读音
+    pron_map = {}
+    if os.path.exists(PRON_PATH):
+        try:
+            raw = json.load(open(PRON_PATH, encoding="utf-8"))
+            for wid, info in raw.items():
+                if isinstance(info, dict) and info.get("pron"):
+                    pron_map[wid] = info["pron"]
+        except Exception:
+            pron_map = {}
+
     books = []
 
     # 首尔大
@@ -142,6 +154,7 @@ def build(snu_words, yonsei_words):
         w["idx"] = i
         w["id"] = word_id(w["word"])
         w["book"] = BOOK_SNU
+        w["pron"] = pron_map.get(w["id"], "")
         snu.append(w)
     books.append({"id": BOOK_SNU, "name": BOOK_NAMES[BOOK_SNU], "words": snu})
 
@@ -151,6 +164,7 @@ def build(snu_words, yonsei_words):
         w["idx"] = i
         w["id"] = word_id(w["word"])
         w["book"] = BOOK_YONSEI
+        w["pron"] = pron_map.get(w["id"], "")
         yonsei.append(w)
     books.append({"id": BOOK_YONSEI, "name": BOOK_NAMES[BOOK_YONSEI], "words": yonsei})
 
