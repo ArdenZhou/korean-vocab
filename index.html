@@ -267,6 +267,18 @@
     <div id="progressInfo" style="font-size:0.85rem;color:#9aa;margin-top:6px;">加载中...</div>
     <button id="clearProgressBtn" style="margin-top:8px;font-size:0.8rem;" class="danger">清除全部进度</button>
   </div>
+  <div class="card" id="syncCard">
+    <label>☁️ 云同步（多设备）</label>
+    <div id="syncStatus" style="font-size:0.85rem;color:#9aa;margin-top:6px;">未设置</div>
+    <input type="password" id="syncTokenInput" placeholder="粘贴 GitHub Token" autocomplete="off" style="width:100%;margin-top:8px;box-sizing:border-box;background:#0f1a30;color:#e6e6e6;border:1px solid #2a3b66;border-radius:6px;padding:8px 10px;font-size:0.9rem;">
+    <div style="margin-top:8px;display:flex;gap:8px;">
+      <button id="syncConnectBtn" class="primary" style="flex:1;">连接并同步</button>
+      <button id="syncNowBtn" style="flex:0 0 auto;">立即同步</button>
+    </div>
+    <div style="font-size:0.75rem;color:#9aa;margin-top:8px;line-height:1.5;">
+      首次使用：<a href="https://github.com/settings/tokens" target="_blank" style="color:#7dd3fc;">生成 GitHub Token</a>，勾选 <b>gist</b> 权限，粘贴到上方点「连接并同步」。之后各设备会自动同步进度和错题集。
+    </div>
+  </div>
 </div>
 
 <!-- ========== 学习模式 ========== -->
@@ -77172,8 +77184,9 @@ window.BOOKS = [
     try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); }
     catch (e) { return {}; }
   }
-  function saveProgress(p) {
+  function saveProgress(p, silent) {
     try { localStorage.setItem(STORE_KEY, JSON.stringify(p)); } catch (e) {}
+    if (!silent) schedulePush();
   }
   var progress = loadProgress();
   function recordResult(word, ok) {
@@ -77189,10 +77202,185 @@ window.BOOKS = [
     try { return JSON.parse(localStorage.getItem(WRONGBOOK_KEY) || "{}"); }
     catch (e) { return {}; }
   }
-  function saveWrongbook(wb) {
+  function saveWrongbook(wb, silent) {
     try { localStorage.setItem(WRONGBOOK_KEY, JSON.stringify(wb)); } catch (e) {}
+    if (!silent) schedulePush();
   }
   var wrongbook = loadWrongbook();
+
+  // ====== 云同步（GitHub Gist）======
+  var SYNC_META_KEY = "hangeul_sync_meta_v1";
+  function loadSyncMeta() {
+    try { return JSON.parse(localStorage.getItem(SYNC_META_KEY) || "{}"); }
+    catch (e) { return {}; }
+  }
+  function saveSyncMeta(m) {
+    try { localStorage.setItem(SYNC_META_KEY, JSON.stringify(m)); } catch (e) {}
+  }
+  var syncMeta = loadSyncMeta(); // { token, gistId, updatedAt }
+
+  function syncEnabled() {
+    return !!(syncMeta && syncMeta.token);
+  }
+
+  // 打包本地数据
+  function packSyncData() {
+    return {
+      updatedAt: Date.now(),
+      progress: progress,
+      wrongbook: wrongbook
+    };
+  }
+
+  // GitHub API 封装
+  function ghApi(method, path, token, body) {
+    var headers = {
+      "Authorization": "Bearer " + token,
+      "Accept": "application/vnd.github+json"
+    };
+    if (body !== undefined) headers["Content-Type"] = "application/json";
+    return fetch("https://api.github.com" + path, {
+      method: method,
+      headers: headers,
+      body: body !== undefined ? JSON.stringify(body) : undefined
+    }).then(function (r) {
+      if (!r.ok) { throw new Error("GitHub API " + r.status); }
+      return r.json();
+    });
+  }
+
+  function ghCreateGist(token, data) {
+    return ghApi("POST", "/gists", token, {
+      description: "韩语记单词 同步数据",
+      public: false,
+      files: { "sync-data.json": { content: JSON.stringify(data) } }
+    }).then(function (r) { return r.id; });
+  }
+
+  function ghUpdateGist(token, gistId, data) {
+    return ghApi("PATCH", "/gists/" + gistId, token, {
+      files: { "sync-data.json": { content: JSON.stringify(data) } }
+    });
+  }
+
+  function ghGetGist(token, gistId) {
+    return ghApi("GET", "/gists/" + gistId, token).then(function (r) {
+      var f = r.files && r.files["sync-data.json"];
+      if (!f || !f.content) { throw new Error("云端无数据"); }
+      return JSON.parse(f.content);
+    });
+  }
+
+  // 查找已有同步 gist（按固定 description 识别，用于多设备首次连接）
+  function ghFindGist(token) {
+    return ghApi("GET", "/gists?per_page=100", token).then(function (gists) {
+      for (var i = 0; i < gists.length; i++) {
+        if (gists[i].description === "韩语记单词 同步数据") {
+          return gists[i].id;
+        }
+      }
+      return null;
+    });
+  }
+
+  // 上传本地到云端
+  function syncPush() {
+    if (!syncEnabled()) return Promise.resolve(false);
+    var data = packSyncData();
+    var p;
+    if (syncMeta.gistId) {
+      p = ghUpdateGist(syncMeta.token, syncMeta.gistId, data);
+    } else {
+      p = ghCreateGist(syncMeta.token, data).then(function (id) {
+        syncMeta.gistId = id;
+        saveSyncMeta(syncMeta);
+      });
+    }
+    return p.then(function () {
+      syncMeta.updatedAt = data.updatedAt;
+      saveSyncMeta(syncMeta);
+      return true;
+    }).catch(function (e) {
+      console.warn("同步上传失败", e);
+      return false;
+    });
+  }
+
+  // 从云端拉取（云端更新时间更新时才覆盖本地）
+  function syncPull() {
+    if (!syncEnabled() || !syncMeta.gistId) return Promise.resolve(false);
+    return ghGetGist(syncMeta.token, syncMeta.gistId).then(function (data) {
+      var remoteUpdatedAt = data.updatedAt || 0;
+      var localUpdatedAt = syncMeta.updatedAt || 0;
+      if (remoteUpdatedAt > localUpdatedAt) {
+        if (data.progress) { progress = data.progress; saveProgress(progress, true); }
+        if (data.wrongbook) { wrongbook = data.wrongbook; saveWrongbook(wrongbook, true); }
+        syncMeta.updatedAt = remoteUpdatedAt;
+        saveSyncMeta(syncMeta);
+        return true;
+      }
+      return false;
+    }).catch(function (e) {
+      console.warn("同步拉取失败", e);
+      return false;
+    });
+  }
+
+  // 数据变化后防抖上传
+  var syncTimer = null;
+  function schedulePush() {
+    if (!syncEnabled()) return;
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(function () { syncPush(); }, 2000);
+  }
+
+  // 手动同步：先拉云端、再推本地
+  function syncNow() {
+    if (!syncEnabled()) { renderSyncStatus("请先输入 Token 连接"); return Promise.resolve(false); }
+    renderSyncStatus("同步中…");
+    if (syncMeta.gistId) {
+      // 已有 gist：先拉云端，再推本地
+      return syncPull().then(function (pulled) {
+        if (pulled) { renderProgress(); }
+        return syncPush();
+      }).then(function (ok) {
+        renderSyncStatus(ok ? "已同步 ✓" : "同步失败 ✗");
+        return ok;
+      });
+    } else {
+      // 首次：先查找其他设备已创建的 gist，找到则拉取，否则新建并上传
+      return ghFindGist(syncMeta.token).then(function (existingId) {
+        if (existingId) {
+          syncMeta.gistId = existingId;
+          saveSyncMeta(syncMeta);
+          return syncPull().then(function (pulled) {
+            if (pulled) { renderProgress(); }
+            return true;
+          });
+        }
+        return syncPush();
+      }).then(function (ok) {
+        renderSyncStatus(ok ? "已同步 ✓" : "同步失败 ✗");
+        return ok;
+      }).catch(function (e) {
+        renderSyncStatus("同步失败 ✗");
+        return false;
+      });
+    }
+  }
+
+  // 同步状态显示
+  function renderSyncStatus(msg) {
+    var el = $("syncStatus");
+    if (!el) return;
+    if (msg) {
+      el.textContent = msg;
+    } else if (syncEnabled()) {
+      el.textContent = "已连接" + (syncMeta.gistId ? "" : "（待首次同步）");
+    } else {
+      el.textContent = "未设置";
+    }
+  }
 
   // 根据当前错误次数计算复习间隔（毫秒）
   function wrongbookInterval(err) {
@@ -78133,6 +78321,23 @@ window.BOOKS = [
     }
   });
 
+  // ====== 云同步交互 ======
+  $("syncConnectBtn").addEventListener("click", function () {
+    var token = $("syncTokenInput").value.trim();
+    if (!token) { renderSyncStatus("请先粘贴 Token"); return; }
+    syncMeta.token = token;
+    saveSyncMeta(syncMeta);
+    $("syncTokenInput").value = "";
+    syncNow();
+  });
+  $("syncNowBtn").addEventListener("click", function () {
+    syncNow();
+  });
+  // 已连接时，自动填入提示（不显示明文 token）
+  if (syncEnabled()) {
+    $("syncTokenInput").placeholder = "已连接，无需重复输入";
+  }
+
   // ====== 错题集交互 ======
   $("openWrongbook").addEventListener("click", function () {
     renderWrongbook();
@@ -78232,6 +78437,13 @@ window.BOOKS = [
   buildLessonList();
   renderKbd();
   renderProgress();
+  renderSyncStatus();
+  // 已连接时，打开页面自动从云端拉取最新数据
+  if (syncEnabled()) {
+    syncPull().then(function (pulled) {
+      if (pulled) { renderProgress(); renderSyncStatus("已同步 ✓"); }
+    });
+  }
   goHome();
 
 })();
