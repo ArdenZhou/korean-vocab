@@ -16,3 +16,6 @@ __pycache__/
 
 # krdict API 密钥（个人密钥，不上传）
 krdict_key.txt
+
+# Anki 牌组（生成物，用 make_anki.py 重新生成即可）
+*.apkg
